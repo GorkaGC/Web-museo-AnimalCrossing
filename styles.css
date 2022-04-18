@@ -19,6 +19,30 @@ body h1 {
   color: red;
 }
 
+header {
+  background-color: #82d7ad;
+}
+header .navbar {
+  display: flex;
+  justify-content: space-between;
+}
+header .navbar .icon-main img {
+  width: 5em;
+}
+header .navbar .nav-links {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .navbar .nav-links img {
+  width: 3em;
+}
+header .navbar .nav-links a {
+  text-decoration: none;
+  margin-right: 15px;
+}
+
 footer {
   background: url("media/footer6.jpg") #ccc no-repeat center center;
   background-size: cover;

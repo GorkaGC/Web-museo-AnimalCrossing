@@ -15,6 +15,25 @@
 </head>
 
 <body>
+    <header class="full-container">
+        <div class="navbar container">
+            <div class="icon-main">
+                <img src="media/icon_main1.png" alt="">
+            </div>
+            <div class="nav-links">
+                <a href="index.php" title="Historia">
+                    <img src="media/icon_history.png" alt="">
+                </a>
+                <a href="store.php"  title="Tienda">
+                    <img src="media/icon_shop.png" alt="">
+                </a>
+                <a href="games.php"  title="Juegos">
+                    <img src="media/icon_games.png" alt="">
+                </a>
+            </div>
+
+        </div>
+    </header>
 
     <h1>My First Heading</h1>
     <p>TEST.</p>
@@ -25,13 +44,13 @@
 
     <footer class="full-container">
         <div class="contenido container">
-            <div class="contacto"> <a href="#"> Contacta con nosotros  </a></div>
-            
+            <div class="contacto"> <a href="#"> Contacta con nosotros </a></div>
+
             <div class="social">
-            <a href="#"> <i class="fa-brands fa-facebook" style="color:#3b5998"></i></a>
-            <a href="#"> <i class="fa-brands fa-twitter" style="color:#00acee"></i></a>
-            <a href="#"> <i class="fa-brands fa-youtube" style="color:#FF0000"></i></a>
-            <a href="#"> <i class="fa-brands fa-instagram" style="color:#8a3ab9"></i></a>
+                <a href="#"> <i class="fa-brands fa-facebook" style="color:#3b5998"></i></a>
+                <a href="#"> <i class="fa-brands fa-twitter" style="color:#00acee"></i></a>
+                <a href="#"> <i class="fa-brands fa-youtube" style="color:#FF0000"></i></a>
+                <a href="#"> <i class="fa-brands fa-instagram" style="color:#8a3ab9"></i></a>
             </div>
 
             <div class="links">
