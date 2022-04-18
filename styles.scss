@@ -26,6 +26,41 @@ body {
         color: red;
     }
 }
+
+
+header {
+    background-color: #82d7ad;
+
+    
+    
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+
+        .icon-main {
+            img {
+                width: 5em;
+            }
+        }
+
+        .nav-links {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+                width: 3em;
+                
+            }
+            a {
+                text-decoration: none;
+                margin-right: 15px;
+                
+            }
+        }
+    }
+}
+
 footer {
     background: url("media/footer6.jpg") #ccc no-repeat center center;
     background-size: cover;
