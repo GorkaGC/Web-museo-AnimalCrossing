@@ -24,10 +24,10 @@
                 <a href="index.php" title="Historia">
                     <img src="media/icon_history.png" alt="">
                 </a>
-                <a href="store.php"  title="Tienda">
+                <a href="store.php" title="Tienda">
                     <img src="media/icon_shop.png" alt="">
                 </a>
-                <a href="games.php"  title="Juegos">
+                <a href="games.php" title="Juegos">
                     <img src="media/icon_games.png" alt="">
                 </a>
             </div>
@@ -35,9 +35,62 @@
         </div>
     </header>
 
-    <h1>My First Heading</h1>
-    <p>TEST.</p>
-    <audio autoplay="" loop="" src="media/index.mp3"></audio>
+    <div class="main-content full-container">
+        <!-- ¿DIV TITULO/BANNER? -->
+        <div class="banner container">
+            <h1>My First Heading</h1>
+            <p>TEST.</p>
+            <audio autoplay="" loop="" src="media/index.mp3"></audio>
+        </div>
+
+
+        <!-- DIV BLOQUES DE CONTENIDO -->
+        <div class="block-entradas container">
+            <div class="entrada">
+                <div class="entrada-titulo">
+                    <img src="media/icon_main1.png" alt="">
+                    <div>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </div>
+                </div>
+                <div class="entrada-texto">
+                    Proin turpis mi, facilisis a lacus a, placerat fermentum arcu. Duis dapibus nulla velit. Ut quis
+                    congue erat, vel auctor nunc. Vestibulum molestie bibendum ornare. Suspendisse sed pharetra tellus.
+                    Curabitur mollis nisi sit amet augue accumsan, quis porta quam hendrerit.
+                </div>
+
+            </div>
+            <div class="entrada">
+                <div class="entrada-titulo">
+                    <img src="media/icon_main1.png" alt="">
+                    <div>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </div>
+                </div>
+                <div class="entrada-texto">
+                    Proin turpis mi, facilisis a lacus a, placerat fermentum arcu. Duis dapibus nulla velit. Ut quis
+                    congue erat, vel auctor nunc. Vestibulum molestie bibendum ornare. Suspendisse sed pharetra tellus.
+                    Curabitur mollis nisi sit amet augue accumsan, quis porta quam hendrerit.
+                </div>
+
+            </div>
+            <div class="entrada">
+                <div class="entrada-titulo">
+                    <img src="media/icon_main1.png" alt="">
+                    <div>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </div>
+                </div>
+                <div class="entrada-texto">
+                    Proin turpis mi, facilisis a lacus a, placerat fermentum arcu. Duis dapibus nulla velit. Ut quis
+                    congue erat, vel auctor nunc. Vestibulum molestie bibendum ornare. Suspendisse sed pharetra tellus.
+                    Curabitur mollis nisi sit amet augue accumsan, quis porta quam hendrerit.
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
 
 
 

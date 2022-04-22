@@ -54,9 +54,56 @@ header {
             }
             a {
                 text-decoration: none;
-                margin-right: 15px;
+                margin-right: 15px; 
                 
             }
+        }
+    }
+}
+
+.main-content {
+    flex-direction: column;
+
+
+    .banner {
+        margin: 10px auto; //REVISAR, NO SE ESTÁ CENTRANDO SIN ESTO
+    }
+
+
+    .block-entradas {
+        margin: 10px auto; //REVISAR, NO SE ESTÁ CENTRANDO SIN ESTO
+
+        .entrada {
+            margin: 15px 0;
+            display: flex;
+            flex-direction: column;
+            
+
+            .entrada-titulo {
+                display: flex;
+                align-items: center;
+                font-size: 1.8em; //poner font-size aqui influye en el tamaño de la img
+                margin-bottom: 10px;
+                img {
+                    width: 5em;
+                    border-radius: 2em;
+                    margin-right: 15px;
+                }
+                div {
+                    background-color: #82d7ad;
+                    padding: 10px;
+                    border-radius: 15px;
+                    //poner font-size aqui NO influye en el tamaño de la img -- PROBAR PARA VER LA DIFERENCIA
+                }
+            }
+
+            .entrada-texto {
+                font-size: 1.2em;
+                background-color: #82d7ad;
+                    padding: 10px;
+                    border-radius: 15px;
+            }
+ 
         }
     }
 }
