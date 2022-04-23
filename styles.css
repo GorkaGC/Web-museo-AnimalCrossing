@@ -43,6 +43,43 @@ header .navbar .nav-links a {
   margin-right: 15px;
 }
 
+.main-content {
+  flex-direction: column;
+}
+.main-content .banner {
+  margin: 10px auto;
+}
+.main-content .block-entradas {
+  margin: 10px auto;
+}
+.main-content .block-entradas .entrada {
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+}
+.main-content .block-entradas .entrada .entrada-titulo {
+  display: flex;
+  align-items: center;
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+.main-content .block-entradas .entrada .entrada-titulo img {
+  width: 5em;
+  border-radius: 2em;
+  margin-right: 15px;
+}
+.main-content .block-entradas .entrada .entrada-titulo div {
+  background-color: #82d7ad;
+  padding: 10px;
+  border-radius: 15px;
+}
+.main-content .block-entradas .entrada .entrada-texto {
+  font-size: 1.2em;
+  background-color: #82d7ad;
+  padding: 10px;
+  border-radius: 15px;
+}
+
 footer {
   background: url("media/footer6.jpg") #ccc no-repeat center center;
   background-size: cover;
