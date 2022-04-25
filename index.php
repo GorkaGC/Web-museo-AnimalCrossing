@@ -36,59 +36,58 @@
     </header>
 
     <div class="main-content full-container">
+
         <!-- ¿DIV TITULO/BANNER? -->
-        <div class="banner container">
-            <h1>My First Heading</h1>
-            <p>TEST.</p>
+        <div class="content container">
             <audio autoplay="" loop="" src="media/index.mp3"></audio>
-        </div>
 
 
-        <!-- DIV BLOQUES DE CONTENIDO -->
-        <div class="block-entradas container">
-            <div class="entrada">
-                <div class="entrada-titulo">
-                    <img src="media/icon_main1.png" alt="">
-                    <div>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+            <!-- DIV BLOQUES DE CONTENIDO -->
+            <div class="block-entradas container">
+                <div class="entrada">
+                    <div class="entrada-titulo">
+                        <img src="media/katsuya-eguchi.jpg" alt="">
+                        <div>
+                            Katsuya Eguchi. El creador de la saga
+                        </div>
                     </div>
+                    <div class="entrada-texto">
+                        <p>Nació en 1965 en Tokio, Japón, y creció en la Prefectura de Chiba. Comenzó a trabajar en Nintendo en 1986 como uno de los diseñadores de Super Mario Bros. 3. En la época de la Super Nintendo, trabajó muy cerca de Shigeru Miyamoto en las sagas de Mario, aportando su talento en Super Mario World, y Star Fox.
+                            Su primer videojuego como director fue Star Fox de SNES en 1993, al que siguieron Wave Race 64 y Animal Crossing. Tras la reestructuración de Nintendo EAD en 2005, produjo todos los desarrollos del grupo que dirigía. Desde la reestructuración de Nintendo Entertainment Planning and Development es el Director adjunto de esta división.</p>
+                    </div>
+
                 </div>
-                <div class="entrada-texto">
-                    Proin turpis mi, facilisis a lacus a, placerat fermentum arcu. Duis dapibus nulla velit. Ut quis
-                    congue erat, vel auctor nunc. Vestibulum molestie bibendum ornare. Suspendisse sed pharetra tellus.
-                    Curabitur mollis nisi sit amet augue accumsan, quis porta quam hendrerit.
+                <div class="entrada">
+                    <div class="entrada-titulo">
+                        <img src="media/icon_main1.png" alt="">
+                        <div>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </div>
+                    </div>
+                    <div class="entrada-texto">
+                        Proin turpis mi, facilisis a lacus a, placerat fermentum arcu. Duis dapibus nulla velit. Ut quis
+                        congue erat, vel auctor nunc. Vestibulum molestie bibendum ornare. Suspendisse sed pharetra tellus.
+                        Curabitur mollis nisi sit amet augue accumsan, quis porta quam hendrerit.
+                    </div>
+
+                </div>
+                <div class="entrada">
+                    <div class="entrada-titulo">
+                        <img src="media/icon_main1.png" alt="">
+                        <div>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </div>
+                    </div>
+                    <div class="entrada-texto">
+                        Proin turpis mi, facilisis a lacus a, placerat fermentum arcu. Duis dapibus nulla velit. Ut quis
+                        congue erat, vel auctor nunc. Vestibulum molestie bibendum ornare. Suspendisse sed pharetra tellus.
+                        Curabitur mollis nisi sit amet augue accumsan, quis porta quam hendrerit.
+                    </div>
+
                 </div>
 
             </div>
-            <div class="entrada">
-                <div class="entrada-titulo">
-                    <img src="media/icon_main1.png" alt="">
-                    <div>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </div>
-                </div>
-                <div class="entrada-texto">
-                    Proin turpis mi, facilisis a lacus a, placerat fermentum arcu. Duis dapibus nulla velit. Ut quis
-                    congue erat, vel auctor nunc. Vestibulum molestie bibendum ornare. Suspendisse sed pharetra tellus.
-                    Curabitur mollis nisi sit amet augue accumsan, quis porta quam hendrerit.
-                </div>
-
-            </div>
-            <div class="entrada">
-                <div class="entrada-titulo">
-                    <img src="media/icon_main1.png" alt="">
-                    <div>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </div>
-                </div>
-                <div class="entrada-texto">
-                    Proin turpis mi, facilisis a lacus a, placerat fermentum arcu. Duis dapibus nulla velit. Ut quis
-                    congue erat, vel auctor nunc. Vestibulum molestie bibendum ornare. Suspendisse sed pharetra tellus.
-                    Curabitur mollis nisi sit amet augue accumsan, quis porta quam hendrerit.
-                </div>
-
-            </div>
-            
         </div>
     </div>
 
@@ -97,13 +96,23 @@
 
     <footer class="full-container">
         <div class="contenido container">
+            <div class="contacto-general">
             <div class="contacto"> <a href="#"> Contacta con nosotros </a></div>
-
+             <div class="contacto-mabel">
+                 <img src="media/char-mabel.png">
+             </div>   
+            </div>
             <div class="social">
+                <!--
                 <a href="#"> <i class="fa-brands fa-facebook" style="color:#3b5998"></i></a>
                 <a href="#"> <i class="fa-brands fa-twitter" style="color:#00acee"></i></a>
                 <a href="#"> <i class="fa-brands fa-youtube" style="color:#FF0000"></i></a>
                 <a href="#"> <i class="fa-brands fa-instagram" style="color:#8a3ab9"></i></a>
+                -->
+                <a href="#"> <img src="media/facebook.png"></a>
+                <a href="#"> <img src="media/twitter.png"></a>
+                <a href="#"> <img src="media/youtube.png"></a>
+                <a href="#"> <img src="media/instagram.png"></a>
             </div>
 
             <div class="links">
