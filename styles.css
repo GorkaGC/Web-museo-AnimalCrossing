@@ -32,7 +32,7 @@ header .navbar .icon-main img {
 header .navbar .nav-links {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 header .navbar .nav-links img {
@@ -44,13 +44,16 @@ header .navbar .nav-links a {
 }
 
 .main-content {
+  background-image: url(media/Background1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.main-content .content {
+  display: flex;
   flex-direction: column;
 }
-.main-content .banner {
-  margin: 10px auto;
-}
 .main-content .block-entradas {
-  margin: 10px auto;
+  margin-bottom: 20px;
 }
 .main-content .block-entradas .entrada {
   margin: 15px 0;
@@ -65,7 +68,8 @@ header .navbar .nav-links a {
 }
 .main-content .block-entradas .entrada .entrada-titulo img {
   width: 5em;
-  border-radius: 2em;
+  border-radius: 2.3em;
+  border: 4px solid #CD5C5C;
   margin-right: 15px;
 }
 .main-content .block-entradas .entrada .entrada-titulo div {
@@ -76,13 +80,19 @@ header .navbar .nav-links a {
 .main-content .block-entradas .entrada .entrada-texto {
   font-size: 1.2em;
   background-color: #82d7ad;
+  border: 1px solid #da6767;
+  box-shadow: 5px 5px 10px 4px rgba(0, 0, 0, 0.59);
   padding: 10px;
   border-radius: 15px;
+}
+.main-content .block-entradas .entrada .entrada-texto p {
+  text-align: justify;
 }
 
 footer {
   background: url("media/footer6.jpg") #ccc no-repeat center center;
   background-size: cover;
+  background-repeat: no-repeat;
   min-height: 100%;
   height: 400px;
 }
@@ -91,26 +101,41 @@ footer .contenido {
   flex-direction: column;
   justify-content: center;
 }
-footer .contenido .contacto {
+footer .contenido .contacto-general {
+  margin: 0 auto;
+}
+footer .contenido .contacto-general .contacto {
+  position: relative;
   background-color: #fdd10a;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
   padding: 14px 75px;
   font-size: 1.4rem;
   border-radius: 12px;
   margin-bottom: 35px;
 }
-footer .contenido .contacto a {
+footer .contenido .contacto-general .contacto a {
   text-decoration: none;
   color: #834b16;
 }
-footer .contenido .contacto a:hover {
+footer .contenido .contacto-general .contacto a:hover {
   color: #bc6c21;
+}
+footer .contenido .contacto-general img {
+  position: absolute;
+  left: 15%;
+  top: 99%;
 }
 footer .contenido .social {
   display: flex;
   justify-content: center;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 12px;
+}
+footer .contenido .social img {
+  width: 3vw;
+  height: 4vh;
 }
 footer .contenido .social a {
   font-size: 35px;
@@ -121,6 +146,7 @@ footer .contenido .social a:last-of-type {
 }
 footer .contenido .social a:hover {
   transform: scale(1.2);
+  filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.7254901961));
 }
 footer .contenido .links {
   margin-top: 35px;
