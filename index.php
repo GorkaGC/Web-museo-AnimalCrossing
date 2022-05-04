@@ -25,13 +25,13 @@
                 <img src="media/icon_main1.png" alt="iconoDePaginaPrincipal">
             </div>
             <div class="nav-links">
-                <a href="index.php" title="Historia">
+                <a href="control.php?f=index" title="Historia">
                     <img src="media/icon_history.png" alt="iconoDeHistoria">
                 </a>
-                <a href="store.php" title="Tienda">
+                <a href="control.php?f=store" title="Tienda">
                     <img src="media/icon_shop.png" alt="iconoDeTienda">
                 </a>
-                <a href="games.php" title="Juegos">
+                <a href="control.php?f=games" title="Juegos">
                     <img src="media/icon_games.png" alt="iconoDeJuegos">
                 </a>
             </div>
@@ -48,51 +48,30 @@
         <div class="content container">
             <audio autoplay="" loop="" src="media/index.mp3"></audio>
 
-       
-
+          
             <!-- DIV BLOQUES DE CONTENIDO -->
+            
             <div class="block-entradas container">
-                <div class="entrada">
+            <?php
+                require_once 'control.php';
+                $div =  $_SESSION['div'] ;
+                $cont = sizeof($div);
+                for($i = 0; $i < $cont; $i++){
+            ?>
+            <div class="entrada">
                     <div class="entrada-titulo">
-                        <img src="media/katsuya-eguchi.jpg" alt="">
+                        <img src="<?php echo $div[$i]->getImagen(); ?>">
                         <div class="titulo">
-                            Katsuya Eguchi<br> El creador de la saga
+                            <p><?php echo $div[$i]->getTitulo(); ?></p>
                         </div>
                     </div>
                     <div class="entrada-texto">
-                        <p>Nació en 1965 en Tokio, Japón, y creció en la Prefectura de Chiba. Comenzó a trabajar en Nintendo en 1986 como uno de los diseñadores de Super Mario Bros. 3. En la época de la Super Nintendo, trabajó muy cerca de Shigeru Miyamoto en las sagas de Mario, aportando su talento en Super Mario World, y Star Fox.
-                            Su primer videojuego como director fue Star Fox de SNES en 1993, al que siguieron Wave Race 64 y Animal Crossing. Tras la reestructuración de Nintendo EAD en 2005, produjo todos los desarrollos del grupo que dirigía. Desde la reestructuración de Nintendo Entertainment Planning and Development es el Director adjunto de esta división.</p>
+                        <p><?php echo $div[$i]->getTexto(); ?></p>
                     </div>
 
-                </div>
-                <div class="entrada">
-                    <div class="entrada-titulo">
-                        <img src="media/icon_main1.png" alt="">
-                        <div class="titulo">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        </div>
-                    </div>
-                    <div class="entrada-texto">
-                        Proin turpis mi, facilisis a lacus a, placerat fermentum arcu. Duis dapibus nulla velit. Ut quis
-                        congue erat, vel auctor nunc. Vestibulum molestie bibendum ornare. Suspendisse sed pharetra tellus.
-                        Curabitur mollis nisi sit amet augue accumsan, quis porta quam hendrerit.
-                    </div>
-
-                </div>
-                <div class="entrada">
-                    <div class="entrada-titulo">
-                        <img src="media/icon_main1.png" alt="">
-                        <div class="titulo">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        </div>
-                    </div>
-                    <div class="entrada-texto">
-                        Proin turpis mi, facilisis a lacus a, placerat fermentum arcu. Duis dapibus nulla velit. Ut quis
-                        congue erat, vel auctor nunc. Vestibulum molestie bibendum ornare. Suspendisse sed pharetra tellus.
-                        Curabitur mollis nisi sit amet augue accumsan, quis porta quam hendrerit.
-                    </div>
-
-                </div>
+            </div>
+                <?php 
+                } ?>
 
             </div>
         </div>

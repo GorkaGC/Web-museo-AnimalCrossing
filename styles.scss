@@ -60,6 +60,9 @@ header {
                 text-decoration: none;
                 margin-right: 15px;
             }
+            a:hover{
+                transform: scale(1.2);
+            }
         }
     }
 }
@@ -84,7 +87,7 @@ header {
         align-items: center;
         width: 100%;
         font-family: 'Arvo', serif;
-        font-size: 1.1em;
+        font-size: 1.8vW;
         background-image: url(./media/hero-bg-desktop.jpg);
         background-repeat: no-repeat;
         background-size: cover;
@@ -180,6 +183,7 @@ footer {
 
             .contacto {
                 position: relative;
+                font-family: 'Arvo', serif;
                 background-color: #fdd10a;
                 justify-content: center;
                 align-items: center;
@@ -233,6 +237,7 @@ footer {
             margin-top: 35px;
             display: flex;
             justify-content: center;
+            font-family: 'Arvo', serif;
 
             ul {
                 li {
@@ -242,6 +247,7 @@ footer {
                     list-style-type: none;
 
                     span {
+                        
                         color: #fdd10a;
                     }
                 }
