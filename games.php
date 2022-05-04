@@ -15,20 +15,19 @@
 </head>
 
 <body>
-
     <header class="full-container">
         <div class="navbar container">
             <div class="icon-main">
                 <img src="media/icon_main1.png" alt="">
             </div>
             <div class="nav-links">
-                <a href="index.php" title="Historia">
+                <a href="control.php?f=index" title="Historia">
                     <img src="media/icon_history.png" alt="">
                 </a>
-                <a href="store.php" title="Tienda">
+                <a href="control.php?f=store" title="Tienda">
                     <img src="media/icon_shop.png" alt="">
                 </a>
-                <a href="games.php" title="Juegos">
+                <a href="control.php?f=games" title="Juegos">
                     <img src="media/icon_games.png" alt="">
                 </a>
             </div>
@@ -39,13 +38,20 @@
 
     <footer class="full-container">
         <div class="contenido container">
-            <div class="contacto"> <a href="#"> Contacta con nosotros </a></div>
-
+            <div class="contacto-general">
+            <div class="contacto"> <a href="#"> Contacta con nosotros </a></div>   
+            </div>
             <div class="social">
+                <!--
                 <a href="#"> <i class="fa-brands fa-facebook" style="color:#3b5998"></i></a>
                 <a href="#"> <i class="fa-brands fa-twitter" style="color:#00acee"></i></a>
                 <a href="#"> <i class="fa-brands fa-youtube" style="color:#FF0000"></i></a>
                 <a href="#"> <i class="fa-brands fa-instagram" style="color:#8a3ab9"></i></a>
+                -->
+                <a href="#"> <img src="media/facebook.png"></a>
+                <a href="#"> <img src="media/twitter.png"></a>
+                <a href="#"> <img src="media/youtube.png"></a>
+                <a href="#"> <img src="media/instagram.png"></a>
             </div>
 
             <div class="links">
