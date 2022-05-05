@@ -2,11 +2,13 @@
 
 class ConectaBD
 {
-
+    /** DESCOMENTAR EL USER/PASS QUE NECESITES PARA NO ANDAR BORRANDO */
     private $servername = "localhost";
-    private $database = "prueba";
-    private $username = "root";
-    private $password = "";
+    private $database = "animalcrossing";
+    private $username = "user";
+    private $password = "pass";
+    //private $username = "root";
+    //private $password = "";
     private $conn;
 
     function __construct()
@@ -20,13 +22,13 @@ class ConectaBD
 
     function set_divs_index()
     {
-        $sql = "SELECT * FROM indexphp";
+        $sql = "SELECT * FROM history";
 
         $result  = $this->conn->query($sql);
         $lista_divs = array();
 
         while ($row = $result->fetch_assoc()){
-            $div = new divIndex($row['imagen'],$row['titulo'],$row['texto']);
+            $div = new divIndex($row['URL_IMG'],$row['TITLE'],$row['TEXT']);
             $lista_divs[] = $div;
         }
         return $lista_divs;
