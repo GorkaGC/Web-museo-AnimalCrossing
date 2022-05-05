@@ -15,55 +15,16 @@
 </head>
 
 <body>
-    <header class="full-container">
-        <div class="navbar container">
-            <div class="icon-main">
-                <img src="media/icon_main1.png" alt="">
-            </div>
-            <div class="nav-links">
-                <a href="control.php?f=index" title="Historia">
-                    <img src="media/icon_history.png" alt="">
-                </a>
-                <a href="control.php?f=store" title="Tienda">
-                    <img src="media/icon_shop.png" alt="">
-                </a>
-                <a href="control.php?f=games" title="Juegos">
-                    <img src="media/icon_games.png" alt="">
-                </a>
-            </div>
+    <?php include "nav.php"; ?>
 
-        </div>
-    </header>
+    <?php   
 
+    $var = $_SESSION['prueba'];
+?>
 
-    <footer class="full-container">
-        <div class="contenido container">
-            <div class="contacto-general">
-            <div class="contacto"> <a href="#"> Contacta con nosotros </a></div>   
-            </div>
-            <div class="social">
-                <!--
-                <a href="#"> <i class="fa-brands fa-facebook" style="color:#3b5998"></i></a>
-                <a href="#"> <i class="fa-brands fa-twitter" style="color:#00acee"></i></a>
-                <a href="#"> <i class="fa-brands fa-youtube" style="color:#FF0000"></i></a>
-                <a href="#"> <i class="fa-brands fa-instagram" style="color:#8a3ab9"></i></a>
-                -->
-                <a href="#"> <img src="media/facebook.png"></a>
-                <a href="#"> <img src="media/twitter.png"></a>
-                <a href="#"> <img src="media/youtube.png"></a>
-                <a href="#"> <img src="media/instagram.png"></a>
-            </div>
+    <h1>Juegos</h1>
+    <p><?php echo $var ?></p>
 
-            <div class="links">
-                <ul>
-                    <li>All rights reserved C</li>
-                    <li>Created by: <span>Nerea Martinez</span> and <span>Gorka García</span></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+    <?php include "footer.php"; ?>
 </body>
-
-
-
 </html>

@@ -1,5 +1,15 @@
 <?php 
 
+/* NECESITAMOS REQUERIR LA CLASE ANTES DE SESSION, O NOS DA ERROR DE INCOMPLETE_CLASS */
+require "divIndex.php";
+require "juego.php";
+
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+
+
 
 ?>
 <header class="full-container">
@@ -18,6 +28,5 @@
                     <img src="media/icon_games.png" alt="">
                 </a>
             </div>
-
         </div>
     </header>
