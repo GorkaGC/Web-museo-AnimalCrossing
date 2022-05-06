@@ -3,6 +3,8 @@
 require "conexion.php";
 require "divIndex.php";
 require "juego.php";
+
+
 if (!isset($_SESSION)) {
     session_start();
 }
