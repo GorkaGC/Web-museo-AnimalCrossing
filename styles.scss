@@ -22,6 +22,32 @@
 
 ////////////////////////////////////////////////////
 
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+    
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #7CDFFF;
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #bc9c10;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #7c680c;
+  }
+
+////////////////////////////////////////////////////
+
 body {
 
 
