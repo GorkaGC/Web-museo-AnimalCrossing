@@ -15,24 +15,24 @@
   max-width: 1100px;
 }
 
-/* width */
+/* ANCHO */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
-/* Track */
+/* TRACK  */
 ::-webkit-scrollbar-track {
   background: #7CDFFF;
   border-radius: 10px;
 }
 
-/* Handle */
+/* HANDLE */
 ::-webkit-scrollbar-thumb {
   background: #bc9c10;
   border-radius: 10px;
 }
 
-/* Handle on hover */
+/* HANDLE HOVER */
 ::-webkit-scrollbar-thumb:hover {
   background: #7c680c;
 }
@@ -218,7 +218,90 @@ footer .contenido .links ul li {
 footer .contenido .links ul li span {
   color: #fdd10a;
 }
+footer .contenido .links ul li span:hover {
+  color: #ffe676;
+}
 
+.contacto-full {
+  background-color: #e6d58f;
+  background-image: url(media/ContactoBg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.contacto-full .contacto {
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+  font-family: "Arvo", serif;
+}
+.contacto-full .contacto .who {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+}
+.contacto-full .contacto .who h1 {
+  margin-bottom: 15px;
+  font-size: 3.5vw;
+  text-align: center;
+  color: #834b16;
+}
+.contacto-full .contacto .who .who-content {
+  display: flex;
+  padding: 7px;
+  background-image: url(media/contact-who.jpg);
+  border-radius: 15px;
+  border: 2px solid #bd9d0f;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+  box-shadow: 2px 6px 11px 3px rgba(0, 0, 0, 0.65);
+  animation: fadeInAnimation ease 3s;
+}
+.contacto-full .contacto .who .who-content img {
+  border: 4px solid #bd9d0f;
+  border-radius: 15px;
+}
+.contacto-full .contacto .who .who-content .who-text {
+  font-family: "Arvo", sans-serif;
+  color: #834b16;
+}
+.contacto-full .contacto .who .who-content .who-text h3 {
+  text-align: center;
+  margin-bottom: 8px;
+  font-size: 1.6em;
+  text-decoration: underline;
+}
+.contacto-full .contacto .who .who-content .who-text p {
+  text-align: justify;
+  padding: 15px;
+  color: #834b16;
+  background-color: #fdd10a;
+  border: 4px solid #bd9d0f;
+  font-weight: 700;
+  border-radius: 0px 15px 15px 15px;
+}
+.contacto-full .contacto .form-contact {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contacto-full .contacto .form-contact h1 {
+  margin-bottom: 15px;
+  font-size: 3.5vw;
+  text-align: center;
+  color: #834b16;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @media screen and (max-width: 1100px) {
   .main-content .block-entradas .entrada {
     align-items: center;

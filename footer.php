@@ -6,7 +6,7 @@
 <footer class="full-container">
         <div class="contenido container">
             <div class="contacto-general">
-                <div class="contacto"> <a href="#"> Contacta con nosotros </a></div>
+                <div class="contacto"> <a href="control.php?f=contact"> Contacta con nosotros </a></div>
             </div>
             <div class="social">
                 <!--
@@ -23,7 +23,7 @@
 
             <div class="links">
                 <ul>
-                    <li>All rights reserved C</li>
+                    <li>All rights reserved ©</li>
                     <li>Created by: <span>Nerea Martinez</span> and <span>Gorka García</span></li>
                 </ul>
             </div>
