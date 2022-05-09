@@ -1,13 +1,37 @@
 <?php
 class Juego{
+    private $idGame;
     private $urlImg;
     private $titleGame;
     private $gameDesc;
+    private $releaseDate;
 
-    public function __construct($urlImg, $titleGame, $gameDesc){
+    public function __construct($idGame, $urlImg, $titleGame, $gameDesc, $releaseDate){
+        $this->idGame = $idGame;
         $this->urlImg = $urlImg;
         $this->titleGame = $titleGame;
         $this->gameDesc = $gameDesc;
+        $this->releaseDate = $releaseDate;
+    }
+
+        /**
+     * Get the value of idGame
+     */ 
+    public function getIdGame()
+    {
+        return $this->idGame;
+    }
+
+    /**
+     * Set the value of idGame
+     *
+     * @return  self
+     */ 
+    public function setIdGame($idGame)
+    {
+        $this->idGame = $idGame;
+
+        return $this;
     }
 
 
@@ -67,6 +91,28 @@ class Juego{
     public function setGameDesc($gameDesc)
     {
         $this->gameDesc = $gameDesc;
+
+        return $this;
+    }
+
+
+
+    /**
+     * Get the value of releaseDate
+     */ 
+    public function getReleaseDate()
+    {
+        return $this->releaseDate;
+    }
+
+    /**
+     * Set the value of releaseDate
+     *
+     * @return  self
+     */ 
+    public function setReleaseDate($releaseDate)
+    {
+        $this->releaseDate = $releaseDate;
 
         return $this;
     }
