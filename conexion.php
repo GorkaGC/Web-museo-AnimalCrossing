@@ -20,7 +20,7 @@ class ConectaBD
         $this->conn = mysqli_connect($this->servername, $this->username, $this->password, $this->database);
     }
 
-    function set_divs_index()
+    public function set_divs_index()
     {
         $sql = "SELECT * FROM history";
 
@@ -33,5 +33,33 @@ class ConectaBD
         }
         return $lista_divs;
     }
-}
 
+    public function getAllGames() {
+        $sql = "SELECT * FROM game";
+
+        $result  = $this->conn->query($sql);
+        $listGames = array();
+
+        while ($row = $result->fetch_assoc()){
+            $game = new Juego($row['ID_GAME'], $row['URL_COVER_IMG'], $row['TITLE_GAME'], $row['GAME_DESC'], $row['RELEASE_DATE']);
+            $listGames[] = $game;
+        }
+        return $listGames;
+    }
+
+    public function getAllCreators() {
+        $sql = "SELECT * FROM creator";
+
+        $result  = $this->conn->query($sql);
+        $listCreators = array();
+
+        while ($row = $result->fetch_assoc()){
+            $creator = new Creador($row['NAME_CREATOR'], $row['URL_CREATOR_IMG'], $row['INFO_CREATOR']);
+            $listCreators[] = $creator;
+        }
+        return $listCreators;
+    }
+
+
+
+}

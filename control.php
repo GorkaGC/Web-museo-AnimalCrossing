@@ -21,7 +21,8 @@ switch ($urlDestino) {
         header("Location: index.php");
         break;
     case "games":
-        $_SESSION['prueba'] = "Hola nerea";
+        $games = $conn->getAllGames();
+        $_SESSION['listGames'] = $games;
         header("Location: games.php");
         break;
     case "contact":
