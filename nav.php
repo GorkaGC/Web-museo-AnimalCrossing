@@ -3,12 +3,11 @@
 /* NECESITAMOS REQUERIR LA CLASE ANTES DE SESSION, O NOS DA ERROR DE INCOMPLETE_CLASS */
 require "divIndex.php";
 require "juego.php";
+require "creador.php";
 
 if (!isset($_SESSION)) {
     session_start();
 }
-
-
 
 
 ?>
