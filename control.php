@@ -3,6 +3,7 @@
 require "conexion.php";
 require "divIndex.php";
 require "juego.php";
+require "creador.php";
 
 
 if (!isset($_SESSION)) {
@@ -26,6 +27,8 @@ switch ($urlDestino) {
         header("Location: games.php");
         break;
     case "contact":
+        $datos_nosotros = $conn->getAllCreators();
+        $_SESSION['nosotros'] = $datos_nosotros;
         header("Location: contacto.php");
         break;
     case "store":
