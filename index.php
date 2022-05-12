@@ -27,6 +27,9 @@
             <!-- DIV BLOQUES DE CONTENIDO -->
             <div class="block-entradas container">
                 <?php
+                if (empty($_SESSION['div'])) {
+                    header("Location: control.php?f=index");
+                }
                 $div =  $_SESSION['div'];
                 //var_dump($div);
                 $cont = sizeof($div);

@@ -9,84 +9,217 @@
         include "head.php";
     ?>
     <title>Juegos</title>
+
+    <style>
+    #tabs {
+        position: relative;
+    }
+
+    span.diana {
+        position: fixed;
+    }
+
+    .diana+a {
+        display: block;
+        float: left;
+        height: 32px;
+        line-height: 32px;
+        padding: 0 10px;
+        border: 1px solid #ddd;
+        background-color: #eee;
+        margin-bottom: -1px;
+        border-radius: 8px 8px 0 0;
+        margin-right: 10px;
+        text-decoration: none;
+        border-radius: 15px;
+    }
+
+    .diana:target+a {
+        background-color: #fff;
+        border-bottom-color: #fff;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+
+    #pnl_1,
+    #pnl_2,
+    #pnl_3 {
+        position: absolute;
+        top: 31px;
+        left: 0;
+        border: none;
+        clear: both;
+        overflow: hidden;
+    }
+
+    #pnl_1>div>p,
+    #pnl_2>div>p,
+    #pnl_3>div>p {
+        /* opacity: 0; */
+        transition: all 0.1s ease;
+        padding: 30px;
+        display: none;
+    }
+
+    #uno:target~#pnl_1,
+    #dos:target~#pnl_2,
+    #tres:target~#pnl_3 {
+        position: static;
+        border: 1px solid #ddd;
+    }
+
+    #uno:target~#pnl_1>div>p,
+    #dos:target~#pnl_2>div>p,
+    #tres:target~#pnl_3>div>p {
+        /* opacity: 1; */
+        transition: all 1s ease;
+        display: block;
+    }
+    </style>
 </head>
 
 <body>
     <?php include "nav.php"; ?>
 
     <?php   
-
+if (empty($_SESSION['listGames'])) {
+    header("Location: control.php?f=games");
+}
     $listGames = $_SESSION['listGames'];
     //var_dump($listGames);
 
     $text = $listGames[0]->getGameDesc();
-    //var_dump($text);
-
-     // PRUEBA
-    // $count = 0;
-    // for ($i=0; $i < strlen($text); $i++) { 
-    //     echo "$text[$i]";
-    //     if ($text[$i] === '.') {
-    //         $count++;
-    //         if ($count>1) {
-    //             echo '<br>';
-    //         }
-            
-    //     }
-    // }
     
     ?>
 
-    
+
 
     <div class=" full-container">
         <div class="games-content container">
-        <h1>Juegos</h1>
-        <div class="container games-pag">
-            <div class="games-list">
-                <?php 
+            <h1>Juegos</h1>
+            <div class="container games-pag">
+                <div class="games-list">
+                    <?php 
                 $cont = sizeof($listGames);
                 for ($i=0; $i < $cont; $i++) { 
                     ?>
-                <div class="img-container">
-                    <img src="<?php echo $listGames[$i]-> getUrlImg(); ?>" alt="" onmouseover="display(this)"
-                        id="game_ac">
+                    <div class="img-container">
+                        <img src="<?php echo $listGames[$i]-> getUrlImg(); ?>" alt="" id="<?php echo $i ?>"
+                            onclick="displayGameInfo(this)">
 
-                </div>
-                <!--
+                    </div>
+                    <!--
                 <div class="hr">
 
                 </div>-->
 
-                <?php } ?>
+                    <?php } ?>
 
-            </div>
+                </div>
 
-            <div class="block-game-description">
-                <div class="game-title-row">
-                    <div> <?php echo $listGames[0]->getTitleGame(); ?></div>
-                    <div> <?php echo $listGames[0]->getReleaseDate(); ?></div>
-                </div>
-                <div class="game-trailer-row">
-                    trailer
-                </div>
+
+
+                <div class="block-game-description">
+                    <div class="game-title-row">
+                        <div> <?php echo $listGames[0]->getTitleGame(); ?></div>
+                        <div> <?php echo $listGames[0]->getReleaseDate(); ?></div>
+                    </div>
+                    <div class="game-trailer-row">
+                        trailer
+                    </div>
+
+                    <div class="game-arg-row">
+                        <h3>Argumento</h3>
+                        <p> <?php echo $listGames[0]->getGameDesc(); ?></p>
+                    </div>
+
+
+
+                    <div class="game-arg-row" style="border:none">
+
+                            <section id="main">
+                                <div id="tabs">
+                                    <span class="diana" id="uno"></span>
+                                    <a href="#uno" class="tab-e">Panel 1</a>
+                                    <span class="diana" id="dos"></span>
+                                    <a href="#dos" class="tab-e">Panel 2</a>
+                                    <span class="diana" id="tres"></span>
+                                    <a href="#tres" class="tab-e">Panel 3</a>
+
+                                    <div id="pnl_1" class="active">
+                                        <div>
+                                            <p> <?php echo $listGames[0]->getGameDesc(); ?></p>
+                                        </div>
+                                    </div>
+
+                                    <div id="pnl_2">
+                                        <div>
+                                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                                accusantium
+                                                doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
+                                                inventore
+                                                veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
+                                                enim
+                                                ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed
+                                                quia
+                                                consequuntur magni dolores.</p>
+
+                                            <p>Neque porro quisquam est, qui
+                                                dolorem
+                                                ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non
+                                                numquam
+                                                eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
+                                                voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam
+                                                corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div id="pnl_3">
+                                        <div>
+                                            <p> No officiis lobortis eam. Soluta laboramus mei cu, sea modo dicant eu,
+                                                cu
+                                                ius eius aperiri. An pro dicam contentiones. Duo amet lorem officiis ex,
+                                                an
+                                                legimus nusquam atomorum per, per cu erat ornatus. Nibh oratio eam eu.
+                                                An
+                                                lobortis sapientem delicatissimi mea, ex dicunt tacimates quo, nec ad
+                                                aeque
+                                                adipisci efficiantur.</p>
+
+                                            <p> Pri ad quando suscipit conclusionemque, ad vel dico ubique. Et sit
+                                                utinam
+                                                apeirian. Ea nemore delicatissimi eos, cum adhuc dignissim ad, putent
+                                                ocurreret has ut. Eos amet duis solet id, est ne prima nostro virtute,
+                                                ea
+                                                pri etiam recteque disputando. Enim dolorum vivendum at vel, vis odio
+                                                consul
+                                                te.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
                 
-                <div class="game-arg-row">
-                    <h3>Argumento</h3>
-                    <p> <?php echo $listGames[0]->getGameDesc(); ?></p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-        </div>
-        
-    
+
+
 
 
     <?php include "footer.php"; ?>
 </body>
 
 </html>
+
+<script>
+function displayGameInfo(x) {
+    var prueba = x.id;
+
+}
+</script>
 
 
 <!-- 
