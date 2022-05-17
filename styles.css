@@ -77,7 +77,7 @@ header .navbar .nav-links .sign-up {
   border-radius: 2.3em;
   font-family: "Arvo", sans-serif;
   padding: 6px;
-  font-size: 1.3em;
+  font-size: 1em;
 }
 header .navbar .nav-links .sign-up:hover {
   background-color: #9e8208;
@@ -159,7 +159,7 @@ header .navbar .hamburger {
   font-size: 1.2em;
   font-family: "Arvo", serif;
   color: #834b16;
-  background-color: #FDF09F;
+  background-color: #fdf09f;
   border: 2px solid #bc9c10;
   box-shadow: 5px 5px 10px 4px rgba(0, 0, 0, 0.59);
   padding: 10px;
@@ -222,7 +222,7 @@ footer .contenido .social a:last-of-type {
 }
 footer .contenido .social a:hover {
   transform: scale(1.2);
-  filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.7254901961));
+  filter: drop-shadow(0px 0px 2px #000000b9);
 }
 footer .contenido .links {
   margin-top: 35px;
@@ -337,6 +337,7 @@ footer .contenido .links ul li span:hover {
   font-weight: 700;
   font-size: 1em;
   background-color: #e6d58f;
+  padding: 15px;
 }
 .contacto-full .contacto .form-contact .form-build form .inputs::placeholder {
   padding: 15px;
@@ -406,28 +407,35 @@ footer .contenido .links ul li span:hover {
     opacity: 1;
   }
 }
-.games-content h1 {
+.games-full {
+  background-color: #e6d58f;
+  background-image: url(media/bg-games.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.games-full .games-content h1 {
   color: #846323;
   text-align: center;
   margin: 30px auto;
 }
-.games-content .games-pag {
+.games-full .games-content .games-pag {
   display: flex;
   justify-content: space-between;
   padding: 10px;
 }
-.games-content .games-pag .games-list {
+.games-full .games-content .games-pag .games-list {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px solid black;
   width: 20%;
   padding: 10px;
 }
-.games-content .games-pag .games-list .img-container:not(:last-child) {
+.games-full .games-content .games-pag .games-list .img-container:not(:last-child) {
   margin-bottom: 10%;
 }
-.games-content .games-pag .games-list .hr {
+.games-full .games-content .games-pag .games-list .hr {
   width: 1px;
   border: 1px solid transparent;
   height: 50px;
@@ -435,24 +443,27 @@ footer .contenido .links ul li span:hover {
   margin: 0px 75px 10px;
   align-items: center;
 }
-.games-content .games-pag .games-list .hr:last-of-type {
+.games-full .games-content .games-pag .games-list .hr:last-of-type {
   display: none;
 }
-.games-content .games-pag .games-list img {
+.games-full .games-content .games-pag .games-list img {
   width: 100%;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222);
 }
-.games-content .games-pag .block-game-description {
-  border: 1px solid black;
+.games-full .games-content .games-pag .block-game-description {
+  background-color: #fdf09f;
+  border: 2px solid #bc9c10;
   width: 70%;
   padding: 10px;
 }
-.games-content .games-pag .block-game-description .game-title-row {
+.games-full .games-content .games-pag .block-game-description .game-title-row {
   display: flex;
   justify-content: space-between;
   padding: 15px;
   border: 1px solid black;
 }
-.games-content .games-pag .block-game-description .game-trailer-row {
+.games-full .games-content .games-pag .block-game-description .game-trailer-row {
   width: 80%;
   border: 1px solid black;
   margin: 10px auto;
@@ -461,9 +472,69 @@ footer .contenido .links ul li span:hover {
   align-items: center;
   justify-content: center;
 }
-.games-content .games-pag .block-game-description .game-arg-row {
+.games-full .games-content .games-pag .block-game-description .game-arg-row {
   padding: 15px;
   border: 1px solid black;
+}
+.games-full .games-content .games-pag .block-game-description .game-arg-row:last-of-type {
+  border: none;
+}
+.games-full .games-content .games-pag #tabs {
+  position: relative;
+}
+.games-full .games-content .games-pag span.diana {
+  position: fixed;
+}
+.games-full .games-content .games-pag .diana + a {
+  display: block;
+  float: left;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 10px;
+  border: 1px solid #ddd;
+  background-color: #eee;
+  margin-bottom: -1px;
+  border-radius: 8px 8px 0 0;
+  margin-right: 10px;
+  text-decoration: none;
+  border-radius: 15px;
+}
+.games-full .games-content .games-pag .diana:target + a {
+  background-color: #fff;
+  border-bottom-color: #fff;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.games-full .games-content .games-pag #pnl_1,
+.games-full .games-content .games-pag #pnl_2,
+.games-full .games-content .games-pag #pnl_3 {
+  position: absolute;
+  top: 31px;
+  left: 0;
+  border: none;
+  clear: both;
+  overflow: hidden;
+}
+.games-full .games-content .games-pag #pnl_1 > div > p,
+.games-full .games-content .games-pag #pnl_2 > div > p,
+.games-full .games-content .games-pag #pnl_3 > div > p {
+  /* opacity: 0; */
+  transition: all 0.1s ease;
+  padding: 30px;
+  display: none;
+}
+.games-full .games-content .games-pag #uno:target ~ #pnl_1,
+.games-full .games-content .games-pag #dos:target ~ #pnl_2,
+.games-full .games-content .games-pag #tres:target ~ #pnl_3 {
+  position: static;
+  border: 1px solid #ddd;
+}
+.games-full .games-content .games-pag #uno:target ~ #pnl_1 > div > p,
+.games-full .games-content .games-pag #dos:target ~ #pnl_2 > div > p,
+.games-full .games-content .games-pag #tres:target ~ #pnl_3 > div > p {
+  /* opacity: 1; */
+  transition: all 1s ease;
+  display: block;
 }
 
 @media screen and (max-width: 1100px) {
@@ -482,7 +553,7 @@ footer .contenido .links ul li span:hover {
 }
 @media screen and (max-width: 800px) {
   header .navbar .nav-links {
-    background-color: rgba(130, 215, 173, 0.7647058824);
+    background-color: #82d7adc3;
     flex-direction: column;
     position: fixed;
     transform: translateY(-100%);
@@ -540,7 +611,7 @@ footer .contenido .links ul li span:hover {
 }
 @media screen and (max-width: 400px) {
   header .navbar .nav-links {
-    background-color: rgba(130, 215, 173, 0.7647058824);
+    background-color: #82d7adc3;
     flex-direction: column;
     position: fixed;
     transform: translateY(-100%);

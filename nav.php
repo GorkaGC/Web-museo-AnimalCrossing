@@ -4,10 +4,12 @@
 require "divIndex.php";
 require "juego.php";
 require "creador.php";
+require "user.php";
 
 if (!isset($_SESSION)) {
     session_start();
 }
+
 
 
 ?>
@@ -26,13 +28,26 @@ if (!isset($_SESSION)) {
             <a class="menuItem" href="control.php?f=games" title="Juegos">
                 <img src="media/icon_games.png" alt="">
             </a>
-            <a class="menuItem" href="#">
+            <?php
+        if (empty($_SESSION['userLoged'])) {
+        ?>
+            <a class="menuItem" href="control.php?f=login&option=login" title="">
                 <div class="sign-up">Inicia Sesión</div>
             </a>
+
+            <?php } else {
+            ?>
+            <a class="menuItem" href="control.php?f=userInterface" title="">
+                <div class="sign-up"> <?php echo $_SESSION['user']->getUserName(); ?></div>
+            </a>
+
+            <?php
+        }
+        ?>
         </div>
         <button class="hamburger">
-        <i class="menuIcon fa-solid fa-bars"></i>
-        <i class="closeIcon fa-solid fa-xmark"></i>
+            <i class="menuIcon fa-solid fa-bars"></i>
+            <i class="closeIcon fa-solid fa-xmark"></i>
         </button>
     </div>
 </header>
