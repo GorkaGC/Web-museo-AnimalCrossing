@@ -392,7 +392,7 @@ footer {
                         margin-bottom: 14px;
                     }
                     .inputs {
-                        width: 50%;
+                        width:65%;
                         height: 40px;
                         color: #834b16;
                         border: 4px solid #bd9d0f;
@@ -401,6 +401,9 @@ footer {
                         font-weight: 700;
                         font-size: 1em;
                         background-color: #e6d58f;
+                        &::placeholder{
+                            padding:15px;
+                        }
                     }
                     textarea {
                         width: 65%;
@@ -619,8 +622,7 @@ footer {
                 border: 2px solid #bc9c10;
                 cursor: pointer;
 
-                .menuIcon {
-                }
+                
                 .closeIcon {
                     display: none;
                    
@@ -693,8 +695,7 @@ footer {
                 border: 2px solid #bc9c10;
                 cursor: pointer;
 
-                .menuIcon {
-                }
+                
                 .closeIcon {
                     display: none;
                    
