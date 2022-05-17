@@ -274,9 +274,6 @@ footer .contenido .links ul li span:hover {
   display: flex;
   padding: 10px;
   background-image: url(media/contact-who.jpg);
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
   border-radius: 15px;
   border: 2px solid #bd9d0f;
   flex-direction: column;
