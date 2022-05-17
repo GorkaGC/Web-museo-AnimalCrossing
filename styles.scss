@@ -21,19 +21,17 @@
     max-width: 1100px;
 }
 
-
 ////////////////////////////////////////////////////
 
 //SCROLL BAR EDITADA
 /* ANCHO */
 ::-webkit-scrollbar {
     width: 8px;
-
 }
 
 /* TRACK  */
 ::-webkit-scrollbar-track {
-    background: #7CDFFF;
+    background: #7cdfff;
     border-radius: 10px;
 }
 
@@ -51,13 +49,10 @@
 ////////////////////////////////////////////////////
 
 body {
-
-
     h1 {
         color: red;
     }
 }
-
 
 header {
     background-color: #82d7ad;
@@ -90,6 +85,28 @@ header {
             a:hover {
                 transform: scale(1.3);
             }
+            a:last-of-type {
+                transform: none;
+            }
+
+            .sign-up {
+                color: #834b16;
+                background-color: #fdd10a;
+                border: 2px solid #bc9c10;
+                border-radius: 2.3em;
+                font-family: "Arvo", sans-serif;
+                padding: 6px;
+                font-size: 1.3em;
+
+                &:hover {
+                    background-color: #9e8208;
+                    color: #ffc822;
+                    transform: none;
+                }
+            }
+        }
+        .hamburger {
+            display: none;
         }
     }
 }
@@ -114,8 +131,8 @@ header {
         flex-direction: column;
         align-items: center;
         width: 100%;
-        font-family: 'Arvo', serif;
-        font-size: 1.8vW;
+        font-family: "Arvo", serif;
+        font-size: 1.8vw;
         background-image: url(./media/hero-bg-desktop.jpg);
         background-repeat: no-repeat;
         background-size: cover;
@@ -132,29 +149,27 @@ header {
         }
     }
 
-
     .block-entradas {
         //margin: 10px auto; //REVISAR, NO SE ESTÁ CENTRANDO SIN ESTO
         margin-bottom: 20px;
-        font-family: 'Animal';
+        font-family: "Animal";
 
         .entrada {
             margin: 60px 0;
             display: flex;
             flex-direction: column;
 
-
             .entrada-titulo {
                 display: flex;
-                font-family: 'Arvo', serif;
+                font-family: "Arvo", serif;
                 align-items: center;
                 font-size: 1.8em; //poner font-size aqui influye en el tamaño de la img
                 margin-bottom: 10px;
 
                 .titulo {
                     border: 4px solid #fdd10a;
-                    background-color: #7CDFFF;
-                    color: #834B16;
+                    background-color: #7cdfff;
+                    color: #834b16;
                     font-weight: 700;
                 }
 
@@ -171,14 +186,13 @@ header {
                     border-radius: 15px;
                     //poner font-size aqui NO influye en el tamaño de la img -- PROBAR PARA VER LA DIFERENCIA
                 }
-
             }
 
             .entrada-texto {
                 font-size: 1.2em;
-                font-family: 'Arvo', serif;
+                font-family: "Arvo", serif;
                 color: #834b16;
-                background-color: #fdd10a;
+                background-color: #FDF09F;
                 border: 2px solid #bc9c10;
                 box-shadow: 5px 5px 10px 4px rgba(0, 0, 0, 0.59);
                 padding: 10px;
@@ -188,13 +202,11 @@ header {
                     text-align: justify;
                 }
             }
-
         }
     }
 }
 
-
-//FOOTER 
+//FOOTER
 footer {
     background: url("media/tomnook2.png") #ccc no-repeat center center;
     background-size: cover;
@@ -212,7 +224,7 @@ footer {
 
             .contacto {
                 position: relative;
-                font-family: 'Arvo', serif;
+                font-family: "Arvo", serif;
                 background-color: #fdd10a;
                 justify-content: center;
                 align-items: center;
@@ -231,7 +243,6 @@ footer {
                     color: #bc6c21;
                 }
             }
-
         }
 
         .social {
@@ -259,14 +270,13 @@ footer {
                 transform: scale(1.2);
                 filter: drop-shadow(0px 0px 2px #000000b9);
             }
-
         }
 
         .links {
             margin-top: 35px;
             display: flex;
             justify-content: center;
-            font-family: 'Arvo', serif;
+            font-family: "Arvo", serif;
 
             ul {
                 li {
@@ -276,7 +286,6 @@ footer {
                     list-style-type: none;
 
                     span {
-
                         color: #fdd10a;
                     }
 
@@ -289,11 +298,11 @@ footer {
     }
 }
 
-//PAGINA CONTACTO 
+//PAGINA CONTACTO
 
 .contacto-full {
     background-color: #e6d58f;
-    background-image: url(media/ContactoBg.jpg);
+    background-image: url(media/footer5.png);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center center;
@@ -301,16 +310,16 @@ footer {
 
     .contacto {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        align-items: center;
         padding: 38px;
-        font-family: 'Arvo', serif;
+        font-family: "Arvo", serif;
 
         .who {
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 40%;
-
+            width: 100%;
 
             h1 {
                 margin-bottom: 15px;
@@ -327,6 +336,7 @@ footer {
                 border: 2px solid #bd9d0f;
                 flex-direction: column;
                 align-items: center;
+                width:50%;
                 margin-bottom: 55px;
                 box-shadow: 2px 6px 11px 3px rgba(0, 0, 0, 0.65);
                 animation: fadeInAnimation ease 3s;
@@ -335,16 +345,14 @@ footer {
                     border: 4px solid #bd9d0f;
                     border-radius: 15px;
                     width: 100%;
-                    max-width:250px;
+                    max-width: 250px;
                     height: 100%;
                     max-height: 250px;
                 }
 
                 .who-text {
-
-                    font-family: 'Arvo', sans-serif;
+                    font-family: "Arvo", sans-serif;
                     color: #834b16;
-                    
 
                     h3 {
                         text-align: center;
@@ -354,17 +362,15 @@ footer {
                     }
 
                     p {
-
                         text-align: justify;
                         padding: 15px;
                         color: #834b16;
                         background-color: #fdd10a;
                         border: 4px solid #bd9d0f;
-                       
+
                         font-weight: 700;
                         border-radius: 0px 15px 15px 15px;
                     }
-
                 }
             }
         }
@@ -375,84 +381,79 @@ footer {
             flex-direction: column;
             align-items: center;
 
-            .form-build{
-                width:100%;
-                form{
+            .form-build {
+                width: 100%;
+                form {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    
-                    input{
+
+                    input {
                         margin-bottom: 14px;
-                       
-                        
                     }
-                    .inputs{
+                    .inputs {
                         width: 50%;
                         height: 40px;
                         color: #834b16;
                         border: 4px solid #bd9d0f;
                         border-radius: 10px;
-                        font-family: 'Arvo',sans-serif;
+                        font-family: "Arvo", sans-serif;
                         font-weight: 700;
                         font-size: 1em;
                         background-color: #e6d58f;
                     }
-                    textarea{
+                    textarea {
                         width: 65%;
                         height: 100px;
                         font-size: 1em;
                         color: #834b16;
                         border: 4px solid #bd9d0f;
-                        font-family: 'Arvo',sans-serif;
+                        font-family: "Arvo", sans-serif;
                         font-weight: 700;
                         border-radius: 10px;
                         background-color: #e6d58f;
-                        &::placeholder{
+                        &::placeholder {
                             padding: 15px;
                         }
-                        &:focus { 
+                        &:focus {
                             outline: none !important;
-                            
-                         }
+                        }
                     }
 
-                    label{
+                    label {
                         color: #834b16;
                         background-color: #fdd10a;
                         padding: 6px;
                         border-radius: 15px;
-                        border:4px solid #bd9d0f ;
+                        border: 4px solid #bd9d0f;
                         margin-top: 15px;
-                        font-family: 'Arvo',sans-serif;
+                        font-family: "Arvo", sans-serif;
                         font-weight: 700;
                         font-size: 1.5em;
                     }
-                    #sub{
+                    #sub {
                         background-color: #fdd10a;
                         border-radius: 15px;
                         font-size: 1em;
                         color: #834b16;
                         border: 4px solid #bd9d0f;
                         height: 40px;
-                        font-family: 'Arvo',sans-serif;
+                        font-family: "Arvo", sans-serif;
                         font-weight: 700;
-                        width:25%;
-                        &:hover{
+                        width: 25%;
+                        &:hover {
                             background-color: #9e8208;
                             color: #ffc822;
                         }
                     }
                     .arrow-down {
-                        width: 0; 
-                        height: 0; 
+                        width: 0;
+                        height: 0;
                         border-left: 20px solid transparent;
                         border-right: 20px solid transparent;
                         border-top: 12px solid #bd9d0f;
-                      }
-                    
+                    }
                 }
-                    
             }
 
             h1 {
@@ -465,7 +466,7 @@ footer {
     }
 }
 
-//ANIMACION PAGINA CONTACTO 
+//ANIMACION PAGINA CONTACTO
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
@@ -476,11 +477,9 @@ footer {
     }
 }
 
-
 //PAGINA JUEGOS
 
 .games-content {
-
     h1 {
         color: #846323;
         text-align: center;
@@ -491,7 +490,7 @@ footer {
         display: flex;
         justify-content: space-between;
         padding: 10px;
-    
+
         .games-list {
             display: flex;
             flex-direction: column;
@@ -534,7 +533,6 @@ footer {
                 justify-content: space-between;
                 padding: 15px;
                 border: 1px solid black;
-                
             }
 
             .game-trailer-row {
@@ -550,18 +548,10 @@ footer {
             .game-arg-row {
                 padding: 15px;
                 border: 1px solid black;
-                
             }
         }
     }
-
-   
 }
-
-
-
-
-
 
 //PANTALLA GRANDE
 @media screen and (max-width: 1100px) {
@@ -573,7 +563,6 @@ footer {
                 .entrada-titulo {
                     width: 90%;
                     text-align: center;
-
                 }
 
                 .entrada-texto {
@@ -582,15 +571,63 @@ footer {
                     height: 12em;
                 }
             }
-
         }
     }
-
-
 }
 
 //PANTALLA MEDIANA
 @media screen and (max-width: 800px) {
+    header {
+        .navbar {
+            .nav-links {
+                background-color: #82d7adc3;
+                flex-direction: column;
+                position: fixed;
+                transform: translateY(-100%);
+                transition: transform 0.2s;
+                width: 20.5%;
+                top: 0;
+                left: 82.5%;
+                bottom: 0;
+                z-index: 99;
+                color: white;
+                list-style: none;
+                padding-top: 4rem;
+
+                .sign-up {
+                    text-align: center;
+                    font-size: 0.8em;
+                    padding: 1px;
+                    width: 6em;
+                }
+            }
+            .showMenu {
+                transform: translateY(0);
+            }
+            .hamburger {
+                display: block;
+                position: fixed;
+                z-index: 100;
+                top: 1rem;
+                right: 1rem;
+                padding: 4px;
+                font-size: 1.8em;
+                width: 2.5em;
+                color: #834b16;
+                border-radius:15px;
+                background-color: #fdd10a;
+                border: 2px solid #bc9c10;
+                cursor: pointer;
+
+                .menuIcon {
+                }
+                .closeIcon {
+                    display: none;
+                   
+                }
+            }
+        }
+    }
     .main-content {
         .block-entradas {
             .entrada {
@@ -608,13 +645,63 @@ footer {
                     height: 15em;
                 }
             }
-
         }
+    }
+}
 
+//PANTALLA PEQUEÑA
+@media screen and (max-width: 400px) {
+    header {
+        .navbar {
+            .nav-links {
+                background-color: #82d7adc3;
+                flex-direction: column;
+                position: fixed;
+                transform: translateY(-100%);
+                transition: transform 0.2s;
+                width: 20.5%;
+                top: 0;
+                left: 82.5%;
+                bottom: 0;
+                z-index: 99;
+                color: white;
+                list-style: none;
+                padding-top: 4rem;
+
+                .sign-up {
+                    text-align: center;
+                    font-size: 0.8em;
+                    padding: 2px;
+                    width: 5em;
+                }
+            }
+            .showMenu {
+                transform: translateY(0);
+            }
+            .hamburger {
+                display: block;
+                position: fixed;
+                z-index: 100;
+                top: 1rem;
+                right: 1rem;
+                padding: 4px;
+                font-size: 1.8em;
+                width: 2.5em;
+                color: #834b16;
+                border-radius:15px;
+                background-color: #fdd10a;
+                border: 2px solid #bc9c10;
+                cursor: pointer;
+
+                .menuIcon {
+                }
+                .closeIcon {
+                    display: none;
+                   
+                }
+            }
+        }
     }
 
 
 }
-
-//PANTALLA PEQUEÑA
-@media screen and (max-width: 400px) {}
