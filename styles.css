@@ -222,7 +222,7 @@ footer .contenido .social a:last-of-type {
 }
 footer .contenido .social a:hover {
   transform: scale(1.2);
-  filter: drop-shadow(0px 0px 2px #000000b9);
+  filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.7254901961));
 }
 footer .contenido .links {
   margin-top: 35px;
@@ -245,7 +245,7 @@ footer .contenido .links ul li span:hover {
 
 .contacto-full {
   background-color: #e6d58f;
-  background-image: url(media/ContactoBg.jpg);
+  background-image: url(media/footer5.png);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center center;
@@ -253,7 +253,8 @@ footer .contenido .links ul li span:hover {
 }
 .contacto-full .contacto {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   padding: 38px;
   font-family: "Arvo", serif;
 }
@@ -261,7 +262,7 @@ footer .contenido .links ul li span:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 40%;
+  width: 100%;
 }
 .contacto-full .contacto .who h1 {
   margin-bottom: 15px;
@@ -277,6 +278,7 @@ footer .contenido .links ul li span:hover {
   border: 2px solid #bd9d0f;
   flex-direction: column;
   align-items: center;
+  width: 50%;
   margin-bottom: 55px;
   box-shadow: 2px 6px 11px 3px rgba(0, 0, 0, 0.65);
   animation: fadeInAnimation ease 3s;
@@ -326,7 +328,7 @@ footer .contenido .links ul li span:hover {
   margin-bottom: 14px;
 }
 .contacto-full .contacto .form-contact .form-build form .inputs {
-  width: 50%;
+  width: 65%;
   height: 40px;
   color: #834b16;
   border: 4px solid #bd9d0f;
@@ -335,6 +337,9 @@ footer .contenido .links ul li span:hover {
   font-weight: 700;
   font-size: 1em;
   background-color: #e6d58f;
+}
+.contacto-full .contacto .form-contact .form-build form .inputs::placeholder {
+  padding: 15px;
 }
 .contacto-full .contacto .form-contact .form-build form textarea {
   width: 65%;
@@ -477,7 +482,7 @@ footer .contenido .links ul li span:hover {
 }
 @media screen and (max-width: 800px) {
   header .navbar .nav-links {
-    background-color: #82d7adc3;
+    background-color: rgba(130, 215, 173, 0.7647058824);
     flex-direction: column;
     position: fixed;
     transform: translateY(-100%);
@@ -535,7 +540,7 @@ footer .contenido .links ul li span:hover {
 }
 @media screen and (max-width: 400px) {
   header .navbar .nav-links {
-    background-color: #82d7adc3;
+    background-color: rgba(130, 215, 173, 0.7647058824);
     flex-direction: column;
     position: fixed;
     transform: translateY(-100%);
