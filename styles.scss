@@ -96,7 +96,7 @@ header {
                 border-radius: 2.3em;
                 font-family: "Arvo", sans-serif;
                 padding: 6px;
-                font-size: 1.3em;
+                font-size: 1em;
 
                 &:hover {
                     background-color: #9e8208;
@@ -192,7 +192,7 @@ header {
                 font-size: 1.2em;
                 font-family: "Arvo", serif;
                 color: #834b16;
-                background-color: #FDF09F;
+                background-color: #fdf09f;
                 border: 2px solid #bc9c10;
                 box-shadow: 5px 5px 10px 4px rgba(0, 0, 0, 0.59);
                 padding: 10px;
@@ -336,7 +336,7 @@ footer {
                 border: 2px solid #bd9d0f;
                 flex-direction: column;
                 align-items: center;
-                width:50%;
+                width: 50%;
                 margin-bottom: 55px;
                 box-shadow: 2px 6px 11px 3px rgba(0, 0, 0, 0.65);
                 animation: fadeInAnimation ease 3s;
@@ -392,7 +392,7 @@ footer {
                         margin-bottom: 14px;
                     }
                     .inputs {
-                        width:65%;
+                        width: 65%;
                         height: 40px;
                         color: #834b16;
                         border: 4px solid #bd9d0f;
@@ -401,8 +401,9 @@ footer {
                         font-weight: 700;
                         font-size: 1em;
                         background-color: #e6d58f;
-                        &::placeholder{
-                            padding:15px;
+                        padding: 15px;
+                        &::placeholder {
+                            padding: 15px;
                         }
                     }
                     textarea {
@@ -482,75 +483,155 @@ footer {
 
 //PAGINA JUEGOS
 
-.games-content {
-    h1 {
-        color: #846323;
-        text-align: center;
-        margin: 30px auto;
-    }
+.games-full {
+    background-color: #e6d58f;
+    background-image: url(media/bg-games.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 
-    .games-pag {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px;
-
-        .games-list {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            border: 1px solid black;
-            width: 20%;
-            padding: 10px;
-            .img-container {
-                //width: 40%;
-
-                &:not(:last-child) {
-                    margin-bottom: 10%;
-                    //background-color: #7CDFFF;
-                }
-            }
-            .hr {
-                width: 1px;
-                border: 1px solid transparent;
-                height: 50px;
-                background-color: transparent;
-                margin: 0px 75px 10px;
-                align-items: center;
-                &:last-of-type {
-                    display: none;
-                }
-            }
-            img {
-                width: 100%;
-                //width: 10em;
-            }
+    .games-content {
+        h1 {
+            color: #846323;
+            text-align: center;
+            margin: 30px auto;
         }
 
-        .block-game-description {
-            border: 1px solid black;
-            width: 70%;
+        .games-pag {
+            display: flex;
+            justify-content: space-between;
             padding: 10px;
 
-            .game-title-row {
+            .games-list {
                 display: flex;
+                flex-direction: column;
                 justify-content: space-between;
-                padding: 15px;
-                border: 1px solid black;
+                width: 20%;
+                padding: 10px;
+                .img-container {
+                    //width: 40%;
+
+                    &:not(:last-child) {
+                        margin-bottom: 10%;
+                        //background-color: #7CDFFF;
+                    }
+                }
+                .hr {
+                    width: 1px;
+                    border: 1px solid transparent;
+                    height: 50px;
+                    background-color: transparent;
+                    margin: 0px 75px 10px;
+                    align-items: center;
+                    &:last-of-type {
+                        display: none;
+                    }
+                }
+                img {
+                    width: 100%;
+                    -webkit-filter: drop-shadow(5px 5px 5px #222);
+                    filter: drop-shadow(5px 5px 5px #222);
+                    //width: 10em;
+                }
             }
 
-            .game-trailer-row {
-                width: 80%;
-                border: 1px solid black;
-                margin: 10px auto;
-                height: 300px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+            .block-game-description {
+                background-color: #fdf09f;
+                border: 2px solid #bc9c10;
+                width: 70%;
+                padding: 10px;
+
+                .game-title-row {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 15px;
+                    border: 1px solid black;
+                }
+
+                .game-trailer-row {
+                    width: 80%;
+                    border: 1px solid black;
+                    margin: 10px auto;
+                    height: 300px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .game-arg-row {
+                    padding: 15px;
+                    border: 1px solid black;
+
+                    &:last-of-type {
+                        border: none;
+                    }
+                }
             }
 
-            .game-arg-row {
-                padding: 15px;
-                border: 1px solid black;
+            #tabs {
+                position: relative;
+            }
+
+            span.diana {
+                position: fixed;
+            }
+
+            .diana + a {
+                display: block;
+                float: left;
+                height: 32px;
+                line-height: 32px;
+                padding: 0 10px;
+                border: 1px solid #ddd;
+                background-color: #eee;
+                margin-bottom: -1px;
+                border-radius: 8px 8px 0 0;
+                margin-right: 10px;
+                text-decoration: none;
+                border-radius: 15px;
+            }
+
+            .diana:target + a {
+                background-color: #fff;
+                border-bottom-color: #fff;
+                border-bottom-left-radius: 0px;
+                border-bottom-right-radius: 0px;
+            }
+
+            #pnl_1,
+            #pnl_2,
+            #pnl_3 {
+                position: absolute;
+                top: 31px;
+                left: 0;
+                border: none;
+                clear: both;
+                overflow: hidden;
+            }
+
+            #pnl_1 > div > p,
+            #pnl_2 > div > p,
+            #pnl_3 > div > p {
+                /* opacity: 0; */
+                transition: all 0.1s ease;
+                padding: 30px;
+                display: none;
+            }
+
+            #uno:target ~ #pnl_1,
+            #dos:target ~ #pnl_2,
+            #tres:target ~ #pnl_3 {
+                position: static;
+                border: 1px solid #ddd;
+            }
+
+            #uno:target ~ #pnl_1 > div > p,
+            #dos:target ~ #pnl_2 > div > p,
+            #tres:target ~ #pnl_3 > div > p {
+                /* opacity: 1; */
+                transition: all 1s ease;
+                display: block;
             }
         }
     }
@@ -617,15 +698,13 @@ footer {
                 font-size: 1.8em;
                 width: 2.5em;
                 color: #834b16;
-                border-radius:15px;
+                border-radius: 15px;
                 background-color: #fdd10a;
                 border: 2px solid #bc9c10;
                 cursor: pointer;
 
-                
                 .closeIcon {
                     display: none;
-                   
                 }
             }
         }
@@ -690,19 +769,15 @@ footer {
                 font-size: 1.8em;
                 width: 2.5em;
                 color: #834b16;
-                border-radius:15px;
+                border-radius: 15px;
                 background-color: #fdd10a;
                 border: 2px solid #bc9c10;
                 cursor: pointer;
 
-                
                 .closeIcon {
                     display: none;
-                   
                 }
             }
         }
     }
-
-
 }
