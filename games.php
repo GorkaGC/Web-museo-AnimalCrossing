@@ -23,7 +23,6 @@ if (empty($_SESSION['listGames'])) {
     header("Location: control.php?f=games");
 }
     $listGames = $_SESSION['listGames'];
-    //var_dump($listGames);
 
     $text = $listGames[0]->getGameDesc();
     
@@ -40,9 +39,8 @@ if (empty($_SESSION['listGames'])) {
                 $cont = sizeof($listGames);
                 for ($i=0; $i < $cont; $i++) { 
                     ?>
-                    <div class="img-container" id='imgContainer'>
-                        <img src="<?php echo $listGames[$i]-> getUrlImg(); ?>" alt="" id="<?php echo $i ?>"
-                            onclick="displayGameInfo()">
+                    <div class="img-container" onclick="getGameInfo('<?php echo $listGames[$i]-> getIdGame(); ?>')">
+                        <img src="<?php echo $listGames[$i]-> getUrlImg(); ?>" alt="" id="<?php echo $i ?>" />
 
                     </div>
                     <!--
@@ -58,8 +56,8 @@ if (empty($_SESSION['listGames'])) {
 
                 <div class="block-game-description">
                     <div class="game-title-row">
-                        <div> <?php echo $listGames[0]->getTitleGame(); ?></div>
-                        <div> <?php echo $listGames[0]->getReleaseDate(); ?></div>
+                        <div id='id-title-game'> <?php echo $listGames[0]->getTitleGame(); ?></div>
+                        <div id='id-release-date'> <?php echo $listGames[0]->getReleaseDate(); ?></div>
                     </div>
                     <div class="game-trailer-row">
                         trailer
@@ -67,7 +65,7 @@ if (empty($_SESSION['listGames'])) {
 
                     <div class="game-arg-row">
                         <h3>Argumento</h3>
-                        <p> <?php echo $listGames[0]->getGameDesc(); ?></p>
+                        <p id='id-game-description'> <?php echo $listGames[0]->getGameDesc(); ?></p>
                     </div>
 
 
@@ -149,27 +147,3 @@ if (empty($_SESSION['listGames'])) {
 </body>
 
 </html>
-
-<script>
-/* function displayGameInfo(x) {
-    var prueba = x.id;
-
-} */
-</script>
-
-
-<!-- 
-    https://stackoverflow.com/questions/6450810/how-do-i-distribute-values-of-an-array-in-three-columns/6463658#6463658
-               
-                <img src="" alt="" onmouseover="display(this)" id="game_ac">
-                <hr>
-                <img src="animal_crossing_wild_world.png" alt="" onmouseover="display(this)" id="game_ac_ww">
-                <hr>
-                <img src="animal_crossing_city_folk.png" alt="" onmouseover="display(this)" id="game_ac_cf">
-                <hr>
-                <img src="animal_crossing_lets_go_to_the_city.png" alt="" onmouseover="display(this)" id="game_ac_lgttc">
-                <hr>
-                <img src="animal_crossing_new_leaf.png" alt="" onmouseover="display(this)" id="game_ac_nl">
-                <hr>
-                <img src="animal_crossing_new_horizons.png" alt="" onmouseover="display(this)" id="game_ac_nh">
--->

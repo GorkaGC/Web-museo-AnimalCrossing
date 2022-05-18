@@ -25,18 +25,21 @@ menuItems.forEach(
 )
 
 
-const displayGameInfo = () => {
-    $('#imgContainer').click(() => {
-        $.ajax({
-            url: "pruebaGames.php",
-            type: "GET",
-            dataType: "json"
-        }).done((respuesta) => {
-            console.log(respuesta, 'done');
-        }).fail((respuesta) => {
-            console.log(respuesta, "fail");
-        }).always((respuesta) => {
-            console.log(respuesta, 'allways');
+
+const getGameInfo = (idImagen) => {
+    // mediante AJAX se hará una llamada al archivo seleccionarJuego.php y le pasaremos
+    // por parámetro el id de la imagen que se ha clicado
+    $.ajax({
+        url: "seleccionarJuego.php?idGame=" + idImagen, // url de la llamada
+        type: "GET", // tipo GET para que devuelva los datos
+        dataType: "json" // el tipo de dato que devolverá será en formato JSON para poder tratarlo con JavaScript
+    }).done((response) => { // si la llamada es correcta
+        $(response).each((element) => { // recorremos la respuesta y vaciamos los divs correspondientes con el contenido anterior para después añadir los datos
+            $('#id-title-game').empty().append(element.TITLE_GAME);
+            $('#id-release-date').empty().append(element.RELEASE_DATE);
+            $('#id-game-description').empty().append(element.GAME_DESC);
         });
+    }).fail((error) => { // si la llamada falla
+        console.log(error, "fail"); // muestra por consola el error
     });
 }
