@@ -40,9 +40,9 @@ if (empty($_SESSION['listGames'])) {
                 $cont = sizeof($listGames);
                 for ($i=0; $i < $cont; $i++) { 
                     ?>
-                    <div class="img-container">
+                    <div class="img-container" id='imgContainer'>
                         <img src="<?php echo $listGames[$i]-> getUrlImg(); ?>" alt="" id="<?php echo $i ?>"
-                            onclick="displayGameInfo(this)">
+                            onclick="displayGameInfo()">
 
                     </div>
                     <!--
@@ -151,10 +151,10 @@ if (empty($_SESSION['listGames'])) {
 </html>
 
 <script>
-function displayGameInfo(x) {
+/* function displayGameInfo(x) {
     var prueba = x.id;
 
-}
+} */
 </script>
 
 
