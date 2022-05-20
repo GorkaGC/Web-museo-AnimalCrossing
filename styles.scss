@@ -228,12 +228,13 @@ footer {
                 background-color: #fdd10a;
                 justify-content: center;
                 align-items: center;
-
                 padding: 14px 75px;
                 font-size: 1.4rem;
                 border-radius: 12px;
                 margin-bottom: 35px;
-
+                p{
+                    font-family: "Arvo", serif;
+                }
                 a {
                     text-decoration: none;
                     color: #834b16;
@@ -353,7 +354,9 @@ footer {
                 .who-text {
                     font-family: "Arvo", sans-serif;
                     color: #834b16;
-
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
                     h3 {
                         text-align: center;
                         margin-bottom: 8px;
@@ -367,7 +370,7 @@ footer {
                         color: #834b16;
                         background-color: #fdd10a;
                         border: 4px solid #bd9d0f;
-
+                        width: 85%;
                         font-weight: 700;
                         border-radius: 0px 15px 15px 15px;
                     }
@@ -402,9 +405,10 @@ footer {
                         font-size: 1em;
                         background-color: #e6d58f;
                         padding: 15px;
-                        &::placeholder {
-                            padding: 15px;
+                        &:focus {
+                            outline:none !important;
                         }
+                       
                     }
                     textarea {
                         width: 65%;
@@ -416,9 +420,7 @@ footer {
                         font-weight: 700;
                         border-radius: 10px;
                         background-color: #e6d58f;
-                        &::placeholder {
-                            padding: 15px;
-                        }
+                        padding:15px;
                         &:focus {
                             outline: none !important;
                         }
@@ -728,7 +730,91 @@ footer {
             }
         }
     }
+
+    .contacto-full {
+        .contacto {
+            .who {
+                h1{
+                    font-size: 1.7em;
+                }
+                .who-content {
+                    width: 100%;
+                    .who-text{
+                        p{  
+                            text-align: center;
+                            overflow: auto;
+                            height: 16vh;
+                        }
+                    }
+                }
+            }
+            
+
+        .form-contact {
+            width: 100%;
+            h1{
+                font-size: 1.7em;
+            }
+            .form-build {
+                
+                form {
+                  
+    
+                    input {
+                        
+                    }
+                    .inputs {
+                       width: 85%;
+                      
+                    }
+                    textarea {
+                        width: 85%;
+                       
+                    }
+    
+                    label {
+                      
+                    }
+                    #sub {
+                      width:55%;
+                        &:hover {
+                            
+                        }
+                    }
+                    .arrow-down {
+                        
+                    }
+                }
+            }
+
+        }
+        }
+
+
+    }
+
+    
+
+
+    .games-full {
+    
+    
+        .games-content {
+       
+            .games-pag {
+               
+    
+                .games-list {
+               
+                    .img-container {
+                        width: 23vw;
+                    }
+                }
+            }
+        }
+    }
 }
+
 
 //PANTALLA PEQUEÑA
 @media screen and (max-width: 400px) {
@@ -776,6 +862,44 @@ footer {
 
                 .closeIcon {
                     display: none;
+                }
+            }
+        }
+    }
+
+
+    .games-full {
+    
+    
+        .games-content {
+       
+            .games-pag {
+               
+    
+                .games-list {
+               
+                    .img-container {
+                        width: 4.5em;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    footer {
+    
+        .contenido {
+           
+    
+            .contacto-general {
+                
+    
+                .contacto {
+                    width: 50%;
+                    display: flex;
+                    margin: auto;
                 }
             }
         }

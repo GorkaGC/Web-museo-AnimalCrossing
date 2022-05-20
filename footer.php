@@ -7,7 +7,7 @@
     <script type="text/javascript" src="scripts.js"></script>
         <div class="contenido container">
             <div class="contacto-general">
-                <div class="contacto"> <a href="control.php?f=contact"> Contacta con nosotros </a></div>
+                <div class="contacto"> <a href="control.php?f=contact"> <p>Contacta con nosotros<p> </a></div>
             </div>
             <div class="social">
                 <!--

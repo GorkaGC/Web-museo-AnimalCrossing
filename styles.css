@@ -195,6 +195,9 @@ footer .contenido .contacto-general .contacto {
   border-radius: 12px;
   margin-bottom: 35px;
 }
+footer .contenido .contacto-general .contacto p {
+  font-family: "Arvo", serif;
+}
 footer .contenido .contacto-general .contacto a {
   text-decoration: none;
   color: #834b16;
@@ -222,7 +225,7 @@ footer .contenido .social a:last-of-type {
 }
 footer .contenido .social a:hover {
   transform: scale(1.2);
-  filter: drop-shadow(0px 0px 2px #000000b9);
+  filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.7254901961));
 }
 footer .contenido .links {
   margin-top: 35px;
@@ -294,6 +297,9 @@ footer .contenido .links ul li span:hover {
 .contacto-full .contacto .who .who-content .who-text {
   font-family: "Arvo", sans-serif;
   color: #834b16;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .contacto-full .contacto .who .who-content .who-text h3 {
   text-align: center;
@@ -307,6 +313,7 @@ footer .contenido .links ul li span:hover {
   color: #834b16;
   background-color: #fdd10a;
   border: 4px solid #bd9d0f;
+  width: 85%;
   font-weight: 700;
   border-radius: 0px 15px 15px 15px;
 }
@@ -339,8 +346,8 @@ footer .contenido .links ul li span:hover {
   background-color: #e6d58f;
   padding: 15px;
 }
-.contacto-full .contacto .form-contact .form-build form .inputs::placeholder {
-  padding: 15px;
+.contacto-full .contacto .form-contact .form-build form .inputs:focus {
+  outline: none !important;
 }
 .contacto-full .contacto .form-contact .form-build form textarea {
   width: 65%;
@@ -352,8 +359,6 @@ footer .contenido .links ul li span:hover {
   font-weight: 700;
   border-radius: 10px;
   background-color: #e6d58f;
-}
-.contacto-full .contacto .form-contact .form-build form textarea::placeholder {
   padding: 15px;
 }
 .contacto-full .contacto .form-contact .form-build form textarea:focus {
@@ -553,7 +558,7 @@ footer .contenido .links ul li span:hover {
 }
 @media screen and (max-width: 800px) {
   header .navbar .nav-links {
-    background-color: #82d7adc3;
+    background-color: rgba(130, 215, 173, 0.7647058824);
     flex-direction: column;
     position: fixed;
     transform: translateY(-100%);
@@ -608,10 +613,40 @@ footer .contenido .links ul li span:hover {
     overflow: auto;
     height: 15em;
   }
+
+  .contacto-full .contacto .who h1 {
+    font-size: 1.7em;
+  }
+  .contacto-full .contacto .who .who-content {
+    width: 100%;
+  }
+  .contacto-full .contacto .who .who-content .who-text p {
+    text-align: center;
+    overflow: auto;
+    height: 16vh;
+  }
+  .contacto-full .contacto .form-contact {
+    width: 100%;
+  }
+  .contacto-full .contacto .form-contact h1 {
+    font-size: 1.7em;
+  }
+  .contacto-full .contacto .form-contact .form-build form .inputs {
+    width: 85%;
+  }
+  .contacto-full .contacto .form-contact .form-build form textarea {
+    width: 85%;
+  }
+  .contacto-full .contacto .form-contact .form-build form #sub {
+    width: 55%;
+  }
+  .games-full .games-content .games-pag .games-list .img-container {
+    width: 23vw;
+  }
 }
 @media screen and (max-width: 400px) {
   header .navbar .nav-links {
-    background-color: #82d7adc3;
+    background-color: rgba(130, 215, 173, 0.7647058824);
     flex-direction: column;
     position: fixed;
     transform: translateY(-100%);
@@ -651,6 +686,16 @@ footer .contenido .links ul li span:hover {
   }
   header .navbar .hamburger .closeIcon {
     display: none;
+  }
+
+  .games-full .games-content .games-pag .games-list .img-container {
+    width: 4.5em;
+  }
+
+  footer .contenido .contacto-general .contacto {
+    width: 50%;
+    display: flex;
+    margin: auto;
   }
 }
 

@@ -24,6 +24,10 @@ menuItems.forEach(
     }
 )
 
+function volumenBajo() { 
+    document.getElementById("bg_music_index").volume /= 6;
+}
+
 
 
 const getGameInfo = (idImagen) => {
@@ -34,7 +38,7 @@ const getGameInfo = (idImagen) => {
         type: "GET", // tipo GET para que devuelva los datos
         dataType: "json" // el tipo de dato que devolverá será en formato JSON para poder tratarlo con JavaScript
     }).done((response) => { // si la llamada es correcta
-        $(response).each((element) => { // recorremos la respuesta y vaciamos los divs correspondientes con el contenido anterior para después añadir los datos
+        $(response).each((_i,element) => { // recorremos la respuesta y vaciamos los divs correspondientes con el contenido anterior para después añadir los datos
             $('#id-title-game').empty().append(element.TITLE_GAME);
             $('#id-release-date').empty().append(element.RELEASE_DATE);
             $('#id-game-description').empty().append(element.GAME_DESC);
