@@ -24,6 +24,10 @@ menuItems.forEach(
     }
 )
 
+function volumenBajo() { 
+    document.getElementById("bg_music_index").volume /= 6;
+}
+
 
 
 const getGameInfo = (idImagen) => {

@@ -21,7 +21,7 @@
         </div>
         <!-- ¿DIV TITULO/BANNER? -->
         <div class="content container">
-            <audio autoplay="" loop="" src="media/index.mp3"></audio>
+            
 
 
             <!-- DIV BLOQUES DE CONTENIDO -->
