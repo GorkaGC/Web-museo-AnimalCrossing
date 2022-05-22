@@ -4,8 +4,10 @@ require 'juego.php';
 
 $server = "localhost";
 $bd = "animalcrossing";
-$user = "root";
-$pass = "";
+//$user = "root";
+//$pass = "";
+$user = "Gorka";
+$pass = "2d4wmi1";
 
 $conexion = mysqli_connect($server, $user, $pass,$bd);
 $idGame = $_GET['idGame'];
