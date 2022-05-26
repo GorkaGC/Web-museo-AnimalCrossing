@@ -59,8 +59,11 @@ if (empty($_SESSION['listGames'])) {
                         <div id='id-title-game'> <?php echo $listGames[0]->getTitleGame(); ?></div>
                         <div id='id-release-date'> <?php echo $listGames[0]->getReleaseDate(); ?></div>
                     </div>
-                    <div class="game-trailer-row">
-                        trailer
+                    <div class="game-trailer-row" id="id-game-trailer-row">
+                        <iframe id="id-game-trailer" width="100%" height="100%" src="<?php echo $listGames[0]->getUrlTrailer(); ?>"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
                     </div>
 
                     <div class="game-arg-row">

@@ -6,12 +6,14 @@ $server = "localhost";
 $bd = "animalcrossing";
 //$user = "root";
 //$pass = "";
-$user = "Gorka";
-$pass = "2d4wmi1";
+//$user = "Gorka";
+//$pass = "2d4wmi1";
+$user = "user";
+$pass = "pass";
 
 $conexion = mysqli_connect($server, $user, $pass,$bd);
 $idGame = $_GET['idGame'];
-$sql = "SELECT `ID_GAME`, `URL_COVER_IMG`, `TITLE_GAME`, `GAME_DESC`, `RELEASE_DATE` FROM game WHERE ID_GAME = '$idGame'";
+$sql = "SELECT `ID_GAME`, `URL_COVER_IMG`, `TITLE_GAME`, `GAME_DESC`, `RELEASE_DATE`, `URL_TRAILER` FROM game WHERE ID_GAME = '$idGame'";
 
 $result  = $conexion->query($sql);
 $listGames = array();

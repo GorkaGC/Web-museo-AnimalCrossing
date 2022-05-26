@@ -42,6 +42,7 @@ const getGameInfo = (idImagen) => {
             $('#id-title-game').empty().append(element.TITLE_GAME);
             $('#id-release-date').empty().append(element.RELEASE_DATE);
             $('#id-game-description').empty().append(element.GAME_DESC);
+            $('#id-game-trailer').attr('src', element.URL_TRAILER);
         });
     }).fail((error) => { // si la llamada falla
         console.log(error, "fail"); // muestra por consola el error

@@ -5,12 +5,12 @@ class ConectaBD
     /** DESCOMENTAR EL USER/PASS QUE NECESITES PARA NO ANDAR BORRANDO */
     private $servername = "localhost";
     private $database = "animalcrossing";
-    //private $username = "user";
-    //private $password = "pass";
+    private $username = "user";
+    private $password = "pass";
     //private $username = "root";
     //private $password = "";
-    private $username = "Gorka";
-    private $password = "2d4wmi1";
+    //private $username = "Gorka";
+    //private $password = "2d4wmi1";
     private $conn;
 
     function __construct()
@@ -43,7 +43,7 @@ class ConectaBD
         $listGames = array();
 
         while ($row = $result->fetch_assoc()){
-            $game = new Juego($row['ID_GAME'], $row['URL_COVER_IMG'], $row['TITLE_GAME'], $row['GAME_DESC'], $row['RELEASE_DATE']);
+            $game = new Juego($row['ID_GAME'], $row['URL_COVER_IMG'], $row['TITLE_GAME'], $row['GAME_DESC'], $row['RELEASE_DATE'], $row['URL_TRAILER']);
             $listGames[] = $game;
         }
         return $listGames;
