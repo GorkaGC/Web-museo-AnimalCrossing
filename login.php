@@ -26,12 +26,12 @@
             <div class="login full-container">
                 <div class="log container">
                     <h1>Login</h1>
-                    <form class="log-form" method="post" action="control.php?f=resultLogin">
+                    <form class="log-form" id="formulario-log" method="post" action="control.php?f=resultLogin">
                         <label>Nombre:</label>
-                        <input type="text" name="userName" required="" placeholder="Nombre">
+                        <input type="text" id="log-name" name="userName"  placeholder="Nombre">
                         <label>Contraseña:</label>
-                        <input type="password" name="userPass" required="" placeholder="Contraseña">
-                        <input type="submit" value="Login">
+                        <input type="password" id="log-pass" name="userPass"  placeholder="Contraseña">
+                        <input type="submit"  id="log-submit" value="Login">
                     </form>
                     <p>¿No tiene cuenta?</p><a href="control.php?f=login&option=registro">Registrarse</a>
                 </div>
@@ -44,13 +44,13 @@
             <div class="register full-container">
                 <div class="reg container">
                     <h1>Registro</h1>
-                    <form class="reg-form" method="post" action="control.php?f=resultRegistro">
+                    <form class="reg-form" id="formulario-reg" method="post" action="control.php?f=resultRegistro">
                         <label>Nombre:</label>
-                        <input type="text" name="userName" required="" placeholder="Nombre">
+                        <input type="text" name="userName"  placeholder="Nombre">
                         <label>Contraseña:</label>
-                        <input type="password" name="userPass"required="" placeholder="Contraseña">
+                        <input type="password" name="userPass" placeholder="Contraseña">
                         <label>Email:</label>
-                        <input type="mail" name="userMail" required="" placeholder="email">
+                        <input type="mail" name="userMail"  placeholder="email">
                         <input type="submit" value="Registrarse">
                     </form>
                     <p>¿Ya tiene cuenta?</p> <a href="control.php?f=login&option=login">Iniciar Sesión</a>

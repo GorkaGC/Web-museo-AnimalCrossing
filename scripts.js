@@ -1,3 +1,5 @@
+
+//JAVASCRIPT
 const menu = document.querySelector(".nav-links");
 const menuItems = document.querySelectorAll(".menuItem");
 const hamburger = document.querySelector(".hamburger");
@@ -19,17 +21,21 @@ function toggleMenu() {
 hamburger.addEventListener("click", toggleMenu);
 
 menuItems.forEach(
-    function(menuItem) {
+    function (menuItem) {
         menuItem.addEventListener("click", toggleMenu);
     }
 )
 
-function volumenBajo() { 
+function volumenBajo() {
     document.getElementById("bg_music_index").volume /= 6;
 }
 
+//FIN DE JAVASCRIPT
 
 
+//JQUERY
+
+//METODO PARA SACAR INFORMACION DE LA PAGINA JUEGOS
 const getGameInfo = (idImagen) => {
     // mediante AJAX se hará una llamada al archivo seleccionarJuego.php y le pasaremos
     // por parámetro el id de la imagen que se ha clicado
@@ -48,3 +54,58 @@ const getGameInfo = (idImagen) => {
         console.log(error, "fail"); // muestra por consola el error
     });
 }
+//FIN DEL METODO JUEGOS
+
+//METODO DE VALIDACION DE FORMULARIOS
+
+//VALIDAR LOGIN
+$(function () {
+    $('#formulario-log').validate({
+        rules:{
+            userName: "required",
+            userPass: "required"
+        },
+        messages:{
+            userName: "Rellene el campo nombre",
+            userPass: "Rellene el campo contraseña"
+        }
+    });
+});
+
+//VALIDAR REGISTRO
+$(function () {
+    $('#formulario-reg').validate({
+        rules:{
+            userName:{
+                required : true,
+                minlength: 3,
+                maxlength: 10
+
+            }, 
+            userPass:{
+                required: true,
+                minlength: 4,
+                
+            },
+            userMail:{
+                required : true,
+                email:true
+            }
+        },
+        messages:{
+            userName: {
+                required: "*Campo nombre obligatorio",
+                minlength: "*3 caracteres mínimo",
+                maxlength: "*10 caracteres máximo"
+            },
+            userPass:{
+                required: "*Campo contraseña obligatorio",
+                minlength: "*4 caracteres mínimo"
+            },
+            userMail:{
+                required: "*El email es obligatorio",
+                email: "Formato incorrecto de correo"
+            } 
+        }
+    });
+});
