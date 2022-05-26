@@ -85,6 +85,7 @@ header {
             a:hover {
                 transform: scale(1.3);
             }
+
             a:last-of-type {
                 transform: none;
             }
@@ -105,11 +106,13 @@ header {
                 }
             }
         }
+
         .hamburger {
             display: none;
         }
     }
 }
+
 //FIN HEADER
 
 .main-content {
@@ -233,9 +236,11 @@ footer {
                 font-size: 1.4rem;
                 border-radius: 12px;
                 margin-bottom: 35px;
+
                 p {
                     font-family: "Arvo", serif;
                 }
+
                 a {
                     text-decoration: none;
                     color: #834b16;
@@ -299,6 +304,7 @@ footer {
         }
     }
 }
+
 //FIN FOOTER
 
 //PAGINA CONTACTO
@@ -359,6 +365,7 @@ footer {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
+
                     h3 {
                         text-align: center;
                         margin-bottom: 8px;
@@ -388,6 +395,7 @@ footer {
 
             .form-build {
                 width: 100%;
+
                 form {
                     display: flex;
                     flex-direction: column;
@@ -396,6 +404,7 @@ footer {
                     input {
                         margin-bottom: 14px;
                     }
+
                     .inputs {
                         width: 65%;
                         height: 40px;
@@ -407,10 +416,12 @@ footer {
                         font-size: 1em;
                         background-color: #e6d58f;
                         padding: 15px;
+
                         &:focus {
                             outline: none !important;
                         }
                     }
+
                     textarea {
                         width: 65%;
                         height: 100px;
@@ -422,6 +433,7 @@ footer {
                         border-radius: 10px;
                         background-color: #e6d58f;
                         padding: 15px;
+
                         &:focus {
                             outline: none !important;
                         }
@@ -438,6 +450,7 @@ footer {
                         font-weight: 700;
                         font-size: 1.5em;
                     }
+
                     #sub {
                         background-color: #fdd10a;
                         border-radius: 15px;
@@ -448,11 +461,13 @@ footer {
                         font-family: "Arvo", sans-serif;
                         font-weight: 700;
                         width: 25%;
+
                         &:hover {
                             background-color: #9e8208;
                             color: #ffc822;
                         }
                     }
+
                     .arrow-down {
                         width: 0;
                         height: 0;
@@ -472,6 +487,7 @@ footer {
         }
     }
 }
+
 //FIN PAGINA CONTACTO
 //ANIMACION PAGINA CONTACTO
 @keyframes fadeInAnimation {
@@ -483,6 +499,7 @@ footer {
         opacity: 1;
     }
 }
+
 //FIN ANIMACION
 //PAGINA JUEGOS
 
@@ -512,6 +529,7 @@ footer {
                 justify-content: space-between;
                 width: 20%;
                 padding: 10px;
+
                 .img-container {
                     //width: 40%;
 
@@ -520,6 +538,7 @@ footer {
                         //background-color: #7CDFFF;
                     }
                 }
+
                 .hr {
                     width: 1px;
                     border: 1px solid transparent;
@@ -527,10 +546,12 @@ footer {
                     background-color: transparent;
                     margin: 0px 75px 10px;
                     align-items: center;
+
                     &:last-of-type {
                         display: none;
                     }
                 }
+
                 img {
                     width: 100%;
                     -webkit-filter: drop-shadow(5px 5px 5px #222);
@@ -580,7 +601,7 @@ footer {
                 position: fixed;
             }
 
-            .diana + a {
+            .diana+a {
                 display: block;
                 float: left;
                 height: 32px;
@@ -595,7 +616,7 @@ footer {
                 border-radius: 15px;
             }
 
-            .diana:target + a {
+            .diana:target+a {
                 background-color: #fff;
                 border-bottom-color: #fff;
                 border-bottom-left-radius: 0px;
@@ -613,25 +634,25 @@ footer {
                 overflow: hidden;
             }
 
-            #pnl_1 > div > p,
-            #pnl_2 > div > p,
-            #pnl_3 > div > p {
+            #pnl_1>div>p,
+            #pnl_2>div>p,
+            #pnl_3>div>p {
                 /* opacity: 0; */
                 transition: all 0.1s ease;
                 padding: 30px;
                 display: none;
             }
 
-            #uno:target ~ #pnl_1,
-            #dos:target ~ #pnl_2,
-            #tres:target ~ #pnl_3 {
+            #uno:target~#pnl_1,
+            #dos:target~#pnl_2,
+            #tres:target~#pnl_3 {
                 position: static;
                 border: 1px solid #ddd;
             }
 
-            #uno:target ~ #pnl_1 > div > p,
-            #dos:target ~ #pnl_2 > div > p,
-            #tres:target ~ #pnl_3 > div > p {
+            #uno:target~#pnl_1>div>p,
+            #dos:target~#pnl_2>div>p,
+            #tres:target~#pnl_3>div>p {
                 /* opacity: 1; */
                 transition: all 1s ease;
                 display: block;
@@ -649,11 +670,13 @@ footer {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center center;
+
     .log {
         display: flex;
         flex-direction: column;
         align-items: center;
         font-family: "Arvo", sans-serif;
+
         h1 {
             font-family: "Arvo", sans-serif;
             margin-top: 25px;
@@ -661,18 +684,23 @@ footer {
             color: #834b16;
             text-decoration: underline;
         }
-        p{
-            font-size:1.5em;
+
+        p {
+            font-size: 1.5em;
             font-family: 'Arvo', sans-serif;
         }
-        a{
-            font-size:1.5em;    
-            margin-bottom:25px;
+
+        a {
+            font-size: 1.5em;
+            margin-bottom: 25px;
         }
+
         .log-form {
             display: flex;
             flex-direction: column;
             align-items: center;
+
+
             input {
                 margin-bottom: 25px;
                 color: #834b16;
@@ -683,26 +711,40 @@ footer {
                 background-color: #e6d58f;
                 padding: 4px;
                 width: 100%;
+
                 &:last-of-type {
                     width: 55%;
+
                     &:hover {
                         background-color: #9e8208;
                         color: #ffc822;
                         cursor: pointer;
                     }
                 }
+
                 &:focus {
                     outline: none !important;
                 }
+            }
+            
+            #log-name-error {
+                color: rgb(216, 47, 47);
+                margin-bottom: 15px;
+            }
+            #log-pass-error{
+                color: rgb(216, 47, 47);
+                margin-bottom: 15px;
             }
 
             label {
                 color: #834b16;
                 font-weight: 700;
+
             }
         }
     }
 }
+
 //FIN PAGINA LOGIN
 
 //REGISTRO
@@ -712,30 +754,36 @@ footer {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center center;
+
     .reg {
         display: flex;
         flex-direction: column;
         align-items: center;
         font-family: "Arvo", sans-serif;
+
         h1 {
             font-family: "Arvo", sans-serif;
             margin-top: 25px;
             margin-bottom: 25px;
-            color:#834b16;
+            color: #834b16;
             text-decoration: underline;
         }
-        p{
-            font-size:1.5em;
+
+        p {
+            font-size: 1.5em;
             font-family: 'Arvo', sans-serif;
         }
-        a{
-            font-size:1.5em;    
-            margin-bottom:25px;
+
+        a {
+            font-size: 1.5em;
+            margin-bottom: 25px;
         }
+
         .reg-form {
             display: flex;
             flex-direction: column;
             align-items: center;
+
             input {
                 margin-bottom: 25px;
                 color: #834b16;
@@ -746,17 +794,32 @@ footer {
                 background-color: #e6d58f;
                 padding: 4px;
                 width: 100%;
+
                 &:last-of-type {
                     width: 55%;
+
                     &:hover {
                         background-color: #9e8208;
                         color: #ffc822;
                         cursor: pointer;
                     }
                 }
+
                 &:focus {
                     outline: none !important;
                 }
+            }
+            #userName-error{
+                color: rgb(216, 47, 47);
+                margin-bottom: 15px;
+            }
+            #userPass-error{
+                color: rgb(216, 47, 47);
+                margin-bottom: 15px;
+            }
+            #userMail-error{
+                color: rgb(216, 47, 47);
+                margin-bottom: 15px;
             }
 
             label {
@@ -817,9 +880,11 @@ footer {
                     width: 6em;
                 }
             }
+
             .showMenu {
                 transform: translateY(0);
             }
+
             .hamburger {
                 display: block;
                 position: fixed;
@@ -841,6 +906,7 @@ footer {
             }
         }
     }
+
     .main-content {
         .block-entradas {
             .entrada {
@@ -867,8 +933,10 @@ footer {
                 h1 {
                     font-size: 1.7em;
                 }
+
                 .who-content {
                     width: 100%;
+
                     .who-text {
                         p {
                             text-align: center;
@@ -881,17 +949,21 @@ footer {
 
             .form-contact {
                 width: 100%;
+
                 h1 {
                     font-size: 1.7em;
                 }
+
                 .form-build {
                     form {
                         .inputs {
                             width: 85%;
                         }
+
                         textarea {
                             width: 85%;
                         }
+
                         #sub {
                             width: 55%;
                         }
@@ -940,9 +1012,11 @@ footer {
                     width: 5em;
                 }
             }
+
             .showMenu {
                 transform: translateY(0);
             }
+
             .hamburger {
                 display: block;
                 position: fixed;
