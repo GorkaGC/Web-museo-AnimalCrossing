@@ -37,7 +37,7 @@ class ConectaBD
     }
 
     public function getAllGames() {
-        $sql = "SELECT * FROM game";
+        $sql = "SELECT * FROM game ORDER BY GAME_NUMBER";
 
         $result  = $this->conn->query($sql);
         $listGames = array();
@@ -47,6 +47,42 @@ class ConectaBD
             $listGames[] = $game;
         }
         return $listGames;
+    }
+
+    public function getCuriositiesFromGame($idGame) {
+        $sql = "SELECT * FROM curiosity WHERE ID_GAME = '$idGame'";
+
+        $result = $this->conn->query($sql);
+        $list = array();
+
+        while ($row = $result->fetch_assoc()) {
+            $list[] = $row['DESCRIPTION'];
+        }
+        return $list;
+    }
+
+    public function getNewsFromGame($idGame) {
+        $sql = "SELECT * FROM new WHERE ID_GAME = '$idGame'";
+
+        $result = $this->conn->query($sql);
+        $list = array();
+
+        while ($row = $result->fetch_assoc()) {
+            $list[] = $row['NEW_DESCRIPTION'];
+        }
+        return $list;
+    }
+
+    public function getPlatformsFromGame($idGame) {
+        $sql = "SELECT * FROM platform WHERE ID_GAME = '$idGame'";
+
+        $result = $this->conn->query($sql);
+        $list = array();
+
+        while ($row = $result->fetch_assoc()) {
+            $list[] = $row['PLATFORM_NAME'];
+        }
+        return $list;
     }
 
     public function getAllCreators() {
