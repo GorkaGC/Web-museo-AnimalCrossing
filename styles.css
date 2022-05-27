@@ -166,6 +166,7 @@ header .navbar .hamburger {
   box-shadow: 5px 5px 10px 4px rgba(0, 0, 0, 0.59);
   padding: 10px;
   border-radius: 15px;
+  margin-bottom: 15px;
 }
 .main-content .block-entradas .entrada .entrada-texto p {
   text-align: justify;
