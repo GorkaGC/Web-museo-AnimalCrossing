@@ -5,10 +5,10 @@ class ConectaBD
     /** DESCOMENTAR EL USER/PASS QUE NECESITES PARA NO ANDAR BORRANDO */
     private $servername = "localhost";
     private $database = "animalcrossing";
-    //private $username = "user";
-    //private $password = "pass";
-    private $username = "root";
-    private $password = "";
+    private $username = "user";
+    private $password = "pass";
+    //private $username = "root";
+    //private $password = "";
     //private $username = "Gorka";
     //private $password = "2d4wmi1";
     private $conn;
@@ -37,16 +37,52 @@ class ConectaBD
     }
 
     public function getAllGames() {
-        $sql = "SELECT * FROM game";
+        $sql = "SELECT * FROM game ORDER BY GAME_NUMBER";
 
         $result  = $this->conn->query($sql);
         $listGames = array();
 
         while ($row = $result->fetch_assoc()){
-            $game = new Juego($row['ID_GAME'], $row['URL_COVER_IMG'], $row['TITLE_GAME'], $row['GAME_DESC'], $row['RELEASE_DATE']);
+            $game = new Juego($row['ID_GAME'], $row['URL_COVER_IMG'], $row['TITLE_GAME'], $row['GAME_DESC'], $row['RELEASE_DATE'], $row['URL_TRAILER']);
             $listGames[] = $game;
         }
         return $listGames;
+    }
+
+    public function getCuriositiesFromGame($idGame) {
+        $sql = "SELECT * FROM curiosity WHERE ID_GAME = '$idGame'";
+
+        $result = $this->conn->query($sql);
+        $list = array();
+
+        while ($row = $result->fetch_assoc()) {
+            $list[] = $row['DESCRIPTION'];
+        }
+        return $list;
+    }
+
+    public function getNewsFromGame($idGame) {
+        $sql = "SELECT * FROM new WHERE ID_GAME = '$idGame'";
+
+        $result = $this->conn->query($sql);
+        $list = array();
+
+        while ($row = $result->fetch_assoc()) {
+            $list[] = $row['NEW_DESCRIPTION'];
+        }
+        return $list;
+    }
+
+    public function getPlatformsFromGame($idGame) {
+        $sql = "SELECT * FROM platform WHERE ID_GAME = '$idGame'";
+
+        $result = $this->conn->query($sql);
+        $list = array();
+
+        while ($row = $result->fetch_assoc()) {
+            $list[] = $row['PLATFORM_NAME'];
+        }
+        return $list;
     }
 
     public function getAllCreators() {

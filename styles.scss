@@ -88,6 +88,7 @@ header {
 
             a:last-of-type {
                 transform: none;
+                justify-self: flex-end;
             }
 
             .sign-up {
@@ -514,9 +515,11 @@ footer {
 
     .games-content {
         h1 {
-            color: #846323;
+            font-family: "Arvo", sans-serif;
+            color: #834b16;
             text-align: center;
             margin: 30px auto;
+            text-decoration: underline;
         }
 
         .games-pag {
@@ -530,6 +533,10 @@ footer {
                 justify-content: space-between;
                 width: 20%;
                 padding: 10px;
+
+                select {
+                    display: none;
+                }
 
                 .img-container {
                     //width: 40%;
@@ -565,98 +572,135 @@ footer {
                 background-color: #fdf09f;
                 border: 2px solid #bc9c10;
                 width: 70%;
-                padding: 10px;
+                padding: 2%;
+                border-radius: 10px;
+                font-family: "Arvo", serif;
+                color: #834b16;
+                //text-align: justify;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+                    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 
                 .game-title-row {
                     display: flex;
                     justify-content: space-between;
                     padding: 15px;
-                    border: 1px solid black;
+                    //border: 1px solid black;
+                }
+
+                .game-trailer-title-row {
+                    padding: 5px 15px;
                 }
 
                 .game-trailer-row {
                     width: 80%;
-                    border: 1px solid black;
                     margin: 10px auto;
-                    height: 300px;
                     display: flex;
+                    flex-direction: column;
                     align-items: center;
                     justify-content: center;
+
+                    video {
+                        width: 100%;
+                        height: 100%;
+                        max-width: 530px;
+                        //max-height: 400px;
+
+                        source {
+                            width: 100%;
+                        }
+                    }
                 }
 
                 .game-arg-row {
                     padding: 15px;
-                    border: 1px solid black;
+                    //border: 2px solid #bc9c10;
+                    background-color: #9dffb0;
+                    border-radius: 5px;
+                    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+                    text-align: justify;
 
                     &:last-of-type {
                         border: none;
                     }
                 }
-            }
 
-            #tabs {
-                position: relative;
-            }
+                .game-extras-row {
+                    padding: 15px 0;
 
-            span.diana {
-                position: fixed;
-            }
+                    #tabs {
+                        position: relative;
+                        text-align: justify;
+                    }
 
-            .diana+a {
-                display: block;
-                float: left;
-                height: 32px;
-                line-height: 32px;
-                padding: 0 10px;
-                border: 1px solid #ddd;
-                background-color: #eee;
-                margin-bottom: -1px;
-                border-radius: 8px 8px 0 0;
-                margin-right: 10px;
-                text-decoration: none;
-                border-radius: 15px;
-            }
+                    span.diana {
+                        position: fixed;
+                        font-size: 2em;
+                    }
 
-            .diana:target+a {
-                background-color: #fff;
-                border-bottom-color: #fff;
-                border-bottom-left-radius: 0px;
-                border-bottom-right-radius: 0px;
-            }
+                    .diana + a {
+                        display: block;
+                        float: left;
+                        line-height: 32px;
+                        padding: 0 10px;
+                        border: 1px solid #ddd;
+                        background-color: #1e8449;
+                        margin-bottom: -1px;
+                        border-radius: 8px 8px 0 0;
+                        margin-right: 10px;
+                        text-decoration: none;
+                        color: white;
+                        border-radius: 15px;
+                        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+                            rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+                    }
 
-            #pnl_1,
-            #pnl_2,
-            #pnl_3 {
-                position: absolute;
-                top: 31px;
-                left: 0;
-                border: none;
-                clear: both;
-                overflow: hidden;
-            }
+                    .diana:target + a {
+                        background-color: #c8d83c;
+                        //border-bottom-color: #fff;
+                        border-bottom-left-radius: 0px;
+                        border-bottom-right-radius: 0px;
+                        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+                            rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+                    }
 
-            #pnl_1>div>p,
-            #pnl_2>div>p,
-            #pnl_3>div>p {
-                /* opacity: 0; */
-                transition: all 0.1s ease;
-                padding: 30px;
-                display: none;
-            }
+                    #pnl_1,
+                    #pnl_2,
+                    #pnl_3 {
+                        position: absolute;
+                        top: 31px;
+                        left: 0;
+                        border: none;
+                        clear: both;
+                        overflow: hidden;
+                        //background-color: white;
+                        border-radius: 3px;
+                        background-color: #9dffb0;
+                        box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+                    }
+                    #pnl_1 > div > ul,
+                    #pnl_2 > div > ul,
+                    #pnl_3 > div > ul {
+                        /* opacity: 0; */
+                        transition: all 0.1s ease;
+                        padding: 30px;
+                        display: none;
+                    }
 
-            #uno:target~#pnl_1,
-            #dos:target~#pnl_2,
-            #tres:target~#pnl_3 {
-                position: static;
-                border: 1px solid #ddd;
-            }
+                    #uno:target ~ #pnl_1,
+                    #dos:target ~ #pnl_2,
+                    #tres:target ~ #pnl_3 {
+                        position: static;
+                        border: 1px solid #ddd;
+                    }
 
-            #uno:target~#pnl_1>div>p,
-            #dos:target~#pnl_2>div>p,
-            #tres:target~#pnl_3>div>p {
-                /* opacity: 1; */
-                transition: all 1s ease;
-                display: block;
+                    #uno:target ~ #pnl_1 > div > ul,
+                    #dos:target ~ #pnl_2 > div > ul,
+                    #tres:target ~ #pnl_3 > div > ul {
+                        /* opacity: 1; */
+                        transition: all 1s ease;
+                        display: block;
+                    }
+                }
             }
         }
     }
@@ -687,12 +731,12 @@ footer {
         }
 
         p {
-            font-size: 1.5em;
-            font-family: 'Arvo', sans-serif;
+            font-size: 1em;
+            font-family: "Arvo", sans-serif;
         }
 
         a {
-            font-size: 1.5em;
+            font-size: 1em;
             margin-bottom: 25px;
         }
 
@@ -700,7 +744,6 @@ footer {
             display: flex;
             flex-direction: column;
             align-items: center;
-
 
             input {
                 margin-bottom: 25px;
@@ -727,12 +770,12 @@ footer {
                     outline: none !important;
                 }
             }
-            
+
             #log-name-error {
                 color: rgb(216, 47, 47);
                 margin-bottom: 15px;
             }
-            #log-pass-error{
+            #log-pass-error {
                 color: rgb(216, 47, 47);
                 margin-bottom: 15px;
             }
@@ -740,7 +783,6 @@ footer {
             label {
                 color: #834b16;
                 font-weight: 700;
-
             }
         }
     }
@@ -772,7 +814,7 @@ footer {
 
         p {
             font-size: 1.5em;
-            font-family: 'Arvo', sans-serif;
+            font-family: "Arvo", sans-serif;
         }
 
         a {
@@ -810,15 +852,15 @@ footer {
                     outline: none !important;
                 }
             }
-            #userName-error{
+            #userName-error {
                 color: rgb(216, 47, 47);
                 margin-bottom: 15px;
             }
-            #userPass-error{
+            #userPass-error {
                 color: rgb(216, 47, 47);
                 margin-bottom: 15px;
             }
-            #userMail-error{
+            #userMail-error {
                 color: rgb(216, 47, 47);
                 margin-bottom: 15px;
             }
@@ -977,9 +1019,75 @@ footer {
     .games-full {
         .games-content {
             .games-pag {
+                flex-direction: column;
+                margin: 5% auto;
                 .games-list {
+                    width: auto;
+                    .custom-select {
+                        display: inline-block;
+                        position: relative;
+                        top: 50%;
+                        -webkit-transform: translateY(-50%);
+                        -ms-transform: translateY(-50%);
+                        transform: translateY(-50%);
+                        border-radius: 5px;
+                        box-shadow: 0 0 1em rgba(#9dffb0, 0.2), inset 0 0 1px rgba(black, 0.8);
+                        background-color: lighten(#1fbded, 20%);
+                        width: 100%;
+
+                        select {
+                            font-family: "Arvo", sans-serif;
+                            display: block;
+                            width: 100%;
+                            margin: 0;
+                            padding: 0.75em 1.5em;
+                            outline: none;
+                            cursor: pointer;
+                            border: none;
+                            border-radius: 0;
+                            background-color: transparent;
+                            color: darken(#1fbded, 35%);
+                            font-size: 1em;
+
+                            /* Eliminación de los estilos por defecto de la flecha hacia abajo */
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+                            text-indent: 0.01px;
+                            text-overflow: "";
+
+                            &::-ms-expand {
+                                display: none;
+                            }
+                        }
+
+                        &:after {
+                            position: absolute;
+                            top: 1em;
+                            right: 1em;
+                            /* Nuevos estilos para la flecha hacia abajo */
+                            width: 0;
+                            height: 0;
+                            padding: 0;
+                            content: "";
+                            border-left: 0.25em solid transparent;
+                            border-right: 0.25em solid transparent;
+                            border-top: 0.375em solid darken(#1fbded, 25%);
+                            pointer-events: none;
+                        }
+                    }
+
                     .img-container {
-                        width: 23vw;
+                        //width: 23vw;
+                        display: none;
+                    }
+                }
+                .block-game-description {
+                    width: 100%;
+
+                    .game-extras-row {
+                        .diana + a {
+                            font-size: 0.9em;
+                        }
                     }
                 }
             }
@@ -1043,9 +1151,11 @@ footer {
     .games-full {
         .games-content {
             .games-pag {
-                .games-list {
-                    .img-container {
-                        width: 4.5em;
+                .block-game-description {
+                    .game-extras-row {
+                        .diana + a {
+                            font-size: 0.7em;
+                        }
                     }
                 }
             }

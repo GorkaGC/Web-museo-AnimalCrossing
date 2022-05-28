@@ -5,13 +5,15 @@ class Juego{
     private $titleGame;
     private $gameDesc;
     private $releaseDate;
+    private $urlTrailer;
 
-    public function __construct($idGame, $urlImg, $titleGame, $gameDesc, $releaseDate){
+    public function __construct($idGame, $urlImg, $titleGame, $gameDesc, $releaseDate, $urlTrailer){
         $this->idGame = $idGame;
         $this->urlImg = $urlImg;
         $this->titleGame = $titleGame;
         $this->gameDesc = $gameDesc;
         $this->releaseDate = $releaseDate;
+        $this->urlTrailer = $urlTrailer;
     }
 
         /**
@@ -113,6 +115,26 @@ class Juego{
     public function setReleaseDate($releaseDate)
     {
         $this->releaseDate = $releaseDate;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of urlTrailer
+     */ 
+    public function getUrlTrailer()
+    {
+        return $this->urlTrailer;
+    }
+
+    /**
+     * Set the value of urlTrailer
+     *
+     * @return  self
+     */ 
+    public function setUrlTrailer($urlTrailer)
+    {
+        $this->urlTrailer = $urlTrailer;
 
         return $this;
     }

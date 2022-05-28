@@ -25,6 +25,9 @@ switch ($urlDestino) {
     case "games":
         $games = $conn->getAllGames();
         $_SESSION['listGames'] = $games;
+        $_SESSION['curiosities'] = $conn->getCuriositiesFromGame("game_ac");
+        $_SESSION['news'] = $conn->getNewsFromGame("game_ac");
+        $_SESSION['platforms'] = $conn->getPlatformsFromGame("game_ac");
         header("Location: games.php");
         break;
     case "contact":

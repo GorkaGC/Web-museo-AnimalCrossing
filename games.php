@@ -35,42 +35,51 @@ if (empty($_SESSION['listGames'])) {
             <h1>Juegos</h1>
             <div class="container games-pag">
                 <div class="games-list">
+                    
                     <?php 
                 $cont = sizeof($listGames);
                 for ($i=0; $i < $cont; $i++) { 
                     ?>
                     <div class="img-container" onclick="getGameInfo('<?php echo $listGames[$i]-> getIdGame(); ?>')">
                         <img src="<?php echo $listGames[$i]-> getUrlImg(); ?>" alt="" id="<?php echo $i ?>" />
-
                     </div>
-                    <!--
-                <div class="hr">
-
-                </div>-->
-
                     <?php } ?>
-
+                    <label class="custom-select">
+                    <select name="games" id="">
+                        <?php
+                    for ($i=0; $i < $cont; $i++) { 
+                    ?>
+                    <option onclick="getGameInfo('<?php echo $listGames[$i]-> getIdGame(); ?>')" value="<?php echo $listGames[$i]-> getIdGame(); ?>"><?php echo $listGames[$i]->getTitleGame(); ?></option>
+                    <?php } ?>
+                    </select>
+                    </label>
                 </div>
 
 
 
                 <div class="block-game-description">
                     <div class="game-title-row">
-                        <div id='id-title-game'> <?php echo $listGames[0]->getTitleGame(); ?></div>
+                        <div id='id-title-game'>
+                            <h2><?php echo $listGames[0]->getTitleGame(); ?></h2>
+                        </div>
                         <div id='id-release-date'> <?php echo $listGames[0]->getReleaseDate(); ?></div>
                     </div>
+                    <div class="game-trailer-title-row">
+                        <h3>Trailer</h3>
+                        <p>Video promocional sobre el videojuego: <span
+                                id="id-trailer-game-name"><?php echo $listGames[0]->getTitleGame(); ?></span></p>
+                    </div>
                     <div class="game-trailer-row">
-                        trailer
+                        <video controls muted id="id-game-trailer">
+                            <source src="<?php echo $listGames[0]->getUrlTrailer(); ?>" type="video/mp4" />
+                        </video>
                     </div>
 
                     <div class="game-arg-row">
                         <h3>Argumento</h3>
                         <p id='id-game-description'> <?php echo $listGames[0]->getGameDesc(); ?></p>
                     </div>
-
-
-
-                    <div class="game-arg-row">
+                    <div class="game-extras-row">
                         <section id="main">
                             <div id="tabs">
                                 <span class="diana" id="uno"></span>
@@ -79,56 +88,45 @@ if (empty($_SESSION['listGames'])) {
                                 <a href="#dos" class="tab-e">Novedades</a>
                                 <span class="diana" id="tres"></span>
                                 <a href="#tres" class="tab-e">Plataformas</a>
-
                                 <div id="pnl_1" class="active">
                                     <div>
-                                        <p> <?php echo $listGames[0]->getGameDesc(); ?></p>
+                                        <ul id="id-game-curiosities">
+                                            <?php 
+                                            $contC = sizeof($_SESSION['curiosities']);
+                                            for ($i=0; $i < $contC; $i++) { 
+                                                ?>
+                                            <li> <?php echo $_SESSION['curiosities'][$i] ?></li>
+                                            <?php } ?>
+                                        </ul>
                                     </div>
                                 </div>
-
                                 <div id="pnl_2">
                                     <div>
-                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                            accusantium
-                                            doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-                                            inventore
-                                            veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
-                                            enim
-                                            ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed
-                                            quia
-                                            consequuntur magni dolores.</p>
-
-                                        <p>Neque porro quisquam est, qui
-                                            dolorem
-                                            ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non
-                                            numquam
-                                            eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
-                                            voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam
-                                            corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
-                                        </p>
+                                        <ul id="id-game-news">
+                                        <?php 
+                                            $contN = sizeof($_SESSION['news']);
+                                            if ($contN == 0) {
+                                               ?> <p>No contiene información.</p> <?php
+                                            } else {
+                                                for ($i=0; $i < $contN; $i++) { 
+                                                    ?>
+                                                <li> <?php echo $_SESSION['news'][$i] ?></li>
+                                                <?php } 
+                                            }
+                                            ?>
+                                        </ul>
                                     </div>
                                 </div>
-
                                 <div id="pnl_3">
                                     <div>
-                                        <p> No officiis lobortis eam. Soluta laboramus mei cu, sea modo dicant eu,
-                                            cu
-                                            ius eius aperiri. An pro dicam contentiones. Duo amet lorem officiis ex,
-                                            an
-                                            legimus nusquam atomorum per, per cu erat ornatus. Nibh oratio eam eu.
-                                            An
-                                            lobortis sapientem delicatissimi mea, ex dicunt tacimates quo, nec ad
-                                            aeque
-                                            adipisci efficiantur.</p>
-
-                                        <p> Pri ad quando suscipit conclusionemque, ad vel dico ubique. Et sit
-                                            utinam
-                                            apeirian. Ea nemore delicatissimi eos, cum adhuc dignissim ad, putent
-                                            ocurreret has ut. Eos amet duis solet id, est ne prima nostro virtute,
-                                            ea
-                                            pri etiam recteque disputando. Enim dolorum vivendum at vel, vis odio
-                                            consul
-                                            te.</p>
+                                        <ul id="id-game-platforms">
+                                        <?php 
+                                            $contP = sizeof($_SESSION['platforms']);
+                                            for ($i=0; $i < $contP; $i++) { 
+                                                ?>
+                                            <li> <?php echo $_SESSION['platforms'][$i] ?></li>
+                                            <?php } ?>
+                                        </ul>
                                     </div>
                                 </div>
 
