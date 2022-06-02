@@ -1,15 +1,8 @@
 <?php
 
-$server = "localhost";
-$bd = "animalcrossing";
-//$user = "root";
-//$pass = "";
-//$user = "Gorka";
-//$pass = "2d4wmi1";
-$user = "user";
-$pass = "pass";
+include 'credenciales.php';
 
-$conexion = mysqli_connect($server, $user, $pass,$bd);
+$conexion = mysqli_connect($servername, $username, $password, $database);
 $idGame = $_GET['idGame'];
 $sql = "SELECT `ID_GAME`, `PLATFORM_NAME` FROM platform WHERE ID_GAME = '$idGame'";
 
