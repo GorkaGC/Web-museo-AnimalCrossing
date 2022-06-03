@@ -2,16 +2,9 @@
 
 require 'juego.php';
 
-$server = "localhost";
-$bd = "animalcrossing";
-$user = "root";
-$pass = "";
-//$user = "Gorka";
-//$pass = "2d4wmi1";
-//$user = "user";
-//$pass = "pass";
+include 'credenciales.php';
 
-$conexion = mysqli_connect($server, $user, $pass,$bd);
+$conexion = mysqli_connect($servername, $username, $password,$database);
 $idGame = $_GET['idGame'];
 $sql = "SELECT `ID_GAME`, `URL_COVER_IMG`, `TITLE_GAME`, `GAME_DESC`, `RELEASE_DATE`, `URL_TRAILER` FROM game WHERE ID_GAME = '$idGame'";
 
