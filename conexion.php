@@ -139,6 +139,19 @@ class ConectaBD
         
     }
 
+    public function takeProducts(){
+        $sql = "SELECT * FROM item";
 
+        $result  = $this->conn->query($sql);
+        
+        $products = array();
+
+        while ($row = $result->fetch_assoc()){
+            $producto = new productos($row['ITEM_IMG'],$row['ITEM_DESCRIPTION'],$row['UNIT_PRICE']);
+            $products[] = $producto;
+        }
+        
+        return $products;
+    }
 
 }
