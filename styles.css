@@ -9,6 +9,7 @@
   display: flex;
   width: 100%;
   justify-content: center;
+  position: relative;
 }
 
 .container {
@@ -36,10 +37,6 @@
 /* HANDLE HOVER */
 ::-webkit-scrollbar-thumb:hover {
   background: #7c680c;
-}
-
-body h1 {
-  color: red;
 }
 
 header {
@@ -176,8 +173,9 @@ footer {
   background: url("media/tomnook2.png") #ccc no-repeat center center;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 100%;
-  height: 400px;
+  padding: 3%;
+  position: absolute;
+  bottom: 0;
 }
 footer .contenido {
   display: flex;
@@ -230,7 +228,7 @@ footer .contenido .social a:last-of-type {
 }
 footer .contenido .social a:hover {
   transform: scale(1.2);
-  filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.7254901961));
+  filter: drop-shadow(0px 0px 2px #000000b9);
 }
 footer .contenido .links {
   margin-top: 35px;
@@ -516,7 +514,7 @@ footer .contenido .links ul li span:hover {
   padding: 15px;
   background-color: #9dffb0;
   border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, #d1d5db 0px 0px 0px 1px inset;
   text-align: justify;
 }
 .games-full .games-content .games-pag .block-game-description .game-arg-row:last-of-type {
@@ -646,11 +644,11 @@ footer .contenido .links ul li span:hover {
   outline: none !important;
 }
 .login .log .log-form #log-name-error {
-  color: rgb(216, 47, 47);
+  color: #d82f2f;
   margin-bottom: 15px;
 }
 .login .log .log-form #log-pass-error {
-  color: rgb(216, 47, 47);
+  color: #d82f2f;
   margin-bottom: 15px;
 }
 .login .log .log-form label {
@@ -715,20 +713,150 @@ footer .contenido .links ul li span:hover {
   outline: none !important;
 }
 .register .reg .reg-form #userName-error {
-  color: rgb(216, 47, 47);
+  color: #d82f2f;
   margin-bottom: 15px;
 }
 .register .reg .reg-form #userPass-error {
-  color: rgb(216, 47, 47);
+  color: #d82f2f;
   margin-bottom: 15px;
 }
 .register .reg .reg-form #userMail-error {
-  color: rgb(216, 47, 47);
+  color: #d82f2f;
   margin-bottom: 15px;
 }
 .register .reg .reg-form label {
   color: #834b16;
   font-weight: 700;
+}
+
+.user-full {
+  flex-direction: column;
+  background-image: url(media/bg_user_interface.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.user-full .user-banner {
+  text-align: center;
+  background-image: url(./media/banner-user-gif.gif);
+  background-size: cover;
+  background-position: center center;
+  --mask: linear-gradient(#000 0 0) top/100% calc(100% - 30px) no-repeat,
+      radial-gradient(circle farthest-side, #000 98%, #0000) bottom/55.50px 60px repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+}
+.user-full .user-banner .user-banner-text {
+  font-family: "Arvo", sans-serif;
+  margin: 10%;
+}
+.user-full .user-banner .user-banner-text h1 {
+  font-size: 2.5em;
+  color: #834b16;
+}
+.user-full .user-banner .user-banner-text h1 spam {
+  color: #fff563;
+}
+.user-full .user-banner .user-banner-text p {
+  font-size: 1em;
+  color: white;
+}
+.user-full .user-banner .user-banner-text p a {
+  color: #9dffb0;
+}
+.user-full .user-content {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.user-full .user-content .user-options-block {
+  display: flex;
+  padding: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.user-full .user-content .user-options-block .user-option {
+  width: 200px;
+  height: auto;
+  background-color: #1e8449;
+  margin: 10px;
+  border-radius: 2%;
+  padding: 2%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.user-full .user-content .user-options-block .user-option a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+.user-full .user-content .user-options-block .user-option img {
+  max-width: 50%;
+}
+.user-full .user-content .user-options-block .user-option label {
+  font-size: 1.2em;
+  color: white;
+}
+.user-full .user-content .user-options-block .user-option:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0px 0px 2px #000000b9);
+}
+.user-full .user-content .user-info-block {
+  padding: 2%;
+}
+.user-full .user-content .user-info-block .user-info {
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid #fffa95;
+  background-color: #fffa95;
+  padding: 10px;
+  font-family: "Arvo", sans-serif;
+  color: #834b16;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+  margin-bottom: 10px;
+}
+.user-full .user-content .user-info-block .user-info ol {
+  list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 10px;
+}
+.user-full .user-content .user-info-block .user-info ol li {
+  width: 33.333333333%;
+  font-size: 1em;
+  padding: 2%;
+}
+.user-full .user-content .user-info-block .user-info ol li .user-info-title {
+  font-size: 1.2em;
+  color: #834b16;
+}
+.user-full .user-content .user-info-block .user-info ol li .user-info-desc {
+  color: black;
+  padding-left: 2%;
+}
+.user-full .user-content .user-info-block .user-orders-table th,
+.user-full .user-content .user-info-block .user-orders-table tr,
+.user-full .user-content .user-info-block .user-orders-table td,
+.user-full .user-content .user-info-block .user-orders-table table {
+  border-collapse: collapse;
+  padding: 20px;
+}
+.user-full .user-content .user-info-block .user-orders-table tr {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.397);
+}
+.user-full .user-content .user-info-block .user-orders-table table {
+  width: 100%;
+}
+.user-full .user-content .user-info-block .user-orders-table table th {
+  text-align: start;
+}
+.user-full .user-content .user-info-block .user-orders-table table td:not(:last-child) {
+  width: 30%;
+}
+.user-full .user-content .user-info-block .user-orders-table table img {
+  width: 50%;
 }
 
 .tienda {
@@ -793,15 +921,15 @@ footer .contenido .links ul li span:hover {
   justify-content: space-between;
 }
 .tienda .tienda-content .tienda-products .caja-producto .contenido-texto h3 {
-  color: rgb(248, 90, 90);
+  color: #f85a5a;
   margin-bottom: 15px;
 }
 .tienda .tienda-content .tienda-products .caja-producto .contenido-texto p {
-  color: rgb(83, 83, 83);
+  color: #535353;
   font-weight: 700;
 }
 .tienda .tienda-content .tienda-products .caja-producto .contenido-texto p span {
-  color: rgb(61, 188, 61);
+  color: #3dbc3d;
 }
 .tienda .tienda-content .tienda-products .caja-producto .contenido-texto #precio {
   font-size: 1.5em;
@@ -845,7 +973,7 @@ footer .contenido .links ul li span:hover {
 }
 @media screen and (max-width: 800px) {
   header .navbar .nav-links {
-    background-color: rgba(130, 215, 173, 0.7647058824);
+    background-color: #82d7adc3;
     flex-direction: column;
     position: fixed;
     transform: translateY(-100%);
@@ -862,8 +990,7 @@ footer .contenido .links ul li span:hover {
   header .navbar .nav-links .sign-up {
     text-align: center;
     font-size: 0.8em;
-    padding: 1px;
-    width: 6em;
+    padding: 5px;
   }
   header .navbar .showMenu {
     transform: translateY(0);
@@ -874,9 +1001,8 @@ footer .contenido .links ul li span:hover {
     z-index: 100;
     top: 1rem;
     right: 1rem;
-    padding: 4px;
+    padding: 10px;
     font-size: 1.8em;
-    width: 2.5em;
     color: #834b16;
     border-radius: 15px;
     background-color: #fdd10a;
@@ -992,10 +1118,50 @@ footer .contenido .links ul li span:hover {
   .games-full .games-content .games-pag .block-game-description .game-extras-row .diana + a {
     font-size: 0.9em;
   }
+
+  .user-full .user-content .user-options-block {
+    justify-content: center;
+  }
+  .user-full .user-content .user-options-block .user-option {
+    width: 25%;
+  }
+  .user-full .user-content .user-options-block .user-option label {
+    font-size: 1em;
+  }
+  .user-full .user-content .user-info-block .user-orders-table {
+    font-size: 0.9em;
+  }
+  .user-full .user-content .user-info-block .user-orders-table table,
+.user-full .user-content .user-info-block .user-orders-table th,
+.user-full .user-content .user-info-block .user-orders-table td,
+.user-full .user-content .user-info-block .user-orders-table tr {
+    padding: 5px;
+  }
+  .user-full .user-content .user-info-block .user-orders-table table td:not(:last-child) {
+    width: 25%;
+  }
+  .user-full .user-content .user-info-block .user-orders-table table td:last-child {
+    text-align: center;
+  }
+  .user-full .user-content .user-info-block .user-orders-table table img {
+    width: 30%;
+  }
+
+  footer .contenido .contacto-general .contacto {
+    display: flex;
+    margin: auto;
+    font-size: 0.8em;
+  }
+  footer .contenido .links {
+    margin-top: 0px;
+  }
+  footer .contenido .links ul li {
+    font-size: 0.8em;
+  }
 }
 @media screen and (max-width: 400px) {
   header .navbar .nav-links {
-    background-color: rgba(130, 215, 173, 0.7647058824);
+    background-color: #82d7adc3;
     flex-direction: column;
     position: fixed;
     transform: translateY(-100%);
@@ -1012,8 +1178,7 @@ footer .contenido .links ul li span:hover {
   header .navbar .nav-links .sign-up {
     text-align: center;
     font-size: 0.8em;
-    padding: 2px;
-    width: 5em;
+    padding: 5px;
   }
   header .navbar .showMenu {
     transform: translateY(0);
@@ -1024,9 +1189,8 @@ footer .contenido .links ul li span:hover {
     z-index: 100;
     top: 1rem;
     right: 1rem;
-    padding: 4px;
+    padding: 5px;
     font-size: 1.8em;
-    width: 2.5em;
     color: #834b16;
     border-radius: 15px;
     background-color: #fdd10a;
@@ -1042,9 +1206,37 @@ footer .contenido .links ul li span:hover {
   }
 
   footer .contenido .contacto-general .contacto {
-    width: 50%;
     display: flex;
     margin: auto;
+    font-size: 0.8em;
+  }
+  footer .contenido .links {
+    margin-top: 0px;
+  }
+  footer .contenido .links ul li {
+    font-size: 0.8em;
+  }
+
+  .user-full .user-content .user-options-block .user-option label {
+    font-size: 0.8em;
+  }
+  .user-full .user-content .user-info-block .user-orders-table {
+    font-size: 0.9em;
+  }
+  .user-full .user-content .user-info-block .user-orders-table table,
+.user-full .user-content .user-info-block .user-orders-table th,
+.user-full .user-content .user-info-block .user-orders-table td,
+.user-full .user-content .user-info-block .user-orders-table tr {
+    padding: 5px;
+  }
+  .user-full .user-content .user-info-block .user-orders-table table td:not(:last-child) {
+    width: 20%;
+  }
+  .user-full .user-content .user-info-block .user-orders-table table td:last-child {
+    text-align: center;
+  }
+  .user-full .user-content .user-info-block .user-orders-table table img {
+    width: 30%;
   }
 }
 

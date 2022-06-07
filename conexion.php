@@ -99,8 +99,9 @@ class ConectaBD
     }
 
     public function checkUser($n, $p) {
-        $sql = "Select * from user where USER_NAME = '$n' OR USER_MAIL = '$n' AND USER_PASS = '$p'";
+        $sql = "Select * from user where USER_NAME = '$n' AND USER_PASS = '$p'";
         $result = $this->conn->query($sql);
+
         if ($result->num_rows == 1) {
             return true;
         } else {
@@ -114,6 +115,10 @@ class ConectaBD
         $row = $result->fetch_assoc();
 
         $u = new User($row["USER_NAME"], $row["USER_PASS"], $row["USER_MAIL"]);
+        $u->setUserMail($row["USER_MAIL"]);
+        $u->setUserLastname($row["USER_LASTNAME"]);
+        $u->setUserAddress($row["USER_ADDRESS"]);
+        $u->setUserID($row["USER_ID"]);
         return $u;
     }
 
@@ -135,8 +140,40 @@ class ConectaBD
                 return false;
             }
         }
-        
-        
+    }
+
+    public function selectLastOrderByUser(User $u) {
+        $sql = "select * from orders where CUSTOMER_ID = '". $u->getUserID() ."' ORDER BY ORDER_ID DESC";
+        $result = $this->conn->query($sql);
+        $row = $result->fetch_assoc();
+
+        $o = new Order($row["ORDER_ID"], $row["CUSTOMER_ID"], $row["ORDER_DATE"], $row["STATUS"]);
+
+        return $o;
+    }
+
+    public function selectAllOrdersByUser(User $u) {
+        $sql = "select * from orders where CUSTOMER_ID = '". $u->getUserID() ."' ORDER BY ORDER_ID DESC";
+        $result = $this->conn->query($sql);
+
+        $listOrders = array();
+
+        while ($row = $result->fetch_assoc()){
+            $order = new Order($row["ORDER_ID"], $row["CUSTOMER_ID"], $row["ORDER_DATE"], $row["STATUS"]);
+            $listOrders[] = $order;
+        }
+        return $listOrders;
+    }
+
+
+    public function alterUserTable(User $u) {
+        $sql = "UPDATE user SET USER_NAME = '". $u->getUserName()."', 
+        USER_LASTNAME = '".$u->getUserLastname()."', USER_MAIL = '".$u->getUserMail()."', USER_ADDRESS = '". $u->getUserAddress() ."', 
+        USER_PASS = '".$u->getUserPass()."' WHERE `USER_ID` = ".$u->getUserID()."";
+
+        $result = $this->conn->query($sql);
+
+        return $result;
     }
 
     public function takeProducts(){
