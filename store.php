@@ -18,171 +18,39 @@
 
         <div class="tienda-content container">
             <div class="barra_navegacion">
-                <input type="text" id="barra_busqueda" name="busqueda" placeholder=" Escribe lo que quieres buscar">
+                <input type="text" id="barra_busqueda" name="busqueda" placeholder="Buscar producto">
             </div>
             <div class="tienda-products">
 
-
-            <div class="caja-producto">
-                    <!--IMAGEN PRODUCTO -->
-                    <div class="caja-imagen">
-                        <img id="img_producto" src="media/icon_main1.png">
-                    </div>
-                    <div class="contenido-texto">
-                        <div class="texto-producto">
-                            <h3> Taza de Isabelle </h3>
-                            <!-- DESCRIPCION -->
-                           <!-- PRECIO -->
-                            <p id="precio"> 14.51 €</p>
+                <?php
+                 if (empty($_SESSION['producto'])) {
+                    header("Location: control.php?f=store");
+                }
+                $productos = $_SESSION["producto"];
+                
+                $cont = sizeof($productos);
+                for ($i = 0; $i < $cont; $i++) {
+                ?>
+                    <div class="caja-producto">
+                        <!--IMAGEN PRODUCTO -->
+                        <div class="caja-imagen">
+                            <img id="img_producto" src="<?php echo $productos[$i]->getImg();  ?>">
                         </div>
-                        <div class="carrito-imagen">
-                            <img id="carrito" src="media/carrito.png">
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-              <div class="caja-producto">
-                    <!--IMAGEN PRODUCTO -->
-                    <div class="caja-imagen">
-                        <img id="img_producto" src="media/icon_main1.png">
-                    </div>
-                    <div class="contenido-texto">
-                        <div class="texto-producto">
-                            <h3> Taza de Isabelle </h3>
-                            <!-- DESCRIPCION -->
-                           <!-- PRECIO -->
-                            <p id="precio"> 14.51 €</p>
-                        </div>
-                        <div class="carrito-imagen">
-                            <img id="carrito" src="media/carrito.png">
+                        <div class="contenido-texto">
+                            <div class="texto-producto">
+                                <h3><?php echo $productos[$i]->getNombre();  ?> </h3>
+                                <!-- DESCRIPCION -->
+                                <!-- PRECIO -->
+                                <p id="precio"> <?php echo $productos[$i]->getPrecio();  ?> <span>€</span></p>
+                            </div>
+                            <div class="carrito-imagen">
+                                <img id="carrito" src="media/carrito.png">
+                            </div>
                         </div>
                     </div>
-                </div>
-
-
-
-
-                <div class="caja-producto">
-                    <!--IMAGEN PRODUCTO -->
-                    <div class="caja-imagen">
-                        <img id="img_producto" src="media/icon_main1.png">
-                    </div>
-                    <div class="contenido-texto">
-                        <div class="texto-producto">
-                            <h3> Taza de Isabelle </h3>
-                            <!-- DESCRIPCION -->
-                           <!-- PRECIO -->
-                            <p id="precio"> 14.51 €</p>
-                        </div>
-                        <div class="carrito-imagen">
-                            <img id="carrito" src="media/carrito.png">
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div class="caja-producto">
-                    <!--IMAGEN PRODUCTO -->
-                    <div class="caja-imagen">
-                        <img id="img_producto" src="media/icon_main1.png">
-                    </div>
-                    <div class="contenido-texto">
-                        <div class="texto-producto">
-                            <h3> Taza de Isabelle </h3>
-                            <!-- DESCRIPCION -->
-                           <!-- PRECIO -->
-                            <p id="precio"> 14.51 €</p>
-                        </div>
-                        <div class="carrito-imagen">
-                            <img id="carrito" src="media/carrito.png">
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="caja-producto">
-                    <!--IMAGEN PRODUCTO -->
-                    <div class="caja-imagen">
-                        <img id="img_producto" src="media/icon_main1.png">
-                    </div>
-                    <div class="contenido-texto">
-                        <div class="texto-producto">
-                            <h3> Taza de Isabelle </h3>
-                            <!-- DESCRIPCION -->
-                           <!-- PRECIO -->
-                            <p id="precio"> 14.51 €</p>
-                        </div>
-                        <div class="carrito-imagen">
-                            <img id="carrito" src="media/carrito.png">
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div class="caja-producto">
-                    <!--IMAGEN PRODUCTO -->
-                    <div class="caja-imagen">
-                        <img id="img_producto" src="media/icon_main1.png">
-                    </div>
-                    <div class="contenido-texto">
-                        <div class="texto-producto">
-                            <h3> Taza de Isabelle </h3>
-                            <!-- DESCRIPCION -->
-                           <!-- PRECIO -->
-                            <p id="precio"> 14.51 €</p>
-                        </div>
-                        <div class="carrito-imagen">
-                            <img id="carrito" src="media/carrito.png">
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-                <div class="caja-producto">
-                    <!--IMAGEN PRODUCTO -->
-                    <div class="caja-imagen">
-                        <img id="img_producto" src="media/icon_main1.png">
-                    </div>
-                    <div class="contenido-texto">
-                        <div class="texto-producto">
-                            <h3> Taza de Isabelle </h3>
-                            <!-- DESCRIPCION -->
-                           <!-- PRECIO -->
-                            <p id="precio"> 14.51 €</p>
-                        </div>
-                        <div class="carrito-imagen">
-                            <img id="carrito" src="media/carrito.png">
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-                <div class="caja-producto">
-                    <!--IMAGEN PRODUCTO -->
-                    <div class="caja-imagen">
-                        <img id="img_producto" src="media/icon_main1.png">
-                    </div>
-                    <div class="contenido-texto">
-                        <div class="texto-producto">
-                            <h3> Camisa </h3>
-                            <!-- DESCRIPCION -->
-                           <!-- PRECIO -->
-                            <p id="precio"> 14.51 €</p>
-                        </div>
-                        <div class="carrito-imagen">
-                            <img id="carrito" src="media/carrito.png">
-                        </div>
-                    </div>
-                </div>
+                <?php
+                }
+                ?>
 
 
 

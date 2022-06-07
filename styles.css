@@ -253,7 +253,7 @@ footer .contenido .links ul li span:hover {
 
 .contacto-full {
   background-color: #e6d58f;
-  background-image: url(media/footer5.png);
+  background-image: url(media/footer1.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center center;
@@ -339,6 +339,13 @@ footer .contenido .links ul li span:hover {
 .contacto-full .contacto .form-contact .form-build form input {
   margin-bottom: 14px;
 }
+.contacto-full .contacto .form-contact .form-build form #politica-error,
+.contacto-full .contacto .form-contact .form-build form #nombre-error,
+.contacto-full .contacto .form-contact .form-build form #correo-error,
+.contacto-full .contacto .form-contact .form-build form #mensaje-error {
+  color: red;
+  font-weight: 700;
+}
 .contacto-full .contacto .form-contact .form-build form .inputs {
   width: 65%;
   height: 40px;
@@ -369,7 +376,7 @@ footer .contenido .links ul li span:hover {
 .contacto-full .contacto .form-contact .form-build form textarea:focus {
   outline: none !important;
 }
-.contacto-full .contacto .form-contact .form-build form label {
+.contacto-full .contacto .form-contact .form-build form .labels {
   color: #834b16;
   background-color: #fdd10a;
   padding: 6px;
@@ -394,6 +401,7 @@ footer .contenido .links ul li span:hover {
 .contacto-full .contacto .form-contact .form-build form #sub:hover {
   background-color: #9e8208;
   color: #ffc822;
+  cursor: pointer;
 }
 .contacto-full .contacto .form-contact .form-build form .arrow-down {
   width: 0;
@@ -446,6 +454,10 @@ footer .contenido .links ul li span:hover {
 }
 .games-full .games-content .games-pag .games-list select {
   display: none;
+}
+.games-full .games-content .games-pag .games-list .img-container img:hover {
+  transform: translateY(-15px);
+  cursor: pointer;
 }
 .games-full .games-content .games-pag .games-list .img-container:not(:last-child) {
   margin-bottom: 10%;
@@ -765,6 +777,9 @@ footer .contenido .links ul li span:hover {
   justify-content: space-around;
 }
 .tienda .tienda-content .tienda-products .caja-producto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 35px;
   font-family: "Arvo", sans-serif;
 }
@@ -775,13 +790,18 @@ footer .contenido .links ul li span:hover {
   padding: 5px;
   border: 4px solid #bd9d0f;
   border-radius: 10px;
+  justify-content: space-between;
 }
 .tienda .tienda-content .tienda-products .caja-producto .contenido-texto h3 {
   color: rgb(248, 90, 90);
+  margin-bottom: 15px;
 }
 .tienda .tienda-content .tienda-products .caja-producto .contenido-texto p {
   color: rgb(83, 83, 83);
   font-weight: 700;
+}
+.tienda .tienda-content .tienda-products .caja-producto .contenido-texto p span {
+  color: rgb(61, 188, 61);
 }
 .tienda .tienda-content .tienda-products .caja-producto .contenido-texto #precio {
   font-size: 1.5em;
