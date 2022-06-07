@@ -5,10 +5,10 @@ class ConectaBD
     /** DESCOMENTAR EL USER/PASS QUE NECESITES PARA NO ANDAR BORRANDO */
     private $servername = "localhost";
     private $database = "animalcrossing";
-    private $username = "user";
-    private $password = "pass";
-    //private $username = "root";
-    //private $password = "";
+    //private $username = "user";
+    //private $password = "pass";
+    private $username = "root";
+    private $password = "";
     //private $username = "Gorka";
     //private $password = "2d4wmi1";
     private $conn;
@@ -176,6 +176,19 @@ class ConectaBD
         return $result;
     }
 
+    public function takeProducts(){
+        $sql = "SELECT * FROM item";
 
+        $result  = $this->conn->query($sql);
+        
+        $products = array();
+
+        while ($row = $result->fetch_assoc()){
+            $producto = new productos($row['ITEM_IMG'],$row['ITEM_DESCRIPTION'],$row['UNIT_PRICE']);
+            $products[] = $producto;
+        }
+        
+        return $products;
+    }
 
 }

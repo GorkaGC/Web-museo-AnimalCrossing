@@ -153,6 +153,29 @@ const getOrderDetails = (idPedido) => {
 //FIN METODO CONSULTAR DETALLES PEDIDO
 
 //METODO DE VALIDACION DE FORMULARIOS
+//VALIDAR CONTACTO
+$(function () {
+    $('#form-contact').validate({
+        rules: {
+           nombre: "required",
+           correo:{
+            required: true,
+            email: true
+           }, 
+           mensaje: "required",
+           politica: "required"
+        },
+        messages: {
+            nombre: "*Nombre obligatorio",
+            correo:{
+                required:"*Correo obligatorio",
+                email:"*Formato incorrecto"
+            },
+            mensaje:"*Mensaje obligatorio", 
+            politica: "*",
+        }
+    });
+});
 
 //VALIDAR LOGIN
 $(function () {

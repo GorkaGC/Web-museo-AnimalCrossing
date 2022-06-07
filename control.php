@@ -6,6 +6,7 @@ require "juego.php";
 require "creador.php";
 require "user.php";
 require "order.php";
+require "productos.php";
 
 
 if (!isset($_SESSION)) {
@@ -41,6 +42,8 @@ switch ($urlDestino) {
         header("Location: contacto.php");
         break;
     case "store":
+        $productos = $conn->takeProducts();
+        $_SESSION['producto'] = $productos;
         header("Location: store.php");
         break;
     case "login":

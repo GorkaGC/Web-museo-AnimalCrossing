@@ -197,6 +197,7 @@ header {
                 box-shadow: 5px 5px 10px 4px rgba(0, 0, 0, 0.59);
                 padding: 10px;
                 border-radius: 15px;
+                margin-bottom: 15px;
 
                 p {
                     text-align: justify;
@@ -244,6 +245,8 @@ footer {
                 a {
                     text-decoration: none;
                     color: #834b16;
+                    font-family: 'Arvo', sans-serif;
+                    font-weight: 700;
                 }
 
                 a:hover {
@@ -294,6 +297,7 @@ footer {
 
                     span {
                         color: #fdd10a;
+
                     }
 
                     span:hover {
@@ -311,7 +315,7 @@ footer {
 
 .contacto-full {
     background-color: #e6d58f;
-    background-image: url(media/footer5.png);
+    background-image: url(media/footer1.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center center;
@@ -405,6 +409,15 @@ footer {
                         margin-bottom: 14px;
                     }
 
+                    #politica-error,
+                    #nombre-error,
+                    #correo-error,
+                    #mensaje-error {
+                        color: red;
+                        font-weight: 700;
+                    }
+
+
                     .inputs {
                         width: 65%;
                         height: 40px;
@@ -439,7 +452,7 @@ footer {
                         }
                     }
 
-                    label {
+                    .labels {
                         color: #834b16;
                         background-color: #fdd10a;
                         padding: 6px;
@@ -465,6 +478,7 @@ footer {
                         &:hover {
                             background-color: #9e8208;
                             color: #ffc822;
+                            cursor: pointer;
                         }
                     }
 
@@ -501,6 +515,7 @@ footer {
 }
 
 //FIN ANIMACION
+
 //PAGINA JUEGOS
 
 .games-full {
@@ -537,7 +552,14 @@ footer {
                 }
 
                 .img-container {
+
                     //width: 40%;
+                    img {
+                        &:hover {
+                            transform: translateY(-15px);
+                            cursor: pointer;
+                        }
+                    }
 
                     &:not(:last-child) {
                         margin-bottom: 10%;
@@ -635,7 +657,7 @@ footer {
                         font-size: 2em;
                     }
 
-                    .diana + a {
+                    .diana+a {
                         display: block;
                         float: left;
                         line-height: 32px;
@@ -652,7 +674,7 @@ footer {
                             rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
                     }
 
-                    .diana:target + a {
+                    .diana:target+a {
                         background-color: #c8d83c;
                         //border-bottom-color: #fff;
                         border-bottom-left-radius: 0px;
@@ -675,25 +697,26 @@ footer {
                         background-color: #9dffb0;
                         box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
                     }
-                    #pnl_1 > div > ul,
-                    #pnl_2 > div > ul,
-                    #pnl_3 > div > ul {
+
+                    #pnl_1>div>ul,
+                    #pnl_2>div>ul,
+                    #pnl_3>div>ul {
                         /* opacity: 0; */
                         transition: all 0.1s ease;
                         padding: 30px;
                         display: none;
                     }
 
-                    #uno:target ~ #pnl_1,
-                    #dos:target ~ #pnl_2,
-                    #tres:target ~ #pnl_3 {
+                    #uno:target~#pnl_1,
+                    #dos:target~#pnl_2,
+                    #tres:target~#pnl_3 {
                         position: static;
                         border: 1px solid #ddd;
                     }
 
-                    #uno:target ~ #pnl_1 > div > ul,
-                    #dos:target ~ #pnl_2 > div > ul,
-                    #tres:target ~ #pnl_3 > div > ul {
+                    #uno:target~#pnl_1>div>ul,
+                    #dos:target~#pnl_2>div>ul,
+                    #tres:target~#pnl_3>div>ul {
                         /* opacity: 1; */
                         transition: all 1s ease;
                         display: block;
@@ -729,12 +752,13 @@ footer {
         }
 
         p {
-            font-size: 1em;
+
+            font-size: 1.5em;
             font-family: "Arvo", sans-serif;
         }
 
         a {
-            font-size: 1em;
+            font-size: 1.5em;
             margin-bottom: 25px;
         }
 
@@ -750,6 +774,7 @@ footer {
                 border-radius: 10px;
                 font-family: "Arvo", sans-serif;
                 font-size: 1em;
+                margin-bottom: 40px;
                 background-color: #e6d58f;
                 padding: 4px;
                 width: 100%;
@@ -773,6 +798,7 @@ footer {
                 color: rgb(216, 47, 47);
                 margin-bottom: 15px;
             }
+
             #log-pass-error {
                 color: rgb(216, 47, 47);
                 margin-bottom: 15px;
@@ -811,6 +837,7 @@ footer {
         }
 
         p {
+
             font-size: 1.5em;
             font-family: "Arvo", sans-serif;
         }
@@ -832,6 +859,7 @@ footer {
                 border-radius: 10px;
                 font-family: "Arvo", sans-serif;
                 font-size: 1em;
+                margin-bottom: 40px;
                 background-color: #e6d58f;
                 padding: 4px;
                 width: 100%;
@@ -850,14 +878,17 @@ footer {
                     outline: none !important;
                 }
             }
+
             #userName-error {
                 color: rgb(216, 47, 47);
                 margin-bottom: 15px;
             }
+
             #userPass-error {
                 color: rgb(216, 47, 47);
                 margin-bottom: 15px;
             }
+
             #userMail-error {
                 color: rgb(216, 47, 47);
                 margin-bottom: 15px;
@@ -1030,6 +1061,131 @@ footer {
 }
 
 //FIN USER INTERFACE
+.tienda {
+    background-image: url(media/tienda.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    #producto {
+        font-family: 'Arvo', sans-serif;
+        color: #834b16;
+        text-decoration: underline;
+    }
+
+    .tienda-content {
+        margin-top: 25px;
+
+        .barra_navegacion {
+            margin-bottom: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            #barra_busqueda {
+                width: 40%;
+                height: 30px;
+                height: 3em;
+                font-size: 1em;
+                align-items: center;
+                color: #834b16;
+                border: 4px solid #bd9d0f;
+                border-radius: 10px;
+                font-family: "Arvo", sans-serif;
+                font-weight: 700;
+                background-color: #e6d58f;
+                padding: 6px;
+
+                &:focus {
+                    outline: none !important;
+                }
+            }
+
+        }
+
+        .tienda-products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+
+            .caja-producto {
+                display:flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 35px;
+                font-family: 'Arvo', sans-serif;
+
+                .contenido-texto {
+                    display: flex;
+                    margin-top: 15px;
+                    background-color: #9dffb0;
+                    padding: 5px;
+                    border: 4px solid #bd9d0f;
+                    border-radius: 10px;
+                    justify-content: space-between;
+
+                    h3 {
+                        color: rgb(248, 90, 90);
+                        margin-bottom: 15px;
+                    }
+
+                    p {
+                        color: rgb(83, 83, 83);
+                        font-weight: 700;
+                        span{
+                            color: rgb(61, 188, 61);
+                        }
+                    }
+
+                    #precio {
+                        font-size: 1.5em;
+                    }
+
+                    .carrito-imagen {
+                        margin-top: 5px;
+                        margin-left: 24px;
+
+                        img {
+                            width: 3em;
+                            height: 3em;
+
+                            &:hover {
+                                transform: scale(1.1);
+                                cursor: pointer;
+                            }
+                        }
+
+                    }
+                }
+
+                .caja-imagen {
+                    width: 15em;
+                    height: 14em;
+
+                    #img_producto {
+                        border: 4px solid #bd9d0f;
+                        border-radius: 10px;
+                        width: 14.4em;
+                        height: 14em;
+                    }
+
+                }
+            }
+        }
+
+
+
+    }
+}
+
+
+
+//PAGINA TIENDA 
+
+
 
 //PANTALLA GRANDE
 @media screen and (max-width: 1100px) {
@@ -1176,8 +1332,10 @@ footer {
             .games-pag {
                 flex-direction: column;
                 margin: 5% auto;
+
                 .games-list {
                     width: auto;
+
                     .custom-select {
                         display: inline-block;
                         position: relative;
@@ -1236,11 +1394,12 @@ footer {
                         display: none;
                     }
                 }
+
                 .block-game-description {
                     width: 100%;
 
                     .game-extras-row {
-                        .diana + a {
+                        .diana+a {
                             font-size: 0.9em;
                         }
                     }
@@ -1370,7 +1529,7 @@ footer {
             .games-pag {
                 .block-game-description {
                     .game-extras-row {
-                        .diana + a {
+                        .diana+a {
                             font-size: 0.7em;
                         }
                     }

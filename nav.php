@@ -6,6 +6,7 @@ require "juego.php";
 require "creador.php";
 require "user.php";
 require "order.php";
+require "productos.php";
 
 if (!isset($_SESSION)) {
     session_start();
