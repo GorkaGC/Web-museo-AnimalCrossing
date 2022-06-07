@@ -11,6 +11,7 @@
     display: flex;
     width: 100%;
     justify-content: center;
+    position: relative;
 }
 
 ////////////////////////////////////////////////////
@@ -47,12 +48,6 @@
 }
 
 ////////////////////////////////////////////////////
-
-body {
-    h1 {
-        color: red;
-    }
-}
 
 header {
     background-color: #82d7ad;
@@ -216,8 +211,12 @@ footer {
     background: url("media/tomnook2.png") #ccc no-repeat center center;
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 100%;
-    height: 400px;
+    //min-height: 100%;
+    //height: 400px;
+    //height: auto;
+    padding: 3%;
+    position: absolute;
+    bottom: 0;
 
     .contenido {
         display: flex;
@@ -874,6 +873,164 @@ footer {
 
 //FIN REGISTRO
 
+//USER INTERFACE
+
+.user-full {
+    flex-direction: column;
+    background-image: url(media/bg_user_interface.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    .user-banner {
+        text-align: center;
+        background-image: url(./media/banner-user-gif.gif);
+        background-size: cover;
+        background-position: center center;
+        --mask: linear-gradient(#000 0 0) top/100% calc(100% - 30px) no-repeat,
+            radial-gradient(circle farthest-side, #000 98%, #0000) bottom/55.50px 60px repeat-x;
+        -webkit-mask: var(--mask);
+        mask: var(--mask);
+
+        .user-banner-text {
+            font-family: "Arvo", sans-serif;
+            margin: 10%;
+
+            h1 {
+                font-size: 2.5em;
+                color: #834b16;
+
+                spam {
+                    color: #fff563;
+                }
+            }
+            p {
+                font-size: 1em;
+                color: white;
+
+                a {
+                    color: #9dffb0;
+                }
+            }
+        }
+    }
+
+    .user-content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .user-options-block {
+            display: flex;
+            padding: 10px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .user-option {
+                width: 200px;
+                height: auto;
+                background-color: #1e8449;
+                margin: 10px;
+                border-radius: 2%;
+                padding: 2%;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+                a {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    text-decoration: none;
+                }
+                img {
+                    max-width: 50%;
+                }
+                label {
+                    font-size: 1.2em;
+                    color: white;
+                }
+
+                &:hover {
+                    transform: scale(1.1);
+                    filter: drop-shadow(0px 0px 2px #000000b9);
+                }
+            }
+        }
+
+        .user-info-block {
+            padding: 2%;
+            .user-info {
+                justify-content: center;
+                border-radius: 10px;
+                border: 1px solid #fffa95;
+                background-color: #fffa95;
+                padding: 10px;
+                font-family: "Arvo", sans-serif;
+                color: #834b16;
+                box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+                margin-bottom: 10px;
+
+                ol {
+                    list-style-type: none;
+                    display: flex;
+                    //justify-content: space-between;
+                    flex-flow: row wrap;
+                    padding: 10px;
+
+                    li {
+                        width: 33.333333333%;
+                        font-size: 1em;
+                        padding: 2%;
+
+                        .user-info-title {
+                            font-size: 1.2em;
+                            color: #834b16;
+                        }
+
+                        .user-info-desc {
+                            color: black;
+                            padding-left: 2%;
+                        }
+                    }
+                }
+            }
+
+            .user-orders-table {
+                th,
+                tr,
+                td,
+                table {
+                    //border: 1px solid black;
+                    border-collapse: collapse;
+                    padding: 20px;
+                }
+
+                tr {
+                    border-bottom: 1px solid rgba(128, 128, 128, 0.397);
+                }
+
+                table {
+                    width: 100%;
+
+                    th {
+                        text-align: start;
+                    }
+
+                    td:not(:last-child) {
+                        width: 30%;
+                    }
+
+                    img {
+                        width: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//FIN USER INTERFACE
+
 //PANTALLA GRANDE
 @media screen and (max-width: 1100px) {
     .main-content {
@@ -918,8 +1075,7 @@ footer {
                 .sign-up {
                     text-align: center;
                     font-size: 0.8em;
-                    padding: 1px;
-                    width: 6em;
+                    padding: 5px;
                 }
             }
 
@@ -933,9 +1089,9 @@ footer {
                 z-index: 100;
                 top: 1rem;
                 right: 1rem;
-                padding: 4px;
+                //width: 2.5em;
+                padding: 10px;
                 font-size: 1.8em;
-                width: 2.5em;
                 color: #834b16;
                 border-radius: 15px;
                 background-color: #fdd10a;
@@ -1092,6 +1248,69 @@ footer {
             }
         }
     }
+
+
+    .user-full {
+        .user-content {
+            .user-options-block {
+                justify-content: center;
+
+                .user-option {
+                    width: 25%;
+                    label {
+                        font-size: 1em;
+                    }
+                }
+            }
+
+            .user-info-block {
+                .user-orders-table {
+                    font-size: 0.9em;
+
+                    table,
+                    th,
+                    td,
+                    tr {
+                        padding: 5px;
+                    }
+
+                    table {
+                        td:not(:last-child) {
+                            width: 25%;
+                        }
+
+                        td:last-child {
+                            text-align: center;
+                        }
+
+                        img {
+                            width: 30%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        .contenido {
+            .contacto-general {
+                .contacto {
+                    //width: 50%;
+                    display: flex;
+                    margin: auto;
+                    font-size: 0.8em;
+                }
+            }
+            .links {
+                margin-top: 0px;
+
+                ul li {
+                    font-size: 0.8em;
+                }
+            }
+        }
+    }
 }
 
 //PANTALLA PEQUEÑA
@@ -1116,8 +1335,7 @@ footer {
                 .sign-up {
                     text-align: center;
                     font-size: 0.8em;
-                    padding: 2px;
-                    width: 5em;
+                    padding: 5px;
                 }
             }
 
@@ -1131,9 +1349,9 @@ footer {
                 z-index: 100;
                 top: 1rem;
                 right: 1rem;
-                padding: 4px;
+                padding: 5px;
                 font-size: 1.8em;
-                width: 2.5em;
+                //width: 2.5em;
                 color: #834b16;
                 border-radius: 15px;
                 background-color: #fdd10a;
@@ -1165,9 +1383,56 @@ footer {
         .contenido {
             .contacto-general {
                 .contacto {
-                    width: 50%;
+                    //width: 50%;
                     display: flex;
                     margin: auto;
+                    font-size: 0.8em;
+                }
+            }
+            .links {
+                margin-top: 0px;
+
+                ul li {
+                    font-size: 0.8em;
+                }
+            }
+        }
+    }
+
+    .user-full {
+        .user-content {
+            .user-options-block {
+                .user-option {
+                    label {
+                        font-size: 0.8em;
+                    }
+                }
+            }
+
+            .user-info-block {
+                .user-orders-table {
+                    font-size: 0.9em;
+
+                    table,
+                    th,
+                    td,
+                    tr {
+                        padding: 5px;
+                    }
+
+                    table {
+                        td:not(:last-child) {
+                            width: 20%;
+                        }
+
+                        td:last-child {
+                            text-align: center;
+                        }
+
+                        img {
+                            width: 30%;
+                        }
+                    }
                 }
             }
         }

@@ -35,6 +35,10 @@ function volumenBajo() {
 
 //JQUERY 
 
+const userInfo = () => {
+
+}
+
 //METODO PARA SACAR INFORMACION EN LA PAGINA JUEGOS
 const getGameInfo = (idGame) => {
     // mediante AJAX se hará una llamada al archivo seleccionarJuego.php y le pasaremos
@@ -114,6 +118,40 @@ const getPlatforms = (idGame) => {
 }
 //FIN DEL METODO JUEGOS
 
+
+//METODO CONSULTAR DETALLES PEDIDO
+
+const getOrderDetails = (idPedido) => {
+    
+    $.ajax({
+        url: "consultarDetallesPedido.php?idPedido=" + idPedido, 
+        type: "GET", 
+        dataType: "json" 
+    }).done((response) => {
+        
+        $(response).each((_i, element) => { 
+            //$('#id-title-game').empty().append('<h2>' + element.TITLE_GAME + '</h2>');
+            console.log(response);
+
+            $('#order-ref').append(element.ORDER_ID);
+            $('#item-desc').append(element.ITEM_DESCRIPTION);
+            $('#item-quantity').append(element.ITEM_QUANTITY);
+            $('#item-price').append(element.DETAIL_UNIT_PRICE);
+            //alert("Nº PEDIDO: " + element.ORDER_ID + "\nPRODUCTO: " + element.ITEM_DESCRIPTION);
+            
+            // Add response in Modal body
+            //$('.modal-body').html(response);
+
+            // Display Modal
+            $('#empModal').html(response); 
+        });
+    }).fail((error) => { 
+        console.log(error, "fail"); 
+    });
+}
+
+//FIN METODO CONSULTAR DETALLES PEDIDO
+
 //METODO DE VALIDACION DE FORMULARIOS
 
 //VALIDAR LOGIN
@@ -167,3 +205,6 @@ $(function () {
         }
     });
 });
+
+
+

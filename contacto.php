@@ -39,10 +39,10 @@
             <div class="form-contact container">
                 <h1>CONTACTO</h1>
                 <div class="form-build">
-                    <form method="post">
-                        <input type="text" class="inputs" id="nombre" placeholder="Nombre">
-                        <input type="text" class="inputs" id="correo" placeholder="Correo Electronico">
-                        <textarea placeholder="Pon tu mensaje" id="mensaje"></textarea>
+                    <form action="#" method="post">
+                        <input type="text" class="inputs" name="contactName" id="nombre" placeholder="Nombre">
+                        <input type="text" class="inputs" name="contactMail" id="correo" placeholder="Correo Electronico">
+                        <textarea placeholder="Pon tu mensaje" name="contactMsg" id="mensaje"></textarea>
                         <label><input type="checkbox" id="cbox1" value="first_checkbox"> Acepto la politica de privacidad</label><br>
                         <input type="submit" id="sub" value="ENVIAR">
                         <div class="arrow-down"></div>

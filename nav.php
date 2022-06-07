@@ -5,6 +5,7 @@ require "divIndex.php";
 require "juego.php";
 require "creador.php";
 require "user.php";
+require "order.php";
 
 if (!isset($_SESSION)) {
     session_start();
