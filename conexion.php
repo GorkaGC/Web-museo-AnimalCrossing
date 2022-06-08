@@ -5,10 +5,10 @@ class ConectaBD
     /** DESCOMENTAR EL USER/PASS QUE NECESITES PARA NO ANDAR BORRANDO */
     private $servername = "localhost";
     private $database = "animalcrossing";
-    //private $username = "user";
-    //private $password = "pass";
-    private $username = "root";
-    private $password = "";
+    private $username = "user";
+    private $password = "pass";
+    //private $username = "root";
+    //private $password = "";
     //private $username = "Gorka";
     //private $password = "2d4wmi1";
     private $conn;

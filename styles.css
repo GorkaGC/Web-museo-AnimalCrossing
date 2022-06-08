@@ -755,7 +755,7 @@ footer .contenido .links ul li span:hover {
   font-size: 2.5em;
   color: #834b16;
 }
-.user-full .user-banner .user-banner-text h1 spam {
+.user-full .user-banner .user-banner-text h1 span {
   color: #fff563;
 }
 .user-full .user-banner .user-banner-text p {
@@ -836,12 +836,65 @@ footer .contenido .links ul li span:hover {
   color: black;
   padding-left: 2%;
 }
+.user-full .user-content .user-info-block .user-info form {
+  display: flex;
+  flex-direction: column;
+}
+.user-full .user-content .user-info-block .user-info form input {
+  font-size: 1em;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: "Arvo", sans-serif;
+}
+.user-full .user-content .user-info-block .user-info form input[type=submit] {
+  color: #834b16;
+  align-self: flex-end;
+  cursor: pointer;
+}
+.user-full .user-content .user-info-block .popup {
+  padding: 15px;
+  background-color: #f6c682;
+  display: none;
+  position: absolute;
+  top: 40%;
+  right: 25%;
+  left: 25%;
+  border-radius: 20px;
+  font-family: "Arvo", sans-serif;
+  color: black;
+  font-size: 1em;
+}
+.user-full .user-content .user-info-block .popup .modal-contenido {
+  display: flex;
+  flex-direction: column;
+  font-family: "Arvo", sans-serif;
+}
+.user-full .user-content .user-info-block .popup .modal-contenido .detail-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.user-full .user-content .user-info-block .popup .modal-contenido .detail-title a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.2em;
+  border: 1px solid black;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
 .user-full .user-content .user-info-block .user-orders-table th,
 .user-full .user-content .user-info-block .user-orders-table tr,
 .user-full .user-content .user-info-block .user-orders-table td,
 .user-full .user-content .user-info-block .user-orders-table table {
   border-collapse: collapse;
   padding: 20px;
+}
+.user-full .user-content .user-info-block .user-orders-table td {
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .user-full .user-content .user-info-block .user-orders-table tr {
   border-bottom: 1px solid rgba(128, 128, 128, 0.397);
@@ -1144,7 +1197,21 @@ footer .contenido .links ul li span:hover {
     text-align: center;
   }
   .user-full .user-content .user-info-block .user-orders-table table img {
-    width: 30%;
+    width: 25%;
+  }
+  .user-full .user-content .user-info-block .user-info form ol li {
+    width: fit-content;
+  }
+  .user-full .user-content .user-info-block .popup {
+    font-size: 0.8em;
+    top: 20%;
+  }
+  .user-full .user-content .user-info-block .popup .modal-contenido .detail-title a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1em;
+    padding: 5px;
+    height: 10%;
   }
 
   footer .contenido .contacto-general .contacto {
@@ -1237,6 +1304,23 @@ footer .contenido .links ul li span:hover {
   }
   .user-full .user-content .user-info-block .user-orders-table table img {
     width: 30%;
+  }
+  .user-full .user-content .user-info-block .popup {
+    font-size: 0.8em;
+    top: 15%;
+  }
+  .user-full .user-content .user-info-block .popup .modal-contenido .detail-title h2 {
+    font-size: 1em;
+  }
+  .user-full .user-content .user-info-block .popup .modal-contenido .detail-title a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1em;
+    padding: 5px;
+    height: 10%;
+  }
+  .user-full .user-content .user-info-block .popup .modal-contenido .detail {
+    font-size: 0.9em;
   }
 }
 
