@@ -245,7 +245,7 @@ footer {
                 a {
                     text-decoration: none;
                     color: #834b16;
-                    font-family: 'Arvo', sans-serif;
+                    font-family: "Arvo", sans-serif;
                     font-weight: 700;
                 }
 
@@ -297,7 +297,6 @@ footer {
 
                     span {
                         color: #fdd10a;
-
                     }
 
                     span:hover {
@@ -416,7 +415,6 @@ footer {
                         color: red;
                         font-weight: 700;
                     }
-
 
                     .inputs {
                         width: 65%;
@@ -552,7 +550,6 @@ footer {
                 }
 
                 .img-container {
-
                     //width: 40%;
                     img {
                         &:hover {
@@ -657,7 +654,7 @@ footer {
                         font-size: 2em;
                     }
 
-                    .diana+a {
+                    .diana + a {
                         display: block;
                         float: left;
                         line-height: 32px;
@@ -674,7 +671,7 @@ footer {
                             rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
                     }
 
-                    .diana:target+a {
+                    .diana:target + a {
                         background-color: #c8d83c;
                         //border-bottom-color: #fff;
                         border-bottom-left-radius: 0px;
@@ -698,25 +695,25 @@ footer {
                         box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
                     }
 
-                    #pnl_1>div>ul,
-                    #pnl_2>div>ul,
-                    #pnl_3>div>ul {
+                    #pnl_1 > div > ul,
+                    #pnl_2 > div > ul,
+                    #pnl_3 > div > ul {
                         /* opacity: 0; */
                         transition: all 0.1s ease;
                         padding: 30px;
                         display: none;
                     }
 
-                    #uno:target~#pnl_1,
-                    #dos:target~#pnl_2,
-                    #tres:target~#pnl_3 {
+                    #uno:target ~ #pnl_1,
+                    #dos:target ~ #pnl_2,
+                    #tres:target ~ #pnl_3 {
                         position: static;
                         border: 1px solid #ddd;
                     }
 
-                    #uno:target~#pnl_1>div>ul,
-                    #dos:target~#pnl_2>div>ul,
-                    #tres:target~#pnl_3>div>ul {
+                    #uno:target ~ #pnl_1 > div > ul,
+                    #dos:target ~ #pnl_2 > div > ul,
+                    #tres:target ~ #pnl_3 > div > ul {
                         /* opacity: 1; */
                         transition: all 1s ease;
                         display: block;
@@ -752,7 +749,6 @@ footer {
         }
 
         p {
-
             font-size: 1.5em;
             font-family: "Arvo", sans-serif;
         }
@@ -837,7 +833,6 @@ footer {
         }
 
         p {
-
             font-size: 1.5em;
             font-family: "Arvo", sans-serif;
         }
@@ -931,7 +926,7 @@ footer {
                 font-size: 2.5em;
                 color: #834b16;
 
-                spam {
+                span {
                     color: #fff563;
                 }
             }
@@ -1024,6 +1019,61 @@ footer {
                         }
                     }
                 }
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+
+                    input {
+                        font-size: 1em;
+                        padding: 10px;
+                        border-radius: 5px;
+                        font-family: "Arvo", sans-serif;
+                    }
+                    input[type="submit"] {
+                        color: #834b16;
+                        align-self: flex-end;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .popup {
+                //width: 50%;
+                //height: 200px;
+                padding: 15px;
+                background-color: #f6c682;
+                display: none;
+                position: absolute;
+                top: 40%;
+                right: 25%;
+                left: 25%;
+                border-radius: 20px;
+                font-family: "Arvo", sans-serif;
+                color: black;
+                font-size: 1em;
+
+                .modal-contenido {
+                    display: flex;
+                    flex-direction: column;
+                    font-family: "Arvo", sans-serif;
+
+                    .detail-title {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+
+                        a {
+                            text-decoration: none;
+                            color: #000;
+                            font-size: 1.2em;
+                            border: 1px solid black;
+                            background-color: white;
+                            padding: 10px;
+                            border-radius: 10px;
+                        }
+                    }
+                }
             }
 
             .user-orders-table {
@@ -1034,6 +1084,13 @@ footer {
                     //border: 1px solid black;
                     border-collapse: collapse;
                     padding: 20px;
+                }
+
+                td {
+                    max-width: 100px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
                 }
 
                 tr {
@@ -1071,7 +1128,7 @@ footer {
     flex-direction: column;
 
     #producto {
-        font-family: 'Arvo', sans-serif;
+        font-family: "Arvo", sans-serif;
         color: #834b16;
         text-decoration: underline;
     }
@@ -1103,7 +1160,6 @@ footer {
                     outline: none !important;
                 }
             }
-
         }
 
         .tienda-products {
@@ -1112,11 +1168,11 @@ footer {
             justify-content: space-around;
 
             .caja-producto {
-                display:flex;
+                display: flex;
                 flex-direction: column;
                 align-items: center;
                 margin-bottom: 35px;
-                font-family: 'Arvo', sans-serif;
+                font-family: "Arvo", sans-serif;
 
                 .contenido-texto {
                     display: flex;
@@ -1135,7 +1191,7 @@ footer {
                     p {
                         color: rgb(83, 83, 83);
                         font-weight: 700;
-                        span{
+                        span {
                             color: rgb(61, 188, 61);
                         }
                     }
@@ -1157,7 +1213,6 @@ footer {
                                 cursor: pointer;
                             }
                         }
-
                     }
                 }
 
@@ -1171,21 +1226,13 @@ footer {
                         width: 14.4em;
                         height: 14em;
                     }
-
                 }
             }
         }
-
-
-
     }
 }
 
-
-
-//PAGINA TIENDA 
-
-
+//PAGINA TIENDA
 
 //PANTALLA GRANDE
 @media screen and (max-width: 1100px) {
@@ -1399,7 +1446,7 @@ footer {
                     width: 100%;
 
                     .game-extras-row {
-                        .diana+a {
+                        .diana + a {
                             font-size: 0.9em;
                         }
                     }
@@ -1407,7 +1454,6 @@ footer {
             }
         }
     }
-
 
     .user-full {
         .user-content {
@@ -1443,7 +1489,33 @@ footer {
                         }
 
                         img {
-                            width: 30%;
+                            width: 25%;
+                        }
+                    }
+                }
+            }
+
+            .user-info-block {
+                .user-info {
+                    form {
+                        ol li {
+                            width: fit-content;
+                        }
+                    }
+                }
+                .popup {
+                    font-size: 0.8em;
+                    top: 20%;
+
+                    .modal-contenido {
+                        .detail-title {
+                            a {
+                                text-decoration: none;
+                                color: #000;
+                                font-size: 1em;
+                                padding: 5px;
+                                height: 10%;
+                            }
                         }
                     }
                 }
@@ -1529,7 +1601,7 @@ footer {
             .games-pag {
                 .block-game-description {
                     .game-extras-row {
-                        .diana+a {
+                        .diana + a {
                             font-size: 0.7em;
                         }
                     }
@@ -1590,6 +1662,31 @@ footer {
 
                         img {
                             width: 30%;
+                        }
+                    }
+                }
+
+                .popup {
+                    font-size: 0.8em;
+                    top: 15%;
+
+                    .modal-contenido {
+                        .detail-title {
+                            h2 {
+                                font-size: 1em;
+                            }
+
+                            a {
+                                text-decoration: none;
+                                color: #000;
+                                font-size: 1em;
+                                padding: 5px;
+                                height: 10%;
+                            }
+                        }
+
+                        .detail {
+                            font-size: 0.9em;
                         }
                     }
                 }

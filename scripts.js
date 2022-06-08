@@ -132,18 +132,17 @@ const getOrderDetails = (idPedido) => {
         $(response).each((_i, element) => { 
             //$('#id-title-game').empty().append('<h2>' + element.TITLE_GAME + '</h2>');
             console.log(response);
+            $('#popup').css('display', 'block');
+            $('body').css('overflow', 'hidden');
 
-            $('#order-ref').append(element.ORDER_ID);
-            $('#item-desc').append(element.ITEM_DESCRIPTION);
-            $('#item-quantity').append(element.ITEM_QUANTITY);
-            $('#item-price').append(element.DETAIL_UNIT_PRICE);
+            $('#order-ref').empty().append(element.ORDER_ID);
+            $('#item-desc').empty().append(element.ITEM_DESCRIPTION);
+            $('#item-quantity').empty().append(element.ITEM_QUANTITY);
+            $('#item-price').empty().append(element.DETAIL_UNIT_PRICE);
+            $('#order_date').empty().append(element.ORDER_DATE);
+            $('#order-total').empty().append(element.ITEM_QUANTITY * element.DETAIL_UNIT_PRICE);
+            $('#order_status').empty().append(element.STATUS);
             //alert("Nº PEDIDO: " + element.ORDER_ID + "\nPRODUCTO: " + element.ITEM_DESCRIPTION);
-            
-            // Add response in Modal body
-            //$('.modal-body').html(response);
-
-            // Display Modal
-            $('#empModal').html(response); 
         });
     }).fail((error) => { 
         console.log(error, "fail"); 
@@ -151,6 +150,11 @@ const getOrderDetails = (idPedido) => {
 }
 
 //FIN METODO CONSULTAR DETALLES PEDIDO
+
+const cerrarPopup = () => {
+    $('body').css('overflow', 'auto ');
+    $('#popup').css('display', 'none');
+}
 
 //METODO DE VALIDACION DE FORMULARIOS
 //VALIDAR CONTACTO
