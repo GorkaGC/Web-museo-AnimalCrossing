@@ -882,6 +882,7 @@ footer .contenido .links ul li span:hover {
   background-color: white;
   padding: 10px;
   border-radius: 10px;
+  cursor: pointer;
 }
 .user-full .user-content .user-info-block .user-orders-table th,
 .user-full .user-content .user-info-block .user-orders-table tr,
@@ -910,6 +911,7 @@ footer .contenido .links ul li span:hover {
 }
 .user-full .user-content .user-info-block .user-orders-table table img {
   width: 50%;
+  cursor: pointer;
 }
 
 .tienda {

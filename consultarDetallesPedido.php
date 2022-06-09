@@ -2,16 +2,9 @@
 
 require 'order.php';
 
-$server = "localhost";
-$bd = "animalcrossing";
-//$user = "root";
-//$pass = "";
-//$user = "Gorka";
-//$pass = "2d4wmi1";
-$user = "user";
-$pass = "pass";
+include 'credenciales.php';
 
-$conexion = mysqli_connect($server, $user, $pass,$bd);
+$conexion = mysqli_connect($servername, $username, $password,$database);
 $idPedido = $_GET['idPedido'];
 //$sql = "SELECT `ORDER_ID`, `ITEM_ID`, `ITEM_QUANTITY`, `DETAIL_UNIT_PRICE` FROM details WHERE ORDER_ID = '$idPedido'";
 //$sql = "SELECT `ORDER_ID`, d.`ITEM_ID`, `ITEM_QUANTITY`, `DETAIL_UNIT_PRICE`, `ITEM_DESCRIPTION` FROM item i, details d WHERE d.ITEM_ID = $idPedido;";
