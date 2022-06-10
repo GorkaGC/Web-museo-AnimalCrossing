@@ -1,3 +1,16 @@
+//COLORES      ¡
+$amarillo-huevo2:  #fdd10a;
+$marron-palido2: #bc9c10;
+$marron-palido: #9e8208;
+$amarillo-huevo: #ffc822;
+$marron-oscuro:#834b16; 
+$marron-brillante: #e6d58f;
+$azul-marino: #82d7ad;
+$amarillo-bordes: #bd9d0f;
+$amarillo-fondo-texto:#fdf09f;
+$azul-verdoso: #9dffb0;
+
+
 * {
     //RESETEAR VALORES POR DEFECTO
     margin: 0;
@@ -38,7 +51,7 @@
 
 /* HANDLE */
 ::-webkit-scrollbar-thumb {
-    background: #bc9c10;
+    background: $marron-palido2;
     border-radius: 10px;
 }
 
@@ -50,7 +63,7 @@
 ////////////////////////////////////////////////////
 
 header {
-    background-color: #82d7ad;
+    background-color: $azul-marino;
 
     .navbar {
         display: flex;
@@ -87,17 +100,17 @@ header {
             }
 
             .sign-up {
-                color: #834b16;
-                background-color: #fdd10a;
-                border: 2px solid #bc9c10;
+                color: $marron-oscuro;
+                background-color: $amarillo-huevo2;
+                border: 2px solid $marron-palido2;
                 border-radius: 2.3em;
                 font-family: "Arvo", sans-serif;
                 padding: 6px;
                 font-size: 1em;
 
                 &:hover {
-                    background-color: #9e8208;
-                    color: #ffc822;
+                    background-color: marron-palido;
+                    color: $amarillo-huevo;
                     transform: none;
                 }
             }
@@ -139,7 +152,7 @@ header {
         background-position: center center;
 
         h1 {
-            color: #846323;
+            color: $marron-oscuro;
             text-align: center;
         }
 
@@ -167,9 +180,9 @@ header {
                 margin-bottom: 10px;
 
                 .titulo {
-                    border: 4px solid #fdd10a;
+                    border: 4px solid $amarillo-huevo2;
                     background-color: #7cdfff;
-                    color: #834b16;
+                    color: $marron-oscuro;
                     font-weight: 700;
                 }
 
@@ -177,7 +190,7 @@ header {
                     width: 5em;
                     margin-bottom: 4 px;
                     border-radius: 2.3em;
-                    border: 4px solid #fdd10a;
+                    border: 4px solid $amarillo-huevo2;
                     margin-right: 15px;
                 }
 
@@ -191,9 +204,9 @@ header {
             .entrada-texto {
                 font-size: 1.2em;
                 font-family: "Arvo", serif;
-                color: #834b16;
-                background-color: #fdf09f;
-                border: 2px solid #bc9c10;
+                color: $marron-oscuro;
+                background-color: $amarillo-fondo-texto;
+                border: 2px solid $marron-palido2;
                 box-shadow: 5px 5px 10px 4px rgba(0, 0, 0, 0.59);
                 padding: 10px;
                 border-radius: 15px;
@@ -230,7 +243,7 @@ footer {
             .contacto {
                 position: relative;
                 font-family: "Arvo", serif;
-                background-color: #fdd10a;
+                background-color: $amarillo-huevo2;
                 justify-content: center;
                 align-items: center;
                 padding: 14px 75px;
@@ -244,7 +257,7 @@ footer {
 
                 a {
                     text-decoration: none;
-                    color: #834b16;
+                    color: $marron-oscuro;
                     font-family: "Arvo", sans-serif;
                     font-weight: 700;
                 }
@@ -296,7 +309,7 @@ footer {
                     list-style-type: none;
 
                     span {
-                        color: #fdd10a;
+                        color: $amarillo-huevo2;
                     }
 
                     span:hover {
@@ -313,7 +326,7 @@ footer {
 //PAGINA CONTACTO
 
 .contacto-full {
-    background-color: #e6d58f;
+    background-color: $marron-brillante;;
     background-image: url(media/footer1.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -337,7 +350,7 @@ footer {
                 margin-bottom: 15px;
                 font-size: 3.5vw;
                 text-align: center;
-                color: #834b16;
+                color: $marron-oscuro;
             }
 
             .who-content {
@@ -345,7 +358,7 @@ footer {
                 padding: 10px;
                 background-image: url(media/contact-who.jpg);
                 border-radius: 15px;
-                border: 2px solid #bd9d0f;
+                border: 2px solid $amarillo-bordes;
                 flex-direction: column;
                 align-items: center;
                 width: 50%;
@@ -354,7 +367,7 @@ footer {
                 animation: fadeInAnimation ease 3s;
 
                 img {
-                    border: 4px solid #bd9d0f;
+                    border: 4px solid $amarillo-bordes;
                     border-radius: 15px;
                     width: 100%;
                     max-width: 250px;
@@ -364,7 +377,7 @@ footer {
 
                 .who-text {
                     font-family: "Arvo", sans-serif;
-                    color: #834b16;
+                    color: $marron-oscuro;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
@@ -379,9 +392,9 @@ footer {
                     p {
                         text-align: justify;
                         padding: 15px;
-                        color: #834b16;
-                        background-color: #fdd10a;
-                        border: 4px solid #bd9d0f;
+                        color: $marron-oscuro;
+                        background-color: $amarillo-huevo2;
+                        border: 4px solid $amarillo-bordes;
                         width: 85%;
                         font-weight: 700;
                         border-radius: 0px 15px 15px 15px;
@@ -419,13 +432,13 @@ footer {
                     .inputs {
                         width: 65%;
                         height: 40px;
-                        color: #834b16;
-                        border: 4px solid #bd9d0f;
+                        color: $marron-oscuro;
+                        border: 4px solid $amarillo-bordes;
                         border-radius: 10px;
                         font-family: "Arvo", sans-serif;
                         font-weight: 700;
                         font-size: 1em;
-                        background-color: #e6d58f;
+                        background-color: $marron-brillante;;
                         padding: 15px;
 
                         &:focus {
@@ -437,12 +450,12 @@ footer {
                         width: 65%;
                         height: 100px;
                         font-size: 1em;
-                        color: #834b16;
-                        border: 4px solid #bd9d0f;
+                        color: $marron-oscuro;
+                        border: 4px solid $amarillo-bordes;
                         font-family: "Arvo", sans-serif;
                         font-weight: 700;
                         border-radius: 10px;
-                        background-color: #e6d58f;
+                        background-color: $marron-brillante;;
                         padding: 15px;
 
                         &:focus {
@@ -451,11 +464,11 @@ footer {
                     }
 
                     .labels {
-                        color: #834b16;
-                        background-color: #fdd10a;
+                        color: $marron-oscuro;
+                        background-color: $amarillo-huevo2;
                         padding: 6px;
                         border-radius: 15px;
-                        border: 4px solid #bd9d0f;
+                        border: 4px solid $amarillo-bordes;
                         margin-top: 15px;
                         font-family: "Arvo", sans-serif;
                         font-weight: 700;
@@ -463,19 +476,19 @@ footer {
                     }
 
                     #sub {
-                        background-color: #fdd10a;
+                        background-color: $amarillo-huevo2;
                         border-radius: 15px;
                         font-size: 1em;
-                        color: #834b16;
-                        border: 4px solid #bd9d0f;
+                        color: $marron-oscuro;
+                        border: 4px solid $amarillo-bordes;
                         height: 40px;
                         font-family: "Arvo", sans-serif;
                         font-weight: 700;
                         width: 25%;
 
                         &:hover {
-                            background-color: #9e8208;
-                            color: #ffc822;
+                            background-color: $marron-palido;
+                            color: $amarillo-huevo;
                             cursor: pointer;
                         }
                     }
@@ -485,7 +498,7 @@ footer {
                         height: 0;
                         border-left: 20px solid transparent;
                         border-right: 20px solid transparent;
-                        border-top: 12px solid #bd9d0f;
+                        border-top: 12px solid $amarillo-bordes;
                     }
                 }
             }
@@ -494,7 +507,7 @@ footer {
                 margin-bottom: 15px;
                 font-size: 3.5vw;
                 text-align: center;
-                color: #834b16;
+                color: $marron-oscuro;
             }
         }
     }
@@ -517,7 +530,7 @@ footer {
 //PAGINA JUEGOS
 
 .games-full {
-    background-color: #e6d58f;
+    background-color: $marron-brillante;;
     background-image: url(media/bg-games.png);
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -527,7 +540,7 @@ footer {
     .games-content {
         h1 {
             font-family: "Arvo", sans-serif;
-            color: #834b16;
+            color: $marron-oscuro;
             text-align: center;
             margin: 30px auto;
             text-decoration: underline;
@@ -586,13 +599,13 @@ footer {
             }
 
             .block-game-description {
-                background-color: #fdf09f;
-                border: 2px solid #bc9c10;
+                background-color: $amarillo-fondo-texto;
+                border: 2px solid $marron-palido2;
                 width: 70%;
                 padding: 2%;
                 border-radius: 10px;
                 font-family: "Arvo", serif;
-                color: #834b16;
+                color: $marron-oscuro;
                 //text-align: justify;
                 box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
                     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -631,7 +644,7 @@ footer {
                 .game-arg-row {
                     padding: 15px;
                     //border: 2px solid #bc9c10;
-                    background-color: #9dffb0;
+                    background-color: $azul-verdoso;
                     border-radius: 5px;
                     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
                     text-align: justify;
@@ -691,7 +704,7 @@ footer {
                         overflow: hidden;
                         //background-color: white;
                         border-radius: 3px;
-                        background-color: #9dffb0;
+                        background-color: $azul-verdoso;
                         box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
                     }
 
@@ -744,7 +757,7 @@ footer {
             font-family: "Arvo", sans-serif;
             margin-top: 25px;
             margin-bottom: 25px;
-            color: #834b16;
+            color: $marron-oscuro;
             text-decoration: underline;
         }
 
@@ -765,13 +778,13 @@ footer {
 
             input {
                 margin-bottom: 25px;
-                color: #834b16;
-                border: 4px solid #bd9d0f;
+                color: $marron-oscuro;
+                border: 4px solid $amarillo-bordes;
                 border-radius: 10px;
                 font-family: "Arvo", sans-serif;
                 font-size: 1em;
                 margin-bottom: 40px;
-                background-color: #e6d58f;
+                background-color: $marron-brillante;
                 padding: 4px;
                 width: 100%;
 
@@ -779,8 +792,8 @@ footer {
                     width: 55%;
 
                     &:hover {
-                        background-color: #9e8208;
-                        color: #ffc822;
+                        background-color: $marron-palido;
+                        color: $amarillo-huevo;
                         cursor: pointer;
                     }
                 }
@@ -801,7 +814,7 @@ footer {
             }
 
             label {
-                color: #834b16;
+                color: $marron-oscuro;
                 font-weight: 700;
             }
         }
@@ -828,7 +841,7 @@ footer {
             font-family: "Arvo", sans-serif;
             margin-top: 25px;
             margin-bottom: 25px;
-            color: #834b16;
+            color: $marron-oscuro;
             text-decoration: underline;
         }
 
@@ -849,13 +862,13 @@ footer {
 
             input {
                 margin-bottom: 25px;
-                color: #834b16;
-                border: 4px solid #bd9d0f;
+                color: $marron-oscuro;
+                border: 4px solid $amarillo-bordes;
                 border-radius: 10px;
                 font-family: "Arvo", sans-serif;
                 font-size: 1em;
                 margin-bottom: 40px;
-                background-color: #e6d58f;
+                background-color: $marron-brillante;
                 padding: 4px;
                 width: 100%;
 
@@ -863,8 +876,8 @@ footer {
                     width: 55%;
 
                     &:hover {
-                        background-color: #9e8208;
-                        color: #ffc822;
+                        background-color: $marron-palido;
+                        color: $amarillo-huevo;
                         cursor: pointer;
                     }
                 }
@@ -890,7 +903,7 @@ footer {
             }
 
             label {
-                color: #834b16;
+                color: $marron-oscuro;
                 font-weight: 700;
             }
         }
@@ -924,7 +937,7 @@ footer {
 
             h1 {
                 font-size: 2.5em;
-                color: #834b16;
+                color: $marron-oscuro;
 
                 span {
                     color: #fff563;
@@ -935,7 +948,7 @@ footer {
                 color: white;
 
                 a {
-                    color: #9dffb0;
+                    color: $azul-verdoso;
                 }
             }
         }
@@ -992,7 +1005,7 @@ footer {
                 background-color: #fffa95;
                 padding: 10px;
                 font-family: "Arvo", sans-serif;
-                color: #834b16;
+                color: $marron-oscuro;
                 box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
                 margin-bottom: 10px;
 
@@ -1010,7 +1023,7 @@ footer {
 
                         .user-info-title {
                             font-size: 1.2em;
-                            color: #834b16;
+                            color: $marron-oscuro;
                         }
 
                         .user-info-desc {
@@ -1031,7 +1044,7 @@ footer {
                         font-family: "Arvo", sans-serif;
                     }
                     input[type="submit"] {
-                        color: #834b16;
+                        color: $marron-oscuro;
                         align-self: flex-end;
                         cursor: pointer;
                     }
@@ -1131,7 +1144,7 @@ footer {
 
     #producto {
         font-family: "Arvo", sans-serif;
-        color: #834b16;
+        color: $marron-oscuro;
         text-decoration: underline;
     }
 
@@ -1150,12 +1163,12 @@ footer {
                 height: 3em;
                 font-size: 1em;
                 align-items: center;
-                color: #834b16;
-                border: 4px solid #bd9d0f;
+                color: $marron-oscuro;
+                border: 4px solid $amarillo-bordes;
                 border-radius: 10px;
                 font-family: "Arvo", sans-serif;
                 font-weight: 700;
-                background-color: #e6d58f;
+                background-color: $marron-brillante;
                 padding: 6px;
 
                 &:focus {
@@ -1179,9 +1192,9 @@ footer {
                 .contenido-texto {
                     display: flex;
                     margin-top: 15px;
-                    background-color: #9dffb0;
+                    background-color: $azul-verdoso;
                     padding: 5px;
-                    border: 4px solid #bd9d0f;
+                    border: 4px solid $amarillo-bordes;
                     border-radius: 10px;
                     justify-content: space-between;
 
@@ -1223,7 +1236,7 @@ footer {
                     height: 14em;
 
                     #img_producto {
-                        border: 4px solid #bd9d0f;
+                        border: 4px solid $amarillo-bordes;
                         border-radius: 10px;
                         width: 14.4em;
                         height: 14em;
@@ -1297,10 +1310,10 @@ footer {
                 //width: 2.5em;
                 padding: 10px;
                 font-size: 1.8em;
-                color: #834b16;
+                color: $marron-oscuro;
                 border-radius: 15px;
-                background-color: #fdd10a;
-                border: 2px solid #bc9c10;
+                background-color: $amarillo-huevo2;
+                border: 2px solid $marron-palido2;
                 cursor: pointer;
 
                 .closeIcon {
@@ -1393,7 +1406,7 @@ footer {
                         -ms-transform: translateY(-50%);
                         transform: translateY(-50%);
                         border-radius: 5px;
-                        box-shadow: 0 0 1em rgba(#9dffb0, 0.2), inset 0 0 1px rgba(black, 0.8);
+                        box-shadow: 0 0 1em rgba($azul-verdoso, 0.2), inset 0 0 1px rgba(black, 0.8);
                         background-color: lighten(#1fbded, 20%);
                         width: 100%;
 
@@ -1585,10 +1598,10 @@ footer {
                 padding: 5px;
                 font-size: 1.8em;
                 //width: 2.5em;
-                color: #834b16;
+                color: $marron-oscuro;
                 border-radius: 15px;
-                background-color: #fdd10a;
-                border: 2px solid #bc9c10;
+                background-color: $amarillo-huevo2;
+                border: 2px solid $marron-palido2;
                 cursor: pointer;
 
                 .closeIcon {

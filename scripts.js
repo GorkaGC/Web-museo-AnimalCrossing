@@ -233,5 +233,17 @@ $(function () {
     });
 });
 
-
-
+//GUIÑO DE TOM NOK
+function cambioTomNok() {
+  var tom = $('#tom');
+    console.log(tom.val());
+  tom.mousedown(function(){
+    console.log("OJO CERRADO");
+    tom.attr('src', 'media/icon_main2.png');
+  })
+ tom.mouseup(function(){
+    console.log("OJO ABIERTO");
+    tom.attr('src', 'media/icon_main1.png');
+  })
+}
+cambioTomNok();
