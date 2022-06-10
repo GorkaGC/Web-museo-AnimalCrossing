@@ -18,7 +18,7 @@ if (!isset($_SESSION)) {
 <header class="full-container">
     <div class="navbar container">
         <div class="icon-main">
-            <img src="media/icon_main1.png" alt="">
+            <img id="tom" src="media/icon_main1.png" alt="">
         </div>
         <div class="nav-links">
             <a class="menuItem" href="control.php?f=index" title="Historia">
