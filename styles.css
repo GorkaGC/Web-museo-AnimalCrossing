@@ -228,7 +228,7 @@ footer .contenido .social a:last-of-type {
 }
 footer .contenido .social a:hover {
   transform: scale(1.2);
-  filter: drop-shadow(0px 0px 2px #000000b9);
+  filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.7254901961));
 }
 footer .contenido .links {
   margin-top: 35px;
@@ -514,7 +514,7 @@ footer .contenido .links ul li span:hover {
   padding: 15px;
   background-color: #9dffb0;
   border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, #d1d5db 0px 0px 0px 1px inset;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
   text-align: justify;
 }
 .games-full .games-content .games-pag .block-game-description .game-arg-row:last-of-type {
@@ -644,11 +644,11 @@ footer .contenido .links ul li span:hover {
   outline: none !important;
 }
 .login .log .log-form #log-name-error {
-  color: #d82f2f;
+  color: rgb(216, 47, 47);
   margin-bottom: 15px;
 }
 .login .log .log-form #log-pass-error {
-  color: #d82f2f;
+  color: rgb(216, 47, 47);
   margin-bottom: 15px;
 }
 .login .log .log-form label {
@@ -713,15 +713,15 @@ footer .contenido .links ul li span:hover {
   outline: none !important;
 }
 .register .reg .reg-form #userName-error {
-  color: #d82f2f;
+  color: rgb(216, 47, 47);
   margin-bottom: 15px;
 }
 .register .reg .reg-form #userPass-error {
-  color: #d82f2f;
+  color: rgb(216, 47, 47);
   margin-bottom: 15px;
 }
 .register .reg .reg-form #userMail-error {
-  color: #d82f2f;
+  color: rgb(216, 47, 47);
   margin-bottom: 15px;
 }
 .register .reg .reg-form label {
@@ -801,7 +801,7 @@ footer .contenido .links ul li span:hover {
 }
 .user-full .user-content .user-options-block .user-option:hover {
   transform: scale(1.1);
-  filter: drop-shadow(0px 0px 2px #000000b9);
+  filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.7254901961));
 }
 .user-full .user-content .user-info-block {
   padding: 2%;
@@ -863,7 +863,7 @@ footer .contenido .links ul li span:hover {
   align-self: center;
 }
 .user-full .user-content .user-info-block .user-info.delete-user-form input[type=submit]:hover {
-  background-color: #e92929;
+  background-color: rgb(233, 41, 41);
   color: white;
 }
 .user-full .user-content .user-info-block .popup {
@@ -1012,15 +1012,15 @@ footer .contenido .links ul li span:hover {
   justify-content: space-between;
 }
 .tienda .tienda-content .tienda-products .caja-producto .contenido-texto h3 {
-  color: #f85a5a;
+  color: rgb(248, 90, 90);
   margin-bottom: 15px;
 }
 .tienda .tienda-content .tienda-products .caja-producto .contenido-texto p {
-  color: #535353;
+  color: rgb(83, 83, 83);
   font-weight: 700;
 }
 .tienda .tienda-content .tienda-products .caja-producto .contenido-texto p span {
-  color: #3dbc3d;
+  color: rgb(61, 188, 61);
 }
 .tienda .tienda-content .tienda-products .caja-producto .contenido-texto #precio {
   font-size: 1.5em;
@@ -1148,7 +1148,7 @@ footer .contenido .links ul li span:hover {
 }
 @media screen and (max-width: 800px) {
   header .navbar .nav-links {
-    background-color: #82d7adc3;
+    background-color: rgba(130, 215, 173, 0.7647058824);
     flex-direction: column;
     position: fixed;
     transform: translateY(-100%);
@@ -1303,6 +1303,9 @@ footer .contenido .links ul li span:hover {
   .user-full .user-content .user-options-block .user-option label {
     font-size: 1em;
   }
+  .user-full .user-content .user-info-block .user-info ol {
+    flex-direction: column;
+  }
   .user-full .user-content .user-info-block .user-orders-table {
     font-size: 0.9em;
   }
@@ -1371,7 +1374,7 @@ footer .contenido .links ul li span:hover {
 }
 @media screen and (max-width: 400px) {
   header .navbar .nav-links {
-    background-color: #82d7adc3;
+    background-color: rgba(130, 215, 173, 0.7647058824);
     flex-direction: column;
     position: fixed;
     transform: translateY(-100%);
@@ -1448,6 +1451,9 @@ footer .contenido .links ul li span:hover {
 
   .user-full .user-content .user-options-block .user-option label {
     font-size: 0.8em;
+  }
+  .user-full .user-content .user-info-block .user-info ol {
+    flex-direction: column;
   }
   .user-full .user-content .user-info-block .user-orders-table {
     font-size: 0.9em;
