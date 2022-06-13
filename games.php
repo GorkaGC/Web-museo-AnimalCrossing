@@ -35,26 +35,24 @@ if (empty($_SESSION['listGames'])) {
             <h1>Juegos</h1>
             <div class="container games-pag">
                 <div class="games-list">
-                    
                     <?php 
                 $cont = sizeof($listGames);
                 for ($i=0; $i < $cont; $i++) { 
                     ?>
-                    <div class="img-container" onclick="getGameInfo('<?php echo $listGames[$i]-> getIdGame(); ?>')">
+                    <div class="img-container" onclick="getGameInfoOnClick('<?php echo $listGames[$i]-> getIdGame(); ?>')">
                         <img src="<?php echo $listGames[$i]-> getUrlImg(); ?>" alt="" id="<?php echo $i ?>" />
                     </div>
                     <?php } ?>
                     <label class="custom-select">
-                    <select name="games" id="">
+                    <select name="games" id="juegoSeleccionado" onchange="getGameInfoOnChange()">
                         <?php
                     for ($i=0; $i < $cont; $i++) { 
                     ?>
-                    <option onclick="getGameInfo('<?php echo $listGames[$i]-> getIdGame(); ?>')" value="<?php echo $listGames[$i]-> getIdGame(); ?>"><?php echo $listGames[$i]->getTitleGame(); ?></option>
+                    <option value="<?php echo $listGames[$i]-> getIdGame(); ?>"><?php echo $listGames[$i]->getTitleGame(); ?></option>
                     <?php } ?>
                     </select>
                     </label>
                 </div>
-
 
 
                 <div class="block-game-description">

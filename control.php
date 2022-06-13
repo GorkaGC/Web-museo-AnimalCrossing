@@ -73,6 +73,7 @@ switch ($urlDestino) {
         $usuarioInsertado = $conn->insertUser($u);
 
         if($usuarioInsertado) {
+            $_SESSION['optionLogin'] = "login";
             header("Location: login.php");
         } else {
             echo "Error";
@@ -139,4 +140,49 @@ switch ($urlDestino) {
         }
 
         break;
+
+        case "iniciarCompra":
+            if (empty($_SESSION['userLoged'])) {
+               header('Location: store.php?error=userNotRegistered');
+            } else{
+                $_SESSION['cesta'] = $conn->returnProductByID($_GET['idProducto']);
+                $_SESSION['faseCompra'] = "infoCompra";
+                header('Location: procesoCompra.php');
+            }
+            
+            break;
+
+
+        case "finalizarCompra":
+            $item_quantity = $_POST['item_quantity'];
+            
+            empty($_POST['userLastname']) ? $userLastName = $_SESSION['user']->getUserLastname() : $userLastName = $_POST['userLastname'];
+            empty($_POST['userAddress']) ? $userAddress = $_SESSION['user']->getUserAddress() : $userAddress = $_POST['userAddress'];
+
+            if (!empty($_POST['userLastname']) || !empty($_POST['userAddress'])) {
+                $u = new User($_SESSION['user']->getUserName(), $_SESSION['user']->getUserPass(), $_SESSION['user']->getUserMail());
+                $u->createUser($_SESSION['user']->getUserName(), $_SESSION['user']->getUserPass(), $_SESSION['user']->getUserMail(), $userAddress, $userLastName);
+                $u->setUserID($_SESSION['user']->getUserID());
+                $usuarioModificado = $conn->alterUserTable($u);
+                $_SESSION['user'] = $u;
+            } 
+
+            $pedidoInsertado = $conn->insertOrder($_SESSION['user'], $_SESSION['cesta'], $item_quantity);
+            
+            $pedidoInsertado ? header('Location: control.php?f=userInterfacecheckUserOrders') : header('Location: store.php?&error=errorOrder');
+
+            break;
+
+
+        case "deleteUserAccount":
+            $usuarioEliminado = $conn->deleteUserAccount($_SESSION['user']);
+            $_SESSION['userLoged'] = false;
+            unset($_SESSION['user']); 
+            header('Location: control.php?f=index');
+            break;
+
+
+
  }
+
+

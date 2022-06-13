@@ -125,18 +125,12 @@ class ConectaBD
     public function insertUser(User $u) {
         $previousCheck = $this->conn->query("Select * from user where USER_NAME = '" . $u->getUserName() . "' OR USER_MAIL = '" . $u->getUserMail() . "'");
         if ($previousCheck->num_rows == 1) {
-            echo "ese usuario existe";
-            die();
             return false;
         } else {
             $sql = "INSERT INTO user (USER_NAME, USER_PASS, USER_MAIL) VALUES ('" . $u->getUserName() . "', '" . $u->getUserPass() . "', '" . $u->getUserMail() . "')";
             if ($this->conn->query($sql)) {
-                echo "usuario insertado";
-                die();
                 return true;
             } else {
-                echo "usuario no insertado";
-                die();
                 return false;
             }
         }
@@ -184,11 +178,71 @@ class ConectaBD
         $products = array();
 
         while ($row = $result->fetch_assoc()){
-            $producto = new productos($row['ITEM_IMG'],$row['ITEM_DESCRIPTION'],$row['UNIT_PRICE']);
+            $producto = new productos($row['ITEM_ID'], $row['ITEM_IMG'], $row['ITEM_DESCRIPTION'],$row['UNIT_PRICE']);
             $products[] = $producto;
         }
         
         return $products;
+    }
+
+
+    public function returnProductByID($id) {
+        $sql = "SELECT * FROM item WHERE ITEM_ID = $id";
+        $result  = $this->conn->query($sql);
+        $row = $result->fetch_assoc();
+
+        $p = new productos($row['ITEM_ID'], $row['ITEM_IMG'], $row['ITEM_DESCRIPTION'],$row['UNIT_PRICE']);
+
+        return $p;
+    }
+
+    public function returnLastOrderID() {
+        $sql = "SELECT ORDER_ID FROM `orders` ORDER BY ORDER_ID DESC";
+        $result  = $this->conn->query($sql);
+        if ($result->num_rows == 0) {
+            $ultimoId = 1;
+        } else {
+            $row = $result->fetch_assoc();
+            $ultimoId = $row['ORDER_ID'];
+        }
+        return $ultimoId;
+
+        
+    }
+
+    public function insertOrder(User $u, productos $i, $c) {
+        $now = date_create()->format('Y-m-d');
+        $orderID = $this->returnLastOrderID()+1;
+
+        $sql = "INSERT INTO `orders` (`ORDER_ID`, `CUSTOMER_ID`, `ORDER_DATE`, `STATUS`) VALUES ('$orderID', '".$u->getUserID()."', '$now', 'EN PREPARACIÓN');";
+        
+        $result  = $this->conn->query($sql);
+
+        $resultDetail = $this->insertDetails($i, $c, $orderID);
+
+        $resultDetail ? $result = true : $result = false;
+
+        if (!$result) {
+            $sql = "DELETE FROM `orders` WHERE `orders`.`ORDER_ID` = $orderID";
+            $this->conn->query($sql);
+        }
+        
+        return $result;
+    }
+
+    public function insertDetails(productos $i, $c, $orderID) {
+        
+        $sql = "INSERT INTO `details` (`ORDER_ID`, `ITEM_ID`, `ITEM_QUANTITY`, `DETAIL_UNIT_PRICE`) VALUES ('$orderID', '".$i->getIdProducto()."', '$c', '".$i->getPrecio()."')";
+
+        $result = $this->conn->query($sql);
+        return $result;
+    }
+
+    public function deleteUserAccount(User $u) {
+        $sql = "DELETE FROM `user` WHERE `user`.`USER_ID` = '".$u->getUserID()."'";
+        $result = $this->conn->query($sql);
+
+        return $result;
     }
 
 }

@@ -10,16 +10,15 @@
     ?>
     <title>Home</title>
 
-    <style>
-
-    </style>
-
 </head>
 
 <body>
     <?php include "nav.php"; ?>
 
     <div class="user-full full-container">
+
+        <?php if (!empty($_SESSION['userLoged'])) {
+        ?>
         <div class="user-banner">
             <div class="user-banner-text">
                 <h1>Hola, <span><?php echo $_SESSION['user']->getUserName() ?></span>
@@ -64,10 +63,24 @@
             ?>
             </div>
         </div>
-
-
-
-
+        <?php
+    } else {
+        ?>
+        <div class="user-content full-container">
+            <div class="user-info-block container">
+                <div class="popup-bloqueo">
+                    <div class="mensaje-bloqueo">
+                        <div class="mensaje-contenido">
+                            Para acceder a esta área debe identificarse correctamente. <br>
+                            Identifíquese iniciando sesión <a href="control.php?f=login">aquí</a>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php
+    }
+    ?>
         <?php include "footer.php"; ?>
 </body>
 

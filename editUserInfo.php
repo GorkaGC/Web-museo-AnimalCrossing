@@ -33,3 +33,9 @@
         <input type="submit" value="Guardar">
     </form>
 </div>
+
+<div class="user-info delete-user-form">
+<form action="control.php?f=deleteUserAccount" method="post">
+        <input type="submit" value="Borrar mi cuenta">
+    </form>
+</div>
