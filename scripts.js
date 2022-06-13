@@ -30,19 +30,47 @@ function volumenBajo() {
     document.getElementById("bg_music_index").volume /= 6;
 }
 
+//GUIÑO DE TOM NOK
+function cambioTomNok() {
+    var tom = $('#tom');
+    console.log(tom.val());
+    tom.mousedown(function () {
+        console.log("OJO CERRADO");
+        tom.attr('src', 'media/icon_main2.png');
+    })
+    tom.mouseup(function () {
+        console.log("OJO ABIERTO");
+        tom.attr('src', 'media/icon_main1.png');
+    })
+}
+cambioTomNok();
+
+
+function actualizarTotal() {
+
+    var item_quantity = $('#item_quantity').val();
+    var item_price = $('#item_price').html();
+    let ip = parseFloat(item_price);
+
+    var total = $('#item_quantity').val() * $('#item_price').html();
+    console.log(total);
+    
+    document.getElementById('totalOrder').innerHTML = (Math.round(total * 100) / 100).toFixed(2);
+
+    
+}
+
+
 //FIN DE JAVASCRIPT
 
 
 //JQUERY 
 
-const userInfo = () => {
-
-}
-
 //METODO PARA SACAR INFORMACION EN LA PAGINA JUEGOS
-const getGameInfo = (idGame) => {
+const getGameInfoOnClick = (idGame) => {
     // mediante AJAX se hará una llamada al archivo seleccionarJuego.php y le pasaremos
     // por parámetro el id de la imagen que se ha clicado
+    console.log(idGame);
     $.ajax({
         url: "seleccionarJuego.php?idGame=" + idGame, // url de la llamada
         type: "GET", // tipo GET para que devuelva los datos
@@ -57,6 +85,32 @@ const getGameInfo = (idGame) => {
             getCuriosities(idGame);
             getNews(idGame);
             getPlatforms(idGame);
+        });
+    }).fail((error) => { // si la llamada falla
+        console.log(error, "fail"); // muestra por consola el error
+    });
+}
+
+const getGameInfoOnChange = () => {
+    // mediante AJAX se hará una llamada al archivo seleccionarJuego.php y le pasaremos
+    // por parámetro el id de la imagen que se ha clicado
+    var juegoSeleccionado = $('#juegoSeleccionado');
+    var selectedValue = $('option:selected', juegoSeleccionado).val();
+    console.log(selectedValue);
+    $.ajax({
+        url: "seleccionarJuego.php?idGame=" + selectedValue, // url de la llamada
+        type: "GET", // tipo GET para que devuelva los datos
+        dataType: "json" // el tipo de dato que devolverá será en formato JSON para poder tratarlo con JavaScript
+    }).done((response) => { // si la llamada es correcta
+        $(response).each((_i, element) => { // recorremos la respuesta y vaciamos los divs correspondientes con el contenido anterior para después añadir los datos
+            $('#id-title-game').empty().append('<h2>' + element.TITLE_GAME + '</h2>');
+            $('#id-release-date').empty().append(element.RELEASE_DATE);
+            $('#id-trailer-game-name').empty().append(element.TITLE_GAME);
+            $('#id-game-description').empty().append(element.GAME_DESC);
+            $('#id-game-trailer').attr('src', element.URL_TRAILER);
+            getCuriosities(selectedValue);
+            getNews(selectedValue);
+            getPlatforms(selectedValue);
         });
     }).fail((error) => { // si la llamada falla
         console.log(error, "fail"); // muestra por consola el error
@@ -122,14 +176,13 @@ const getPlatforms = (idGame) => {
 //METODO CONSULTAR DETALLES PEDIDO
 
 const getOrderDetails = (idPedido) => {
-    
     $.ajax({
-        url: "consultarDetallesPedido.php?idPedido=" + idPedido, 
-        type: "GET", 
-        dataType: "json" 
+        url: "consultarDetallesPedido.php?idPedido=" + idPedido,
+        type: "GET",
+        dataType: "json"
     }).done((response) => {
-        
-        $(response).each((_i, element) => { 
+
+        $(response).each((_i, element) => {
             //$('#id-title-game').empty().append('<h2>' + element.TITLE_GAME + '</h2>');
             console.log(response);
             $('#popup').css('display', 'block');
@@ -144,8 +197,8 @@ const getOrderDetails = (idPedido) => {
             $('#order_status').empty().append(element.STATUS);
             //alert("Nº PEDIDO: " + element.ORDER_ID + "\nPRODUCTO: " + element.ITEM_DESCRIPTION);
         });
-    }).fail((error) => { 
-        console.log(error, "fail"); 
+    }).fail((error) => {
+        console.log(error, "fail");
     });
 }
 
@@ -161,21 +214,21 @@ const cerrarPopup = () => {
 $(function () {
     $('#form-contact').validate({
         rules: {
-           nombre: "required",
-           correo:{
-            required: true,
-            email: true
-           }, 
-           mensaje: "required",
-           politica: "required"
+            nombre: "required",
+            correo: {
+                required: true,
+                email: true
+            },
+            mensaje: "required",
+            politica: "required"
         },
         messages: {
             nombre: "*Nombre obligatorio",
-            correo:{
-                required:"*Correo obligatorio",
-                email:"*Formato incorrecto"
+            correo: {
+                required: "*Correo obligatorio",
+                email: "*Formato incorrecto"
             },
-            mensaje:"*Mensaje obligatorio", 
+            mensaje: "*Mensaje obligatorio",
             politica: "*",
         }
     });
@@ -233,17 +286,25 @@ $(function () {
     });
 });
 
-//GUIÑO DE TOM NOK
-function cambioTomNok() {
-  var tom = $('#tom');
-    console.log(tom.val());
-  tom.mousedown(function(){
-    console.log("OJO CERRADO");
-    tom.attr('src', 'media/icon_main2.png');
-  })
- tom.mouseup(function(){
-    console.log("OJO ABIERTO");
-    tom.attr('src', 'media/icon_main1.png');
-  })
+
+
+
+//PROCESO COMPRA
+
+const actualizarMetodoPago = () => {
+    var metodoSeleccionado = $('#metodoPago');
+    var selectedValue = $('option:selected', metodoSeleccionado).val();
+    
+    switch (selectedValue) {
+        case 'contrareembolso':
+            $('#metodoPagoC').css('display', 'block');
+            $('#metodoPagoT').css('display', 'none');
+            break;
+
+        case 'tarjeta':
+            $('#metodoPagoC').css('display', 'none');
+            $('#metodoPagoT').css('display', 'block');
+            break;
+    }
 }
-cambioTomNok();
+

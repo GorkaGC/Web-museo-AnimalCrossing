@@ -1,15 +1,14 @@
 //COLORES      ¡
-$amarillo-huevo2:  #fdd10a;
+$amarillo-huevo2: #fdd10a;
 $marron-palido2: #bc9c10;
 $marron-palido: #9e8208;
 $amarillo-huevo: #ffc822;
-$marron-oscuro:#834b16; 
+$marron-oscuro: #834b16;
 $marron-brillante: #e6d58f;
 $azul-marino: #82d7ad;
 $amarillo-bordes: #bd9d0f;
-$amarillo-fondo-texto:#fdf09f;
+$amarillo-fondo-texto: #fdf09f;
 $azul-verdoso: #9dffb0;
-
 
 * {
     //RESETEAR VALORES POR DEFECTO
@@ -109,7 +108,7 @@ header {
                 font-size: 1em;
 
                 &:hover {
-                    background-color: marron-palido;
+                    background-color: $marron-palido;
                     color: $amarillo-huevo;
                     transform: none;
                 }
@@ -326,7 +325,7 @@ footer {
 //PAGINA CONTACTO
 
 .contacto-full {
-    background-color: $marron-brillante;;
+    background-color: $marron-brillante;
     background-image: url(media/footer1.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -438,7 +437,7 @@ footer {
                         font-family: "Arvo", sans-serif;
                         font-weight: 700;
                         font-size: 1em;
-                        background-color: $marron-brillante;;
+                        background-color: $marron-brillante;
                         padding: 15px;
 
                         &:focus {
@@ -455,7 +454,7 @@ footer {
                         font-family: "Arvo", sans-serif;
                         font-weight: 700;
                         border-radius: 10px;
-                        background-color: $marron-brillante;;
+                        background-color: $marron-brillante;
                         padding: 15px;
 
                         &:focus {
@@ -530,7 +529,7 @@ footer {
 //PAGINA JUEGOS
 
 .games-full {
-    background-color: $marron-brillante;;
+    background-color: $marron-brillante;
     background-image: url(media/bg-games.png);
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -1042,11 +1041,29 @@ footer {
                         padding: 10px;
                         border-radius: 5px;
                         font-family: "Arvo", sans-serif;
+                        border: 1px solid #bc9c10;
                     }
                     input[type="submit"] {
                         color: $marron-oscuro;
                         align-self: flex-end;
                         cursor: pointer;
+                        background-color: #fff563;
+                    }
+                }
+
+                &.delete-user-form {
+                    background-color: transparent;
+                    border:none;
+                    box-shadow: none;
+                    justify-content: center;
+                    
+                    input[type="submit"] {
+                        align-self: center;
+                    }
+
+                    input[type="submit"]:hover {
+                        background-color: rgb(233, 41, 41);
+                        color: white;
                     }
                 }
             }
@@ -1088,6 +1105,16 @@ footer {
                         }
                     }
                 }
+            }
+
+            .popup-bloqueo {
+                padding: 5%;
+                font-size: 1.2em;
+                background-color: #f6c682;
+                margin: 10% auto;
+                border-radius: 20px;
+                font-family: "Arvo", sans-serif;
+                color: black;
             }
 
             .user-orders-table {
@@ -1150,6 +1177,20 @@ footer {
 
     .tienda-content {
         margin-top: 25px;
+
+        h1 {
+            font-family: "Arvo", sans-serif;
+            color: $marron-oscuro;
+            text-align: center;
+            margin: 30px auto;
+            text-decoration: underline;
+        }
+
+        h3 {
+            color: red;
+            font-size: 1.3em;
+            text-align: center;
+        }
 
         .barra_navegacion {
             margin-bottom: 50px;
@@ -1241,6 +1282,114 @@ footer {
                         width: 14.4em;
                         height: 14em;
                     }
+                }
+            }
+        }
+
+        .form-compra {
+            display: flex;
+            flex-direction: column;
+            //padding: 20px;
+            align-items: center;
+            margin-bottom: 10%;
+            font-family: "Arvo", sans-serif;
+
+            input[type="submit"] {
+                color: $marron-oscuro;
+                cursor: pointer;
+                font-family: "Arvo", sans-serif;
+                background-color: #fff563;
+                padding: 10px;
+                border-radius: 10px;
+                width: 50%;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+                    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            }
+
+            input {
+                font-size: 1em;
+                padding: 5px;
+                border-radius: 5px;
+                font-family: "Arvo", sans-serif;
+                border: 1px solid #bc9c10;
+            }
+
+            h3 {
+                color: $marron-oscuro;
+            }
+
+            .compra-blocks {
+                display: flex;
+                //padding: 10px;
+            }
+
+            .compra-info-block {
+                width: 50%;
+                height: fit-content;
+                background-color: #9dffb0;
+                margin: 10px;
+                padding: 10px;
+                border-radius: 5px;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+                    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+                ol {
+                    list-style-type: none;
+                    display: flex;
+                    //justify-content: space-between;
+                    flex-flow: row wrap;
+                    padding: 10px;
+
+                    li {
+                        width: 50%;
+                        font-size: 1em;
+                        padding: 2%;
+
+                        .info-title {
+                            font-size: 1.2em;
+                            color: $marron-oscuro;
+                        }
+
+                        .info-desc {
+                            color: black;
+                            padding-left: 2%;
+                        }
+                    }
+                }
+
+                select {
+                    font-size: 1em;
+                    padding: 5px;
+                    border-radius: 5px;
+                    font-family: "Arvo", sans-serif;
+                    margin: 10px;
+                    border: 1px solid #bc9c10;
+                }
+
+                p {
+                    margin: 10px;
+                }
+
+                #metodoPagoC {
+                    padding: 10px;
+                }
+
+                #metodoPagoT {
+                    display: none;
+                    padding: 10px;
+                }
+
+                .datosTarjeta {
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+
+
+                    label {
+                        padding: 10px;
+                    }
+
+
                 }
             }
         }
@@ -1508,9 +1657,7 @@ footer {
                         }
                     }
                 }
-            }
 
-            .user-info-block {
                 .user-info {
                     form {
                         ol li {
@@ -1534,9 +1681,43 @@ footer {
                         }
                     }
                 }
+
+                .popup-bloqueo {
+                    padding: 10%;
+                    font-size: 1em;
+                    background-color: #f6c682;
+                    margin: 50% auto;
+                    border-radius: 20px;
+                    font-family: "Arvo", sans-serif;
+                    color: black;
+                }
             }
         }
     }
+
+    .tienda {
+
+        .tienda-content {
+
+            .form-compra {
+                padding: 10px;
+                .compra-blocks {
+                    display: flex;
+                    flex-direction: column;
+                    //padding: 10px;
+
+                    
+                }
+                .compra-info-block {
+                    width: 100%;
+                    margin: 10px auto;
+                }
+
+                
+            }
+        }
+    }
+    
 
     footer {
         .contenido {
@@ -1641,6 +1822,37 @@ footer {
                 ul li {
                     font-size: 0.8em;
                 }
+            }
+        }
+    }
+
+    .tienda {
+
+        .tienda-content {
+
+            .form-compra {
+                padding: 10px;
+                .compra-blocks {
+                    display: flex;
+                    flex-direction: column;
+                    //padding: 10px;
+
+                    
+                }
+                .compra-info-block {
+                    width: 100%;
+                    min-width: 300px;
+                    margin: 10px auto;
+
+                    ol {
+                        flex-direction: column;
+                        li {
+                        width: 100%;
+                    }
+                }
+                }
+
+                
             }
         }
     }

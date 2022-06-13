@@ -1,12 +1,14 @@
 <?php
 
 class productos {
+    private $idProducto;
     private $img;
     private $nombre;
     private $precio;
 
 
-    public function __construct($img, $nombre,$precio){
+    public function __construct($idProducto, $img, $nombre,$precio){
+        $this->idProducto = $idProducto;
         $this->img = $img;
         $this->nombre = $nombre;
         $this->precio = $precio;
@@ -32,5 +34,25 @@ class productos {
         $this->precio = $precio;
     }
 
+
+    /**
+     * Get the value of idProducto
+     */ 
+    public function getIdProducto()
+    {
+        return $this->idProducto;
+    }
+
+    /**
+     * Set the value of idProducto
+     *
+     * @return  self
+     */ 
+    public function setIdProducto($idProducto)
+    {
+        $this->idProducto = $idProducto;
+
+        return $this;
+    }
 }
 ?>

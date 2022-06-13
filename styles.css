@@ -79,7 +79,7 @@ header .navbar .nav-links .sign-up {
   font-size: 1em;
 }
 header .navbar .nav-links .sign-up:hover {
-  background-color: marron-palido;
+  background-color: #9e8208;
   color: #ffc822;
   transform: none;
 }
@@ -228,7 +228,7 @@ footer .contenido .social a:last-of-type {
 }
 footer .contenido .social a:hover {
   transform: scale(1.2);
-  filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.7254901961));
+  filter: drop-shadow(0px 0px 2px #000000b9);
 }
 footer .contenido .links {
   margin-top: 35px;
@@ -514,7 +514,7 @@ footer .contenido .links ul li span:hover {
   padding: 15px;
   background-color: #9dffb0;
   border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, #d1d5db 0px 0px 0px 1px inset;
   text-align: justify;
 }
 .games-full .games-content .games-pag .block-game-description .game-arg-row:last-of-type {
@@ -644,11 +644,11 @@ footer .contenido .links ul li span:hover {
   outline: none !important;
 }
 .login .log .log-form #log-name-error {
-  color: rgb(216, 47, 47);
+  color: #d82f2f;
   margin-bottom: 15px;
 }
 .login .log .log-form #log-pass-error {
-  color: rgb(216, 47, 47);
+  color: #d82f2f;
   margin-bottom: 15px;
 }
 .login .log .log-form label {
@@ -713,15 +713,15 @@ footer .contenido .links ul li span:hover {
   outline: none !important;
 }
 .register .reg .reg-form #userName-error {
-  color: rgb(216, 47, 47);
+  color: #d82f2f;
   margin-bottom: 15px;
 }
 .register .reg .reg-form #userPass-error {
-  color: rgb(216, 47, 47);
+  color: #d82f2f;
   margin-bottom: 15px;
 }
 .register .reg .reg-form #userMail-error {
-  color: rgb(216, 47, 47);
+  color: #d82f2f;
   margin-bottom: 15px;
 }
 .register .reg .reg-form label {
@@ -801,7 +801,7 @@ footer .contenido .links ul li span:hover {
 }
 .user-full .user-content .user-options-block .user-option:hover {
   transform: scale(1.1);
-  filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.7254901961));
+  filter: drop-shadow(0px 0px 2px #000000b9);
 }
 .user-full .user-content .user-info-block {
   padding: 2%;
@@ -845,11 +845,26 @@ footer .contenido .links ul li span:hover {
   padding: 10px;
   border-radius: 5px;
   font-family: "Arvo", sans-serif;
+  border: 1px solid #bc9c10;
 }
 .user-full .user-content .user-info-block .user-info form input[type=submit] {
   color: #834b16;
   align-self: flex-end;
   cursor: pointer;
+  background-color: #fff563;
+}
+.user-full .user-content .user-info-block .user-info.delete-user-form {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  justify-content: center;
+}
+.user-full .user-content .user-info-block .user-info.delete-user-form input[type=submit] {
+  align-self: center;
+}
+.user-full .user-content .user-info-block .user-info.delete-user-form input[type=submit]:hover {
+  background-color: #e92929;
+  color: white;
 }
 .user-full .user-content .user-info-block .popup {
   padding: 15px;
@@ -883,6 +898,15 @@ footer .contenido .links ul li span:hover {
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
+}
+.user-full .user-content .user-info-block .popup-bloqueo {
+  padding: 5%;
+  font-size: 1.2em;
+  background-color: #f6c682;
+  margin: 10% auto;
+  border-radius: 20px;
+  font-family: "Arvo", sans-serif;
+  color: black;
 }
 .user-full .user-content .user-info-block .user-orders-table th,
 .user-full .user-content .user-info-block .user-orders-table tr,
@@ -931,6 +955,18 @@ footer .contenido .links ul li span:hover {
 .tienda .tienda-content {
   margin-top: 25px;
 }
+.tienda .tienda-content h1 {
+  font-family: "Arvo", sans-serif;
+  color: #834b16;
+  text-align: center;
+  margin: 30px auto;
+  text-decoration: underline;
+}
+.tienda .tienda-content h3 {
+  color: red;
+  font-size: 1.3em;
+  text-align: center;
+}
 .tienda .tienda-content .barra_navegacion {
   margin-bottom: 50px;
   display: flex;
@@ -976,15 +1012,15 @@ footer .contenido .links ul li span:hover {
   justify-content: space-between;
 }
 .tienda .tienda-content .tienda-products .caja-producto .contenido-texto h3 {
-  color: rgb(248, 90, 90);
+  color: #f85a5a;
   margin-bottom: 15px;
 }
 .tienda .tienda-content .tienda-products .caja-producto .contenido-texto p {
-  color: rgb(83, 83, 83);
+  color: #535353;
   font-weight: 700;
 }
 .tienda .tienda-content .tienda-products .caja-producto .contenido-texto p span {
-  color: rgb(61, 188, 61);
+  color: #3dbc3d;
 }
 .tienda .tienda-content .tienda-products .caja-producto .contenido-texto #precio {
   font-size: 1.5em;
@@ -1011,6 +1047,90 @@ footer .contenido .links ul li span:hover {
   width: 14.4em;
   height: 14em;
 }
+.tienda .tienda-content .form-compra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10%;
+  font-family: "Arvo", sans-serif;
+}
+.tienda .tienda-content .form-compra input[type=submit] {
+  color: #834b16;
+  cursor: pointer;
+  font-family: "Arvo", sans-serif;
+  background-color: #fff563;
+  padding: 10px;
+  border-radius: 10px;
+  width: 50%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.tienda .tienda-content .form-compra input {
+  font-size: 1em;
+  padding: 5px;
+  border-radius: 5px;
+  font-family: "Arvo", sans-serif;
+  border: 1px solid #bc9c10;
+}
+.tienda .tienda-content .form-compra h3 {
+  color: #834b16;
+}
+.tienda .tienda-content .form-compra .compra-blocks {
+  display: flex;
+}
+.tienda .tienda-content .form-compra .compra-info-block {
+  width: 50%;
+  height: fit-content;
+  background-color: #9dffb0;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.tienda .tienda-content .form-compra .compra-info-block ol {
+  list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 10px;
+}
+.tienda .tienda-content .form-compra .compra-info-block ol li {
+  width: 50%;
+  font-size: 1em;
+  padding: 2%;
+}
+.tienda .tienda-content .form-compra .compra-info-block ol li .info-title {
+  font-size: 1.2em;
+  color: #834b16;
+}
+.tienda .tienda-content .form-compra .compra-info-block ol li .info-desc {
+  color: black;
+  padding-left: 2%;
+}
+.tienda .tienda-content .form-compra .compra-info-block select {
+  font-size: 1em;
+  padding: 5px;
+  border-radius: 5px;
+  font-family: "Arvo", sans-serif;
+  margin: 10px;
+  border: 1px solid #bc9c10;
+}
+.tienda .tienda-content .form-compra .compra-info-block p {
+  margin: 10px;
+}
+.tienda .tienda-content .form-compra .compra-info-block #metodoPagoC {
+  padding: 10px;
+}
+.tienda .tienda-content .form-compra .compra-info-block #metodoPagoT {
+  display: none;
+  padding: 10px;
+}
+.tienda .tienda-content .form-compra .compra-info-block .datosTarjeta {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.tienda .tienda-content .form-compra .compra-info-block .datosTarjeta label {
+  padding: 10px;
+}
 
 @media screen and (max-width: 1100px) {
   .main-content .block-entradas .entrada {
@@ -1028,7 +1148,7 @@ footer .contenido .links ul li span:hover {
 }
 @media screen and (max-width: 800px) {
   header .navbar .nav-links {
-    background-color: rgba(130, 215, 173, 0.7647058824);
+    background-color: #82d7adc3;
     flex-direction: column;
     position: fixed;
     transform: translateY(-100%);
@@ -1215,6 +1335,27 @@ footer .contenido .links ul li span:hover {
     padding: 5px;
     height: 10%;
   }
+  .user-full .user-content .user-info-block .popup-bloqueo {
+    padding: 10%;
+    font-size: 1em;
+    background-color: #f6c682;
+    margin: 50% auto;
+    border-radius: 20px;
+    font-family: "Arvo", sans-serif;
+    color: black;
+  }
+
+  .tienda .tienda-content .form-compra {
+    padding: 10px;
+  }
+  .tienda .tienda-content .form-compra .compra-blocks {
+    display: flex;
+    flex-direction: column;
+  }
+  .tienda .tienda-content .form-compra .compra-info-block {
+    width: 100%;
+    margin: 10px auto;
+  }
 
   footer .contenido .contacto-general .contacto {
     display: flex;
@@ -1230,7 +1371,7 @@ footer .contenido .links ul li span:hover {
 }
 @media screen and (max-width: 400px) {
   header .navbar .nav-links {
-    background-color: rgba(130, 215, 173, 0.7647058824);
+    background-color: #82d7adc3;
     flex-direction: column;
     position: fixed;
     transform: translateY(-100%);
@@ -1284,6 +1425,25 @@ footer .contenido .links ul li span:hover {
   }
   footer .contenido .links ul li {
     font-size: 0.8em;
+  }
+
+  .tienda .tienda-content .form-compra {
+    padding: 10px;
+  }
+  .tienda .tienda-content .form-compra .compra-blocks {
+    display: flex;
+    flex-direction: column;
+  }
+  .tienda .tienda-content .form-compra .compra-info-block {
+    width: 100%;
+    min-width: 300px;
+    margin: 10px auto;
+  }
+  .tienda .tienda-content .form-compra .compra-info-block ol {
+    flex-direction: column;
+  }
+  .tienda .tienda-content .form-compra .compra-info-block ol li {
+    width: 100%;
   }
 
   .user-full .user-content .user-options-block .user-option label {
