@@ -122,8 +122,6 @@ class user{
         return $this;
     }
 
-
-
     /**
      * Get the value of userID
      */ 

@@ -18,7 +18,6 @@
                             }
                             ?>
         </li>
-        </li>
         <li>
             <p class="user-info-title">Correo</p>
             <p class="user-info-desc"><?php echo $_SESSION['user']->getUserMail() ?></p>
@@ -66,7 +65,6 @@
             <?php
                             }
                             ?>
-        </li>
         </li>
         <li>
             <p class="user-info-title">Fecha</p>

@@ -22,6 +22,9 @@ class ConectaBD
         $this->conn = mysqli_connect($this->servername, $this->username, $this->password, $this->database);
     }
 
+    /**
+     * Función que devuelve toda la info de la tabla history.
+     */
     public function set_divs_index()
     {
         $sql = "SELECT * FROM history";
@@ -36,6 +39,9 @@ class ConectaBD
         return $lista_divs;
     }
 
+    /**
+     * Función que devuelve toda la info de la tabla game.
+     */
     public function getAllGames() {
         $sql = "SELECT * FROM game ORDER BY GAME_NUMBER";
 
@@ -49,6 +55,9 @@ class ConectaBD
         return $listGames;
     }
 
+    /**
+     * Función que devuelve todas las curiosidades de un juego cuyo ID_GAME corresponde al recibido por parámetro.
+     */
     public function getCuriositiesFromGame($idGame) {
         $sql = "SELECT * FROM curiosity WHERE ID_GAME = '$idGame'";
 
@@ -61,6 +70,9 @@ class ConectaBD
         return $list;
     }
 
+    /**
+     * Función que devuelve todas las novedades de un juego cuyo ID_GAME corresponde al recibido por parámetro.
+     */
     public function getNewsFromGame($idGame) {
         $sql = "SELECT * FROM new WHERE ID_GAME = '$idGame'";
 
@@ -73,6 +85,9 @@ class ConectaBD
         return $list;
     }
 
+    /**
+     * Función que devuelve todas las plataformas de un juego cuyo ID_GAME corresponde al recibido por parámetro.
+     */
     public function getPlatformsFromGame($idGame) {
         $sql = "SELECT * FROM platform WHERE ID_GAME = '$idGame'";
 
@@ -85,6 +100,9 @@ class ConectaBD
         return $list;
     }
 
+    /**
+     * Función que devuelve toda la info de la tabla creator.
+     */
     public function getAllCreators() {
         $sql = "SELECT * FROM creator";
 
@@ -98,6 +116,9 @@ class ConectaBD
         return $listCreators;
     }
 
+    /**
+     * Función que comprueba si existe un usuario en la base de datos que coincida con el nombre y contraseña recibidos por parámetro.
+     */
     public function checkUser($n, $p) {
         $sql = "Select * from user where USER_NAME = '$n' AND USER_PASS = '$p'";
         $result = $this->conn->query($sql);
@@ -109,6 +130,9 @@ class ConectaBD
         }
     }
 
+    /**
+     * Función que devuelve toda la info de un usuario según el nombre recibido por parámetro.
+     */
     public function returnUser($n) {
         $sql = "select * from user where USER_NAME = '$n'";
         $result = $this->conn->query($sql);
@@ -122,6 +146,9 @@ class ConectaBD
         return $u;
     }
 
+    /**
+     * Función que inserta un registro en la tabla user, recibe por parámetro un objeto de la clase User.
+     */
     public function insertUser(User $u) {
         $previousCheck = $this->conn->query("Select * from user where USER_NAME = '" . $u->getUserName() . "' OR USER_MAIL = '" . $u->getUserMail() . "'");
         if ($previousCheck->num_rows == 1) {
@@ -136,6 +163,9 @@ class ConectaBD
         }
     }
 
+    /**
+     * Función que recupera el último pedido de la tabla orders para un usuario recibido por parámetro.
+     */
     public function selectLastOrderByUser(User $u) {
         $sql = "select * from orders where CUSTOMER_ID = '". $u->getUserID() ."' ORDER BY ORDER_ID DESC";
         $result = $this->conn->query($sql);
@@ -146,6 +176,9 @@ class ConectaBD
         return $o;
     }
 
+    /**
+     * Función que recumera todos los pedidos de la tabla orders para un usuario recibido por parámetro.
+     */
     public function selectAllOrdersByUser(User $u) {
         $sql = "select * from orders where CUSTOMER_ID = '". $u->getUserID() ."' ORDER BY ORDER_ID DESC";
         $result = $this->conn->query($sql);
@@ -159,7 +192,9 @@ class ConectaBD
         return $listOrders;
     }
 
-
+    /**
+     * Función que modifica en la tabla user los datos de un usuario recibido por parámetro.
+     */
     public function alterUserTable(User $u) {
         $sql = "UPDATE user SET USER_NAME = '". $u->getUserName()."', 
         USER_LASTNAME = '".$u->getUserLastname()."', USER_MAIL = '".$u->getUserMail()."', USER_ADDRESS = '". $u->getUserAddress() ."', 
@@ -170,6 +205,9 @@ class ConectaBD
         return $result;
     }
 
+    /**
+     * Función que devuelve toda la info de la tabla item.
+     */
     public function takeProducts(){
         $sql = "SELECT * FROM item";
 
@@ -185,7 +223,9 @@ class ConectaBD
         return $products;
     }
 
-
+    /**
+     * Función que devuelve un producto de la tabla item según el ITEM_ID recibido por parámetro.
+     */
     public function returnProductByID($id) {
         $sql = "SELECT * FROM item WHERE ITEM_ID = $id";
         $result  = $this->conn->query($sql);
@@ -196,6 +236,9 @@ class ConectaBD
         return $p;
     }
 
+    /**
+     * Función que devuelve el último ORDER_ID de la tabla orders.
+     */
     public function returnLastOrderID() {
         $sql = "SELECT ORDER_ID FROM `orders` ORDER BY ORDER_ID DESC";
         $result  = $this->conn->query($sql);
@@ -210,6 +253,10 @@ class ConectaBD
         
     }
 
+    /**
+     * Función que inserta un registro en la tabla orders, recibe por parámetro el usuario que realiza el pedido, el producto comprado y 
+     * la cantidad de producto.
+     */
     public function insertOrder(User $u, productos $i, $c) {
         $now = date_create()->format('Y-m-d');
         $orderID = $this->returnLastOrderID()+1;
@@ -230,6 +277,9 @@ class ConectaBD
         return $result;
     }
 
+    /**
+     * Función que inserta un registro en la tabla details, recibe por parámetro el producto comprado, la cantidad y el ORDER_ID del pedido.
+     */
     public function insertDetails(productos $i, $c, $orderID) {
         
         $sql = "INSERT INTO `details` (`ORDER_ID`, `ITEM_ID`, `ITEM_QUANTITY`, `DETAIL_UNIT_PRICE`) VALUES ('$orderID', '".$i->getIdProducto()."', '$c', '".$i->getPrecio()."')";
@@ -238,11 +288,13 @@ class ConectaBD
         return $result;
     }
 
+    /**
+     * Función que borra un registro de la tabla user correspondiente al usuario pasado por parámetro.
+     */ 
     public function deleteUserAccount(User $u) {
         $sql = "DELETE FROM `user` WHERE `user`.`USER_ID` = '".$u->getUserID()."'";
         $result = $this->conn->query($sql);
 
         return $result;
     }
-
 }

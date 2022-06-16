@@ -31,7 +31,6 @@
                                     <p class="info-desc" id="item_price"> <?php echo $_SESSION['cesta']->getPrecio() ?>
                                     </p>
                                 </li>
-                                </li>
                                 <li>
                                     <p class="info-title">Cantidad</p>
                                     <input type="number" min="1" name="item_quantity" value="1" id="item_quantity"
@@ -66,7 +65,6 @@
                             }
                             ?>
                                 </li>
-                                </li>
                                 <li>
                                     <p class="info-title">Correo</p>
                                     <p class="info-desc"><?php echo $_SESSION['user']->getUserMail() ?></p>
@@ -86,9 +84,7 @@
                                 </li>
                             </ol>
                     </div>
-
                 </div>
-
                 <div class="compra-info-block">
                     <h3>Método de pago</h3>
 
@@ -100,25 +96,23 @@
                     <div id="metodoPagoT">
                         Ha seleccionado pago con tarjeta, por favor, rellene los siguientes datos:
                         <div class="datosTarjeta">
-                            <label for="">Propietario:</label>
+                            <label>Propietario:</label>
                             <input type="text" name="propietarioTarjeta" placeholder="Usuario Usuariez">
-                            <label for="">Número:</label>
-                            <input type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" name="numeroTarjeta">
-                            <label for="">Fecha Cad:</label>
-                            <input type="text" name="caducidadTarjeta" pattern="[0-1][0-9]/[0-9][0-9]" placeholder="XX/XX">
-                            <label for="">CVV:</label>
-                            <input type="text" pattern="[0-9]{3}" name="claveTarjeta" placeholder="xxx">
+                            <label>Número:</label>
+                            <input type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}"
+                                maxlength="19" placeholder="xxxx xxxx xxxx xxxx" name="numeroTarjeta">
+                            <label>Fecha Cad:</label>
+                            <input type="text" name="caducidadTarjeta" pattern="[0-1][0-9]/[0-9][0-9]" maxlength="5"
+                                placeholder="XX/XX">
+                            <label>CVV:</label>
+                            <input type="text" pattern="[0-9]{3}" name="claveTarjeta" maxlength="3" placeholder="xxx">
                         </div>
-
                     </div>
                 </div>
                 <input type="submit" value="Finalizar compra">
             </form>
         </div>
-
     </div>
-
-
     <?php include "footer.php"; ?>
 </body>
 

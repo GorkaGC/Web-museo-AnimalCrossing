@@ -18,9 +18,8 @@
 
         <div class="tienda-content container">
             <div class="barra_navegacion">
-                <input type="text" id="barra_busqueda" name="busqueda" placeholder="Buscar producto">
+                <input type="text" id="barra_busqueda" name="busqueda" onkeyup="buscarProducto()" placeholder="Buscar producto">
                 <?php
-
                 if (!empty($_GET['error'])) {
                     echo (($_GET['error'])) == 'userNotRegistered' ? '<h3>Debe <a href="control.php?f=login">iniciar sesión</a> para poder realizar una compra.</h3>' : '<h3>El pedido no ha podido completarse.</h3>';
                 }
@@ -60,9 +59,10 @@
                 <?php
                 }
                 ?>
+            </div>
 
-
-
+            <div class="no-resultado" id="no-resultado">
+            No se encuentran resultados que coincidan.
             </div>
         </div>
 

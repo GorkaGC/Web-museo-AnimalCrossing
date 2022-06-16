@@ -10,8 +10,6 @@ class creador{
         $this->infoCreador = $infoCreador;
     }
 
-       
-
     /**
      * Get the value of nombreCreador
      */ 
@@ -72,5 +70,4 @@ class creador{
         return $this;
     }
 }
-
 ?>

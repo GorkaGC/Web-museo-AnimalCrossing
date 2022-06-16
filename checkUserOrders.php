@@ -13,7 +13,6 @@
             <p class="user-info-title">Estado</p>
             <p class="user-info-desc">No existen datos.</p>
         </li>
-        </li>
         <li>
             <p class="user-info-title">Fecha</p>
             <p class="user-info-desc">No existen datos.</p>
@@ -27,6 +26,7 @@
             <th>Nº Pedido</th>
             <th>Estado</th>
             <th>Fecha</th>
+            <th></th>
 
         </tr>
         <?php
@@ -54,8 +54,8 @@
     <div id="miModal" class="modal">
         <div class="modal-contenido">
             <div class="detail-title">
-            <h2>Detalle pedido nº <span id="order-ref"></span></h2>
-            <a href="#user-orders-table">X</a>
+                <h2>Detalle pedido nº <span id="order-ref"></span></h2>
+                <a href="#user-orders-table">X</a>
             </div>
             <div class="detail">
                 <p>Descripción producto: <span id="item-desc"></span></p>

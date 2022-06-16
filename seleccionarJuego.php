@@ -12,6 +12,7 @@ $result  = $conexion->query($sql);
 $listGames = array();
 $iteration = 0;
 
+//Obtiene una fila de resultados
 while ($row = mysqli_fetch_array($result)){
     $listGames[$iteration] = $row;
     $iteration++;

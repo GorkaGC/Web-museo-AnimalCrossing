@@ -1,11 +1,9 @@
 <?php
-
 class order{
     private $orderID;
     private $customerID;
     private $orderDate;
     private $orderStatus;
-
 
     public function __construct($orderID, $customerID, $orderDate, $orderStatus){
         $this->orderID = $orderID;
@@ -13,8 +11,6 @@ class order{
         $this->orderDate = $orderDate;
         $this->orderStatus = $orderStatus;
     }
-
-    
 
     /**
      * Get the value of orderID
@@ -96,6 +92,4 @@ class order{
         return $this;
     }
 }
-
-
-    ?>
+?>

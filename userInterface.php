@@ -9,14 +9,11 @@
         include "head.php";
     ?>
     <title>Home</title>
-
 </head>
 
 <body>
     <?php include "nav.php"; ?>
-
     <div class="user-full full-container">
-
         <?php if (!empty($_SESSION['userLoged'])) {
         ?>
         <div class="user-banner">
@@ -29,25 +26,24 @@
             <div class="user-options-block container">
                 <div class="user-option">
                     <a href="control.php?f=userInterfaceEditUserInfo">
-                        <img src="./media/user_icon.png" alt="">
+                        <img src="./media/user_icon.png" alt="editar mis datos">
                         <label for="">Editar mis datos</label>
                     </a>
                 </div>
                 <div class="user-option">
                     <a href="control.php?f=userInterfacecheckUserOrders">
-                        <img src="./media/user_orders_icon.png" alt="">
+                        <img src="./media/user_orders_icon.png" alt="historial pedidos">
                         <label for="">Historial pedidos</label>
                     </a>
                 </div>
                 <div class="user-option">
                     <a href="control.php?f=logOut">
-                        <img src="./media/logout_icon.png" alt="">
+                        <img src="./media/logout_icon.png" alt="cerrar sesion">
                         <label for="">Cerrar sesión</label>
                     </a>
                 </div>
             </div>
             <div class="user-info-block container">
-
                 <?php
     switch ($_SESSION['optionUserInterface']) {
         case "checkUserInfo":

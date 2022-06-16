@@ -12,7 +12,6 @@
                 <input type="text" name="userLastname" class="user-info-desc"
                     value="<?php echo $_SESSION['user']->getUserLastname() ?>">
             </li>
-            </li>
             <li>
                 <p class="user-info-title">Correo</p>
                 <input type="text" name="userMail" class="user-info-desc"
@@ -35,7 +34,7 @@
 </div>
 
 <div class="user-info delete-user-form">
-<form action="control.php?f=deleteUserAccount" method="post">
+    <form action="control.php?f=deleteUserAccount" method="post">
         <input type="submit" value="Borrar mi cuenta">
     </form>
 </div>
