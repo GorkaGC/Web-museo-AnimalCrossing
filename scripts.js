@@ -1,5 +1,6 @@
-
-//JAVASCRIPT
+/**
+ * Función menú hamburguesa.
+ */
 const menu = document.querySelector(".nav-links");
 const menuItems = document.querySelectorAll(".menuItem");
 const hamburger = document.querySelector(".hamburger");
@@ -26,11 +27,9 @@ menuItems.forEach(
     }
 )
 
-function volumenBajo() {
-    document.getElementById("bg_music_index").volume /= 6;
-}
-
-//GUIÑO DE TOM NOK
+/**
+ * Función guiño Tom Nok icono navegador.
+ */
 function cambioTomNok() {
     var tom = $('#tom');
     console.log(tom.val());
@@ -45,38 +44,85 @@ function cambioTomNok() {
 }
 cambioTomNok();
 
+/**
+ * Función barra de búsqueda de la página store.php
+ */
+ function buscarProducto() {
+    let input = document.getElementById('barra_busqueda').value;
+    input=input.toLowerCase();
+    let x = document.getElementsByClassName('caja-producto');
+    let cont = 0;
+    for (i = 0; i < x.length; i++) { 
+        console.log(x[i].innerText);
+        console.log(x.length);
+        if (!x[i].innerHTML.toLowerCase().includes(input)) {
+            x[i].style.display="none";
+            cont++;
 
+            if (cont == x.length) {
+                $('#no-resultado').css('display', 'block');
+            }  
+        }
+        else {
+            x[i].style.display="block";
+            $('#no-resultado').css('display', 'none');
+        }
+    }
+}
+
+/**
+ * Función que actualiza el total durante el proceso de compra, según se modifique la cantidad de producto.
+ */
 function actualizarTotal() {
-
     var item_quantity = $('#item_quantity').val();
     var item_price = $('#item_price').html();
     let ip = parseFloat(item_price);
 
     var total = $('#item_quantity').val() * $('#item_price').html();
-    console.log(total);
-    
-    document.getElementById('totalOrder').innerHTML = (Math.round(total * 100) / 100).toFixed(2);
 
-    
+    document.getElementById('totalOrder').innerHTML = (Math.round(total * 100) / 100).toFixed(2);
 }
 
+/**
+ * Función que actualiza el método de pago seleccionado.
+ */
+const actualizarMetodoPago = () => {
+    var metodoSeleccionado = $('#metodoPago');
+    var selectedValue = $('option:selected', metodoSeleccionado).val();
+    
+    switch (selectedValue) {
+        case 'contrareembolso':
+            $('#metodoPagoC').css('display', 'block');
+            $('#metodoPagoT').css('display', 'none');
+            break;
 
-//FIN DE JAVASCRIPT
+        case 'tarjeta':
+            $('#metodoPagoC').css('display', 'none');
+            $('#metodoPagoT').css('display', 'block');
+            break;
+    }
+}
 
-
-//JQUERY 
-
-//METODO PARA SACAR INFORMACION EN LA PAGINA JUEGOS
+/**
+ * Función onClick para obtener y modificar la información en la página games.php según la imagen
+ * que el usuario clique.
+ * Mediante Ajax se hará una llamada al archivo selecconarJuego.php, pasándole por parámetro el id 
+ * de la imagen que se ha clicado.
+ *      url: url de la llamada
+ *      type: ripo GET para que devuelva los datos
+ *      dataType: el tipo de dato que devolverá, que será formato JSON para poder tratarlo con JS
+ * 
+ * Si la llamada es correcta (done), recorremos la respuesta, vaciando los divs del contenido
+ * anterior y rellenándolos con los datos obtenidos.
+ * Si la llamada falla (fail), muestra por consola el error.
+ */
 const getGameInfoOnClick = (idGame) => {
-    // mediante AJAX se hará una llamada al archivo seleccionarJuego.php y le pasaremos
-    // por parámetro el id de la imagen que se ha clicado
-    console.log(idGame);
     $.ajax({
-        url: "seleccionarJuego.php?idGame=" + idGame, // url de la llamada
-        type: "GET", // tipo GET para que devuelva los datos
-        dataType: "json" // el tipo de dato que devolverá será en formato JSON para poder tratarlo con JavaScript
-    }).done((response) => { // si la llamada es correcta
-        $(response).each((_i, element) => { // recorremos la respuesta y vaciamos los divs correspondientes con el contenido anterior para después añadir los datos
+        url: "seleccionarJuego.php?idGame=" + idGame,
+        type: "GET",
+        dataType: "json"
+    }).done((response) => {
+        $(response).each((_i, element) => {
             $('#id-title-game').empty().append('<h2>' + element.TITLE_GAME + '</h2>');
             $('#id-release-date').empty().append(element.RELEASE_DATE);
             $('#id-trailer-game-name').empty().append(element.TITLE_GAME);
@@ -86,23 +132,24 @@ const getGameInfoOnClick = (idGame) => {
             getNews(idGame);
             getPlatforms(idGame);
         });
-    }).fail((error) => { // si la llamada falla
-        console.log(error, "fail"); // muestra por consola el error
+    }).fail((error) => {
+        console.log(error, "fail");
     });
 }
 
+/**
+ * Función onChange asignada al elemento select, similar a la función getGameInfoOnClick
+ */
 const getGameInfoOnChange = () => {
-    // mediante AJAX se hará una llamada al archivo seleccionarJuego.php y le pasaremos
-    // por parámetro el id de la imagen que se ha clicado
     var juegoSeleccionado = $('#juegoSeleccionado');
     var selectedValue = $('option:selected', juegoSeleccionado).val();
     console.log(selectedValue);
     $.ajax({
-        url: "seleccionarJuego.php?idGame=" + selectedValue, // url de la llamada
-        type: "GET", // tipo GET para que devuelva los datos
-        dataType: "json" // el tipo de dato que devolverá será en formato JSON para poder tratarlo con JavaScript
-    }).done((response) => { // si la llamada es correcta
-        $(response).each((_i, element) => { // recorremos la respuesta y vaciamos los divs correspondientes con el contenido anterior para después añadir los datos
+        url: "seleccionarJuego.php?idGame=" + selectedValue,
+        type: "GET",
+        dataType: "json"
+    }).done((response) => {
+        $(response).each((_i, element) => {
             $('#id-title-game').empty().append('<h2>' + element.TITLE_GAME + '</h2>');
             $('#id-release-date').empty().append(element.RELEASE_DATE);
             $('#id-trailer-game-name').empty().append(element.TITLE_GAME);
@@ -112,11 +159,14 @@ const getGameInfoOnChange = () => {
             getNews(selectedValue);
             getPlatforms(selectedValue);
         });
-    }).fail((error) => { // si la llamada falla
-        console.log(error, "fail"); // muestra por consola el error
+    }).fail((error) => {
+        console.log(error, "fail");
     });
 }
 
+/**
+ * Función que actualiza las curiosidades del juego seleccionado.
+ */
 const getCuriosities = (idGame) => {
     $.ajax({
         url: "añadirCuriosidades.php?idGame=" + idGame,
@@ -135,6 +185,9 @@ const getCuriosities = (idGame) => {
     });
 }
 
+/**
+ * Función que actualiza las novedades del juego seleccionado.
+ */
 const getNews = (idGame) => {
     $.ajax({
         url: "añadirNovedades.php?idGame=" + idGame,
@@ -153,6 +206,9 @@ const getNews = (idGame) => {
     });
 }
 
+/**
+ * Función que actualiza las plataformas del juego seleccionado.
+ */
 const getPlatforms = (idGame) => {
     $.ajax({
         url: "añadirPlataformas.php?idGame=" + idGame,
@@ -170,21 +226,18 @@ const getPlatforms = (idGame) => {
         console.log(error, "fail");
     });
 }
-//FIN DEL METODO JUEGOS
 
-
-//METODO CONSULTAR DETALLES PEDIDO
-
+/**
+ * Función para consultar los detalles del pedido seleccionado.
+ * Impide el scroll en la página al activar el pop up con el detalle.
+ */
 const getOrderDetails = (idPedido) => {
     $.ajax({
         url: "consultarDetallesPedido.php?idPedido=" + idPedido,
         type: "GET",
         dataType: "json"
     }).done((response) => {
-
         $(response).each((_i, element) => {
-            //$('#id-title-game').empty().append('<h2>' + element.TITLE_GAME + '</h2>');
-            console.log(response);
             $('#popup').css('display', 'block');
             $('body').css('overflow', 'hidden');
 
@@ -193,24 +246,25 @@ const getOrderDetails = (idPedido) => {
             $('#item-quantity').empty().append(element.ITEM_QUANTITY);
             $('#item-price').empty().append(element.DETAIL_UNIT_PRICE);
             $('#order_date').empty().append(element.ORDER_DATE);
-            $('#order-total').empty().append(element.ITEM_QUANTITY * element.DETAIL_UNIT_PRICE);
+            $('#order-total').empty().append((Math.round((element.ITEM_QUANTITY * element.DETAIL_UNIT_PRICE) * 100) / 100).toFixed(2));
             $('#order_status').empty().append(element.STATUS);
-            //alert("Nº PEDIDO: " + element.ORDER_ID + "\nPRODUCTO: " + element.ITEM_DESCRIPTION);
         });
     }).fail((error) => {
         console.log(error, "fail");
     });
 }
 
-//FIN METODO CONSULTAR DETALLES PEDIDO
-
+/**
+ * Función para cerrar el pop up del detalle de pedido, permitiendo otra vez el scroll.
+ */
 const cerrarPopup = () => {
     $('body').css('overflow', 'auto ');
     $('#popup').css('display', 'none');
 }
 
-//METODO DE VALIDACION DE FORMULARIOS
-//VALIDAR CONTACTO
+/**
+ * Función para la validación del formulario de contacto.
+ */
 $(function () {
     $('#form-contact').validate({
         rules: {
@@ -234,7 +288,9 @@ $(function () {
     });
 });
 
-//VALIDAR LOGIN
+/**
+ * Función para la validación del formulario de login.
+ */
 $(function () {
     $('#formulario-log').validate({
         rules: {
@@ -248,7 +304,9 @@ $(function () {
     });
 });
 
-//VALIDAR REGISTRO
+/**
+ * Función para la validación del formulario de registro.
+ */
 $(function () {
     $('#formulario-reg').validate({
         rules: {
@@ -256,12 +314,10 @@ $(function () {
                 required: true,
                 minlength: 3,
                 maxlength: 10
-
             },
             userPass: {
                 required: true,
                 minlength: 4,
-
             },
             userMail: {
                 required: true,
@@ -285,26 +341,3 @@ $(function () {
         }
     });
 });
-
-
-
-
-//PROCESO COMPRA
-
-const actualizarMetodoPago = () => {
-    var metodoSeleccionado = $('#metodoPago');
-    var selectedValue = $('option:selected', metodoSeleccionado).val();
-    
-    switch (selectedValue) {
-        case 'contrareembolso':
-            $('#metodoPagoC').css('display', 'block');
-            $('#metodoPagoT').css('display', 'none');
-            break;
-
-        case 'tarjeta':
-            $('#metodoPagoC').css('display', 'none');
-            $('#metodoPagoT').css('display', 'block');
-            break;
-    }
-}
-

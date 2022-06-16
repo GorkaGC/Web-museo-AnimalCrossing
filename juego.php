@@ -16,7 +16,7 @@ class Juego{
         $this->urlTrailer = $urlTrailer;
     }
 
-        /**
+    /**
      * Get the value of idGame
      */ 
     public function getIdGame()
@@ -35,7 +35,6 @@ class Juego{
 
         return $this;
     }
-
 
     /**
      * Get the value of urlImg
@@ -97,8 +96,6 @@ class Juego{
         return $this;
     }
 
-
-
     /**
      * Get the value of releaseDate
      */ 
@@ -139,5 +136,4 @@ class Juego{
         return $this;
     }
 }
-
 ?>

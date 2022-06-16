@@ -6,7 +6,6 @@ class productos {
     private $nombre;
     private $precio;
 
-
     public function __construct($idProducto, $img, $nombre,$precio){
         $this->idProducto = $idProducto;
         $this->img = $img;
@@ -33,7 +32,6 @@ class productos {
     public function setPrecio($precio):void{
         $this->precio = $precio;
     }
-
 
     /**
      * Get the value of idProducto

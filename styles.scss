@@ -162,7 +162,6 @@ header {
     }
 
     .block-entradas {
-        //margin: 10px auto; //REVISAR, NO SE ESTÁ CENTRANDO SIN ESTO
         margin-bottom: 20px;
         font-family: "Animal";
 
@@ -175,7 +174,7 @@ header {
                 display: flex;
                 font-family: "Arvo", serif;
                 align-items: center;
-                font-size: 1.8em; //poner font-size aqui influye en el tamaño de la img
+                font-size: 1.8em; 
                 margin-bottom: 10px;
 
                 .titulo {
@@ -196,7 +195,6 @@ header {
                 div {
                     padding: 10px;
                     border-radius: 15px;
-                    //poner font-size aqui NO influye en el tamaño de la img -- PROBAR PARA VER LA DIFERENCIA
                 }
             }
 
@@ -224,9 +222,6 @@ footer {
     background: url("media/tomnook2.png") #ccc no-repeat center center;
     background-size: cover;
     background-repeat: no-repeat;
-    //min-height: 100%;
-    //height: 400px;
-    //height: auto;
     padding: 3%;
     position: absolute;
     bottom: 0;
@@ -562,7 +557,6 @@ footer {
                 }
 
                 .img-container {
-                    //width: 40%;
                     img {
                         &:hover {
                             transform: translateY(-15px);
@@ -572,7 +566,6 @@ footer {
 
                     &:not(:last-child) {
                         margin-bottom: 10%;
-                        //background-color: #7CDFFF;
                     }
                 }
 
@@ -593,7 +586,6 @@ footer {
                     width: 100%;
                     -webkit-filter: drop-shadow(5px 5px 5px #222);
                     filter: drop-shadow(5px 5px 5px #222);
-                    //width: 10em;
                 }
             }
 
@@ -605,7 +597,6 @@ footer {
                 border-radius: 10px;
                 font-family: "Arvo", serif;
                 color: $marron-oscuro;
-                //text-align: justify;
                 box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
                     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 
@@ -613,7 +604,6 @@ footer {
                     display: flex;
                     justify-content: space-between;
                     padding: 15px;
-                    //border: 1px solid black;
                 }
 
                 .game-trailer-title-row {
@@ -632,7 +622,6 @@ footer {
                         width: 100%;
                         height: 100%;
                         max-width: 530px;
-                        //max-height: 400px;
 
                         source {
                             width: 100%;
@@ -642,7 +631,6 @@ footer {
 
                 .game-arg-row {
                     padding: 15px;
-                    //border: 2px solid #bc9c10;
                     background-color: $azul-verdoso;
                     border-radius: 5px;
                     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
@@ -685,7 +673,6 @@ footer {
 
                     .diana:target + a {
                         background-color: #c8d83c;
-                        //border-bottom-color: #fff;
                         border-bottom-left-radius: 0px;
                         border-bottom-right-radius: 0px;
                         box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
@@ -701,7 +688,6 @@ footer {
                         border: none;
                         clear: both;
                         overflow: hidden;
-                        //background-color: white;
                         border-radius: 3px;
                         background-color: $azul-verdoso;
                         box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
@@ -710,7 +696,6 @@ footer {
                     #pnl_1 > div > ul,
                     #pnl_2 > div > ul,
                     #pnl_3 > div > ul {
-                        /* opacity: 0; */
                         transition: all 0.1s ease;
                         padding: 30px;
                         display: none;
@@ -726,7 +711,6 @@ footer {
                     #uno:target ~ #pnl_1 > div > ul,
                     #dos:target ~ #pnl_2 > div > ul,
                     #tres:target ~ #pnl_3 > div > ul {
-                        /* opacity: 1; */
                         transition: all 1s ease;
                         display: block;
                     }
@@ -746,12 +730,16 @@ footer {
     background-repeat: no-repeat;
     background-position: center center;
 
+    h3 {
+        color: red;
+    }
+
     .log {
         display: flex;
         flex-direction: column;
         align-items: center;
         font-family: "Arvo", sans-serif;
-
+        margin: 10% auto;
         h1 {
             font-family: "Arvo", sans-serif;
             margin-top: 25px;
@@ -830,11 +818,16 @@ footer {
     background-repeat: no-repeat;
     background-position: center center;
 
+    h3 {
+        color: red;
+    }
+
     .reg {
         display: flex;
         flex-direction: column;
         align-items: center;
         font-family: "Arvo", sans-serif;
+        margin: 10% auto;
 
         h1 {
             font-family: "Arvo", sans-serif;
@@ -1011,7 +1004,6 @@ footer {
                 ol {
                     list-style-type: none;
                     display: flex;
-                    //justify-content: space-between;
                     flex-flow: row wrap;
                     padding: 10px;
 
@@ -1053,10 +1045,10 @@ footer {
 
                 &.delete-user-form {
                     background-color: transparent;
-                    border:none;
+                    border: none;
                     box-shadow: none;
                     justify-content: center;
-                    
+
                     input[type="submit"] {
                         align-self: center;
                     }
@@ -1069,8 +1061,6 @@ footer {
             }
 
             .popup {
-                //width: 50%;
-                //height: 200px;
                 padding: 15px;
                 background-color: #f6c682;
                 display: none;
@@ -1111,7 +1101,7 @@ footer {
                 padding: 5%;
                 font-size: 1.2em;
                 background-color: #f6c682;
-                margin: 10% auto;
+                margin: 20% auto;
                 border-radius: 20px;
                 font-family: "Arvo", sans-serif;
                 color: black;
@@ -1122,7 +1112,6 @@ footer {
                 tr,
                 td,
                 table {
-                    //border: 1px solid black;
                     border-collapse: collapse;
                     padding: 20px;
                 }
@@ -1174,17 +1163,17 @@ footer {
         color: $marron-oscuro;
         text-decoration: underline;
     }
+    h1 {
+        font-family: "Arvo", sans-serif;
+        color: $marron-oscuro;
+        text-align: center;
+        margin: 30px auto;
+        text-decoration: underline;
+    }
 
     .tienda-content {
         margin-top: 25px;
-
-        h1 {
-            font-family: "Arvo", sans-serif;
-            color: $marron-oscuro;
-            text-align: center;
-            margin: 30px auto;
-            text-decoration: underline;
-        }
+        padding: 10px;
 
         h3 {
             color: red;
@@ -1289,7 +1278,6 @@ footer {
         .form-compra {
             display: flex;
             flex-direction: column;
-            //padding: 20px;
             align-items: center;
             margin-bottom: 10%;
             font-family: "Arvo", sans-serif;
@@ -1320,7 +1308,6 @@ footer {
 
             .compra-blocks {
                 display: flex;
-                //padding: 10px;
             }
 
             .compra-info-block {
@@ -1336,7 +1323,6 @@ footer {
                 ol {
                     list-style-type: none;
                     display: flex;
-                    //justify-content: space-between;
                     flex-flow: row wrap;
                     padding: 10px;
 
@@ -1384,14 +1370,22 @@ footer {
                     flex-direction: column;
                     flex-wrap: wrap;
 
-
                     label {
                         padding: 10px;
                     }
-
-
                 }
             }
+        }
+
+        .no-resultado {
+            padding: 5%;
+            font-size: 1.2em;
+            background-color: #82d7ad;
+            margin: 20% auto;
+            border-radius: 20px;
+            font-family: "Arvo", sans-serif;
+            color: black;
+            display: none;
         }
     }
 }
@@ -1456,7 +1450,6 @@ footer {
                 z-index: 100;
                 top: 1rem;
                 right: 1rem;
-                //width: 2.5em;
                 padding: 10px;
                 font-size: 1.8em;
                 color: $marron-oscuro;
@@ -1601,7 +1594,6 @@ footer {
                     }
 
                     .img-container {
-                        //width: 23vw;
                         display: none;
                     }
                 }
@@ -1633,8 +1625,8 @@ footer {
             }
 
             .user-info-block {
-                .user-info{
-                    ol{
+                .user-info {
+                    ol {
                         flex-direction: column;
                     }
                 }
@@ -1701,36 +1693,29 @@ footer {
     }
 
     .tienda {
-
         .tienda-content {
-
             .form-compra {
                 padding: 10px;
                 .compra-blocks {
                     display: flex;
                     flex-direction: column;
-                    //padding: 10px;
-
-                    
                 }
                 .compra-info-block {
                     width: 100%;
                     margin: 10px auto;
                 }
-
-                
+            }
+            .no-resultado {
+                padding: 10%;
+                margin: 50% auto;
             }
         }
     }
-
-    
-    
 
     footer {
         .contenido {
             .contacto-general {
                 .contacto {
-                    //width: 50%;
                     display: flex;
                     margin: auto;
                     font-size: 0.8em;
@@ -1738,7 +1723,6 @@ footer {
             }
             .links {
                 margin-top: 0px;
-
                 ul li {
                     font-size: 0.8em;
                 }
@@ -1765,18 +1749,15 @@ footer {
                 color: white;
                 list-style: none;
                 padding-top: 4rem;
-
                 .sign-up {
                     text-align: center;
                     font-size: 0.8em;
                     padding: 5px;
                 }
             }
-
             .showMenu {
                 transform: translateY(0);
             }
-
             .hamburger {
                 display: block;
                 position: fixed;
@@ -1785,7 +1766,6 @@ footer {
                 right: 1rem;
                 padding: 5px;
                 font-size: 1.8em;
-                //width: 2.5em;
                 color: $marron-oscuro;
                 border-radius: 15px;
                 background-color: $amarillo-huevo2;
@@ -1817,7 +1797,6 @@ footer {
         .contenido {
             .contacto-general {
                 .contacto {
-                    //width: 50%;
                     display: flex;
                     margin: auto;
                     font-size: 0.8em;
@@ -1834,17 +1813,13 @@ footer {
     }
 
     .tienda {
-
         .tienda-content {
-
             .form-compra {
                 padding: 10px;
                 .compra-blocks {
                     display: flex;
                     flex-direction: column;
-                    //padding: 10px;
 
-                    
                 }
                 .compra-info-block {
                     width: 100%;
@@ -1854,12 +1829,10 @@ footer {
                     ol {
                         flex-direction: column;
                         li {
-                        width: 100%;
+                            width: 100%;
+                        }
                     }
                 }
-                }
-
-                
             }
         }
     }
@@ -1875,12 +1848,12 @@ footer {
             }
 
             .user-info-block {
-                .user-info{
-                    ol{
+                .user-info {
+                    ol {
                         flex-direction: column;
                     }
                 }
-                
+
                 .user-orders-table {
                     font-size: 0.9em;
 

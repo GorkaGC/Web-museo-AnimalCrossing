@@ -228,7 +228,7 @@ footer .contenido .social a:last-of-type {
 }
 footer .contenido .social a:hover {
   transform: scale(1.2);
-  filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.7254901961));
+  filter: drop-shadow(0px 0px 2px #000000b9);
 }
 footer .contenido .links {
   margin-top: 35px;
@@ -514,7 +514,7 @@ footer .contenido .links ul li span:hover {
   padding: 15px;
   background-color: #9dffb0;
   border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, #d1d5db 0px 0px 0px 1px inset;
   text-align: justify;
 }
 .games-full .games-content .games-pag .block-game-description .game-arg-row:last-of-type {
@@ -568,7 +568,6 @@ footer .contenido .links ul li span:hover {
 .games-full .games-content .games-pag .block-game-description .game-extras-row #pnl_1 > div > ul,
 .games-full .games-content .games-pag .block-game-description .game-extras-row #pnl_2 > div > ul,
 .games-full .games-content .games-pag .block-game-description .game-extras-row #pnl_3 > div > ul {
-  /* opacity: 0; */
   transition: all 0.1s ease;
   padding: 30px;
   display: none;
@@ -582,7 +581,6 @@ footer .contenido .links ul li span:hover {
 .games-full .games-content .games-pag .block-game-description .game-extras-row #uno:target ~ #pnl_1 > div > ul,
 .games-full .games-content .games-pag .block-game-description .game-extras-row #dos:target ~ #pnl_2 > div > ul,
 .games-full .games-content .games-pag .block-game-description .game-extras-row #tres:target ~ #pnl_3 > div > ul {
-  /* opacity: 1; */
   transition: all 1s ease;
   display: block;
 }
@@ -594,11 +592,15 @@ footer .contenido .links ul li span:hover {
   background-repeat: no-repeat;
   background-position: center center;
 }
+.login h3 {
+  color: red;
+}
 .login .log {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: "Arvo", sans-serif;
+  margin: 10% auto;
 }
 .login .log h1 {
   font-family: "Arvo", sans-serif;
@@ -644,11 +646,11 @@ footer .contenido .links ul li span:hover {
   outline: none !important;
 }
 .login .log .log-form #log-name-error {
-  color: rgb(216, 47, 47);
+  color: #d82f2f;
   margin-bottom: 15px;
 }
 .login .log .log-form #log-pass-error {
-  color: rgb(216, 47, 47);
+  color: #d82f2f;
   margin-bottom: 15px;
 }
 .login .log .log-form label {
@@ -663,11 +665,15 @@ footer .contenido .links ul li span:hover {
   background-repeat: no-repeat;
   background-position: center center;
 }
+.register h3 {
+  color: red;
+}
 .register .reg {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: "Arvo", sans-serif;
+  margin: 10% auto;
 }
 .register .reg h1 {
   font-family: "Arvo", sans-serif;
@@ -713,15 +719,15 @@ footer .contenido .links ul li span:hover {
   outline: none !important;
 }
 .register .reg .reg-form #userName-error {
-  color: rgb(216, 47, 47);
+  color: #d82f2f;
   margin-bottom: 15px;
 }
 .register .reg .reg-form #userPass-error {
-  color: rgb(216, 47, 47);
+  color: #d82f2f;
   margin-bottom: 15px;
 }
 .register .reg .reg-form #userMail-error {
-  color: rgb(216, 47, 47);
+  color: #d82f2f;
   margin-bottom: 15px;
 }
 .register .reg .reg-form label {
@@ -801,7 +807,7 @@ footer .contenido .links ul li span:hover {
 }
 .user-full .user-content .user-options-block .user-option:hover {
   transform: scale(1.1);
-  filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.7254901961));
+  filter: drop-shadow(0px 0px 2px #000000b9);
 }
 .user-full .user-content .user-info-block {
   padding: 2%;
@@ -863,7 +869,7 @@ footer .contenido .links ul li span:hover {
   align-self: center;
 }
 .user-full .user-content .user-info-block .user-info.delete-user-form input[type=submit]:hover {
-  background-color: rgb(233, 41, 41);
+  background-color: #e92929;
   color: white;
 }
 .user-full .user-content .user-info-block .popup {
@@ -903,7 +909,7 @@ footer .contenido .links ul li span:hover {
   padding: 5%;
   font-size: 1.2em;
   background-color: #f6c682;
-  margin: 10% auto;
+  margin: 20% auto;
   border-radius: 20px;
   font-family: "Arvo", sans-serif;
   color: black;
@@ -952,15 +958,16 @@ footer .contenido .links ul li span:hover {
   color: #834b16;
   text-decoration: underline;
 }
-.tienda .tienda-content {
-  margin-top: 25px;
-}
-.tienda .tienda-content h1 {
+.tienda h1 {
   font-family: "Arvo", sans-serif;
   color: #834b16;
   text-align: center;
   margin: 30px auto;
   text-decoration: underline;
+}
+.tienda .tienda-content {
+  margin-top: 25px;
+  padding: 10px;
 }
 .tienda .tienda-content h3 {
   color: red;
@@ -1012,15 +1019,15 @@ footer .contenido .links ul li span:hover {
   justify-content: space-between;
 }
 .tienda .tienda-content .tienda-products .caja-producto .contenido-texto h3 {
-  color: rgb(248, 90, 90);
+  color: #f85a5a;
   margin-bottom: 15px;
 }
 .tienda .tienda-content .tienda-products .caja-producto .contenido-texto p {
-  color: rgb(83, 83, 83);
+  color: #535353;
   font-weight: 700;
 }
 .tienda .tienda-content .tienda-products .caja-producto .contenido-texto p span {
-  color: rgb(61, 188, 61);
+  color: #3dbc3d;
 }
 .tienda .tienda-content .tienda-products .caja-producto .contenido-texto #precio {
   font-size: 1.5em;
@@ -1131,6 +1138,16 @@ footer .contenido .links ul li span:hover {
 .tienda .tienda-content .form-compra .compra-info-block .datosTarjeta label {
   padding: 10px;
 }
+.tienda .tienda-content .no-resultado {
+  padding: 5%;
+  font-size: 1.2em;
+  background-color: #82d7ad;
+  margin: 20% auto;
+  border-radius: 20px;
+  font-family: "Arvo", sans-serif;
+  color: black;
+  display: none;
+}
 
 @media screen and (max-width: 1100px) {
   .main-content .block-entradas .entrada {
@@ -1148,7 +1165,7 @@ footer .contenido .links ul li span:hover {
 }
 @media screen and (max-width: 800px) {
   header .navbar .nav-links {
-    background-color: rgba(130, 215, 173, 0.7647058824);
+    background-color: #82d7adc3;
     flex-direction: column;
     position: fixed;
     transform: translateY(-100%);
@@ -1359,6 +1376,10 @@ footer .contenido .links ul li span:hover {
     width: 100%;
     margin: 10px auto;
   }
+  .tienda .tienda-content .no-resultado {
+    padding: 10%;
+    margin: 50% auto;
+  }
 
   footer .contenido .contacto-general .contacto {
     display: flex;
@@ -1374,7 +1395,7 @@ footer .contenido .links ul li span:hover {
 }
 @media screen and (max-width: 400px) {
   header .navbar .nav-links {
-    background-color: rgba(130, 215, 173, 0.7647058824);
+    background-color: #82d7adc3;
     flex-direction: column;
     position: fixed;
     transform: translateY(-100%);

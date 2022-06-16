@@ -1,5 +1,9 @@
  <?php
 
+/**
+ * Fichero encargado de recibir las peticiones del usuario y manejar el flujo, intermediario entre usuario y servidor.
+ */
+
 require "conexion.php";
 require "divIndex.php";
 require "juego.php";
@@ -20,7 +24,6 @@ if(!empty($_GET['f'])) {
 } else {
     $urlDestino = $_POST['f'];
 }
-
 
 switch ($urlDestino) {
     case "index":
@@ -60,8 +63,7 @@ switch ($urlDestino) {
             $_SESSION['user'] = $conn->returnUser($n);
             header("Location: index.php");
         } else {
-            echo "Error";
-            header("Location: login.php");
+            header("Location: login.php?resultado=falloLogin");
         }
         break;
 
@@ -74,11 +76,10 @@ switch ($urlDestino) {
 
         if($usuarioInsertado) {
             $_SESSION['optionLogin'] = "login";
-            header("Location: login.php");
+            header("Location: login.php?resultado=exitoRegistro");
         } else {
-            echo "Error";
             $_SESSION['optionLogin'] = "registro";
-            header("Location: login.php");
+            header("Location: login.php?resultado=falloRegistro");
         }
         
         break;
@@ -133,56 +134,53 @@ switch ($urlDestino) {
         $email = $_POST['contactMail'];
         $asunto = 'Formulario Contacto';
         $mensaje = $_POST['contactMsg'];
-
-
         if(mail('neeotp1510@gmail.com', $asunto, $mensaje)){
             echo "Correo enviado";
         }
-
         break;
 
-        case "iniciarCompra":
-            if (empty($_SESSION['userLoged'])) {
-               header('Location: store.php?error=userNotRegistered');
-            } else{
-                $_SESSION['cesta'] = $conn->returnProductByID($_GET['idProducto']);
-                $_SESSION['faseCompra'] = "infoCompra";
-                header('Location: procesoCompra.php');
+    case "iniciarCompra":
+        if (empty($_SESSION['userLoged'])) {
+            header('Location: store.php?error=userNotRegistered');
+        } else{
+            $_SESSION['cesta'] = $conn->returnProductByID($_GET['idProducto']);
+            $_SESSION['faseCompra'] = "infoCompra";
+            header('Location: procesoCompra.php');
+        }
+        break;
+
+    case "finalizarCompra":
+        $item_quantity = $_POST['item_quantity'];
+                
+        empty($_POST['userLastname']) ? $userLastName = $_SESSION['user']->getUserLastname() : $userLastName = $_POST['userLastname'];
+        empty($_POST['userAddress']) ? $userAddress = $_SESSION['user']->getUserAddress() : $userAddress = $_POST['userAddress'];
+
+        if (!empty($_POST['userLastname']) || !empty($_POST['userAddress'])) {
+            $u = new User($_SESSION['user']->getUserName(), $_SESSION['user']->getUserPass(), $_SESSION['user']->getUserMail());
+            $u->createUser($_SESSION['user']->getUserName(), $_SESSION['user']->getUserPass(), $_SESSION['user']->getUserMail(), $userAddress, $userLastName);
+            $u->setUserID($_SESSION['user']->getUserID());
+            $usuarioModificado = $conn->alterUserTable($u);
+            $_SESSION['user'] = $u;
+        } 
+
+        if ($_POST['metodoPago'] == "tarjeta") {
+            if ($_POST['propietarioTarjeta'] == "" || $_POST['numeroTarjeta'] == "" 
+                || $_POST['caducidadTarjeta'] == "" || $_POST['claveTarjeta'] == "") {
+                header('Location: store.php?error=emptyData');
+            } else {
+                $pedidoInsertado = $conn->insertOrder($_SESSION['user'], $_SESSION['cesta'], $item_quantity);
+                $pedidoInsertado ? header('Location: control.php?f=userInterfacecheckUserOrders') : header('Location: store.php?&error=errorOrder');
             }
-            
-            break;
-
-
-        case "finalizarCompra":
-            $item_quantity = $_POST['item_quantity'];
-            
-            empty($_POST['userLastname']) ? $userLastName = $_SESSION['user']->getUserLastname() : $userLastName = $_POST['userLastname'];
-            empty($_POST['userAddress']) ? $userAddress = $_SESSION['user']->getUserAddress() : $userAddress = $_POST['userAddress'];
-
-            if (!empty($_POST['userLastname']) || !empty($_POST['userAddress'])) {
-                $u = new User($_SESSION['user']->getUserName(), $_SESSION['user']->getUserPass(), $_SESSION['user']->getUserMail());
-                $u->createUser($_SESSION['user']->getUserName(), $_SESSION['user']->getUserPass(), $_SESSION['user']->getUserMail(), $userAddress, $userLastName);
-                $u->setUserID($_SESSION['user']->getUserID());
-                $usuarioModificado = $conn->alterUserTable($u);
-                $_SESSION['user'] = $u;
-            } 
-
+        } else {
             $pedidoInsertado = $conn->insertOrder($_SESSION['user'], $_SESSION['cesta'], $item_quantity);
-            
             $pedidoInsertado ? header('Location: control.php?f=userInterfacecheckUserOrders') : header('Location: store.php?&error=errorOrder');
-
-            break;
-
-
-        case "deleteUserAccount":
-            $usuarioEliminado = $conn->deleteUserAccount($_SESSION['user']);
-            $_SESSION['userLoged'] = false;
-            unset($_SESSION['user']); 
-            header('Location: control.php?f=index');
-            break;
-
-
-
+        }
+        break;
+        
+    case "deleteUserAccount":
+        $usuarioEliminado = $conn->deleteUserAccount($_SESSION['user']);
+        $_SESSION['userLoged'] = false;
+        unset($_SESSION['user']); 
+        header('Location: control.php?f=index');
+        break;
  }
-
-

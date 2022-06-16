@@ -9,10 +9,6 @@
         include "head.php";
     ?>
     <title>Juegos</title>
-
-    <style>
-
-    </style>
 </head>
 
 <body>
@@ -23,13 +19,8 @@ if (empty($_SESSION['listGames'])) {
     header("Location: control.php?f=games");
 }
     $listGames = $_SESSION['listGames'];
-
     $text = $listGames[0]->getGameDesc();
-    
     ?>
-
-
-
     <div class="games-full full-container">
         <div class="games-content container">
             <h1>Juegos</h1>
@@ -39,18 +30,20 @@ if (empty($_SESSION['listGames'])) {
                 $cont = sizeof($listGames);
                 for ($i=0; $i < $cont; $i++) { 
                     ?>
-                    <div class="img-container" onclick="getGameInfoOnClick('<?php echo $listGames[$i]-> getIdGame(); ?>')">
+                    <div class="img-container"
+                        onclick="getGameInfoOnClick('<?php echo $listGames[$i]-> getIdGame(); ?>')">
                         <img src="<?php echo $listGames[$i]-> getUrlImg(); ?>" alt="" id="<?php echo $i ?>" />
                     </div>
                     <?php } ?>
                     <label class="custom-select">
-                    <select name="games" id="juegoSeleccionado" onchange="getGameInfoOnChange()">
-                        <?php
+                        <select name="games" id="juegoSeleccionado" onchange="getGameInfoOnChange()">
+                            <?php
                     for ($i=0; $i < $cont; $i++) { 
                     ?>
-                    <option value="<?php echo $listGames[$i]-> getIdGame(); ?>"><?php echo $listGames[$i]->getTitleGame(); ?></option>
-                    <?php } ?>
-                    </select>
+                            <option value="<?php echo $listGames[$i]-> getIdGame(); ?>">
+                                <?php echo $listGames[$i]->getTitleGame(); ?></option>
+                            <?php } ?>
+                        </select>
                     </label>
                 </div>
 
@@ -101,15 +94,15 @@ if (empty($_SESSION['listGames'])) {
                                 <div id="pnl_2">
                                     <div>
                                         <ul id="id-game-news">
-                                        <?php 
+                                            <?php 
                                             $contN = sizeof($_SESSION['news']);
                                             if ($contN == 0) {
                                                ?> <p>No contiene información.</p> <?php
                                             } else {
                                                 for ($i=0; $i < $contN; $i++) { 
                                                     ?>
-                                                <li> <?php echo $_SESSION['news'][$i] ?></li>
-                                                <?php } 
+                                            <li> <?php echo $_SESSION['news'][$i] ?></li>
+                                            <?php } 
                                             }
                                             ?>
                                         </ul>
@@ -118,7 +111,7 @@ if (empty($_SESSION['listGames'])) {
                                 <div id="pnl_3">
                                     <div>
                                         <ul id="id-game-platforms">
-                                        <?php 
+                                            <?php 
                                             $contP = sizeof($_SESSION['platforms']);
                                             for ($i=0; $i < $contP; $i++) { 
                                                 ?>
@@ -127,18 +120,13 @@ if (empty($_SESSION['listGames'])) {
                                         </ul>
                                     </div>
                                 </div>
-
+                            </div>
                         </section>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-
-
     <?php include "footer.php"; ?>
 </body>
 
